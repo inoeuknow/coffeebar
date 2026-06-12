@@ -25,7 +25,7 @@
             -webkit-print-color-adjust: exact;
         }
 
-        /* Split-Pane Left: Branding & Visual Margin */
+        /* Split-Pane Left: Branding, Visual Margin & Nutrition Matrix */
         .left-pane {
             width: 35%;
             height: 100%;
@@ -57,8 +57,53 @@
             display: inline-block;
         }
 
+        /* Compact Nutrition Panel Styling */
+        .nutrition-panel {
+            margin-top: 2rem;
+            border: 1px solid #ffffff;
+            padding: 10px 12px;
+            background: #111111;
+            max-width: 240px;
+        }
+
+        .nutrition-title {
+            font-size: 11px;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            border-bottom: 1.5px solid #ffffff;
+            padding-bottom: 3px;
+            margin-bottom: 6px;
+        }
+
+        .macro-row {
+            display: flex;
+            justify-content: space-between;
+            font-size: 9px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 2.5px 0;
+            border-bottom: 1px solid #222222;
+        }
+
+        .macro-row.highlight {
+            font-weight: 900;
+            color: #ffffff;
+            border-bottom: 1px solid #ffffff;
+            padding-top: 4px;
+        }
+
+        .macro-note {
+            font-size: 7.5px;
+            color: #888888;
+            margin-top: 6px;
+            line-height: 1.2;
+            text-transform: none;
+        }
+
         .meta-specs {
             margin-top: auto;
+            padding-top: 1.5rem;
         }
 
         .spec-item {
@@ -189,11 +234,27 @@
 </head>
 <body>
 
-    <!-- LEFT PANE: BRANDING & SPECIFICATIONS -->
+    <!-- LEFT PANE: BRANDING, NUTRITION MATRIX & SPECIFICATIONS -->
     <div class="left-pane">
         <div>
             <div class="brand-name">Noe Good</div>
             <div class="brand-sub">Analytical Standard</div>
+            
+            <!-- COMPACT NUTRITION MATRIX BLOCK -->
+            <div class="nutrition-panel">
+                <div class="nutrition-title">Macro Profile</div>
+                <div class="macro-row"><span>Serving Size:</span> <span>1 Tablespoon</span></div>
+                <div class="macro-row"><span>Calories:</span> <span>0 kcal</span></div>
+                <div class="macro-row"><span>Total Fat:</span> <span>0 grams</span></div>
+                <div class="macro-row"><span>Total Carbs:</span> <span>7.4 grams</span></div>
+                <div class="macro-row"><span>Dietary Fiber:</span> <span>0 grams</span></div>
+                <div class="macro-row"><span>Allulose:</span> <span>7.4 grams</span></div>
+                <div class="macro-row highlight"><span>Net Carbs:</span> <span>0 grams</span></div>
+                <div class="macro-row"><span>Protein:</span> <span>0 grams</span></div>
+                <div class="macro-note">
+                    *Note: Values describe the standalone simple syrup base. Allulose is mathematically subtracted from net carbohydrate metrics due to zero-glycemic systemic transit.
+                </div>
+            </div>
         </div>
         
         <div class="meta-specs">
