@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Noe Good Analytical Standard - Chai Concentrate (French Press Protocol)</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Inter:wght@400;600;700;900&display=swap');
+
+        /* 11x8.5 Landscape Sheet Layout */
+        @page {
+            size: 11in 8.5in;
+            margin: 0;
+        }
+        
+        body {
+            margin: 0;
+            padding: 0;
+            width: 11in;
+            height: 8.5in;
+            background: #ffffff;
+            font-family: 'Inter', sans-serif;
+            color: #000000;
+            display: flex;
+            box-sizing: border-box;
+            -webkit-print-color-adjust: exact;
+        }
+
+        /* Split-Pane Left: Branding & Visual Margin */
+        .left-pane {
+            width: 35%;
+            height: 100%;
+            background: #000000;
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 3.5rem 2.5rem;
+            box-sizing: border-box;
+        }
+
+        .brand-name {
+            font-size: 28px;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            line-height: 1.1;
+        }
+
+        .brand-sub {
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            border-top: 2px solid #ffffff;
+            margin-top: 10px;
+            padding-top: 10px;
+            display: inline-block;
+        }
+
+        .meta-specs {
+            margin-top: auto;
+        }
+
+        .spec-item {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #a0a0a0;
+        }
+
+        .spec-item strong {
+            color: #ffffff;
+        }
+
+        /* Split-Pane Right: Analytical Instructions */
+        .right-pane {
+            width: 65%;
+            height: 100%;
+            padding: 3.5rem 4rem;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 38px;
+            margin: 0 0 1.5rem 0;
+            font-style: italic;
+            font-weight: 700;
+            border-bottom: 4px solid #000000;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            font-size: 12px;
+            text-transform: uppercase;
+            margin: 1.5rem 0 0.75rem 0;
+            font-weight: 900;
+            letter-spacing: 2px;
+            border-bottom: 1px solid #000000;
+            padding-bottom: 4px;
+        }
+
+        h2:first-of-type {
+            margin-top: 0;
+        }
+
+        /* Ingredient Table Calibration */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 1rem;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 8px 10px;
+            font-size: 12px;
+            line-height: 1.4;
+        }
+
+        th {
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 2px solid #000000;
+            padding-bottom: 6px;
+        }
+
+        td {
+            border-bottom: 1px solid #e5e5e5;
+            font-weight: 600;
+        }
+
+        .mass-col {
+            font-weight: 900;
+            width: 90px;
+            white-space: nowrap;
+        }
+        
+        .note-col {
+            color: #444444;
+            font-weight: 400;
+        }
+
+        /* Procedural Steps */
+        .steps-container {
+            font-size: 11.5px;
+            line-height: 1.5;
+            font-weight: 500;
+        }
+
+        .step {
+            margin-bottom: 10px;
+            text-align: justify;
+        }
+
+        .step strong {
+            font-weight: 900;
+            text-transform: uppercase;
+            font-size: 11px;
+            letter-spacing: 0.5px;
+        }
+
+        .storage-footer {
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #000000;
+            font-weight: 900;
+            border-top: 3px solid #000000;
+            padding-top: 1rem;
+            margin-top: auto;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        @media print {
+            body {
+                width: 11in;
+                height: 8.5in;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- LEFT PANE: BRANDING & SPECIFICATIONS -->
+    <div class="left-pane">
+        <div>
+            <div class="brand-name">Noe Good</div>
+            <div class="brand-sub">Analytical Standard</div>
+        </div>
+        
+        <div class="meta-specs">
+            <div class="spec-item">Formulation: <strong>Threshold Clarity Edition</strong></div>
+            <div class="spec-item">Target Yield: <strong>14.0 Fluid Ounces</strong></div>
+            <div class="spec-item">Volumetric Yield: <strong>28 Tablespoons</strong></div>
+            <div class="spec-item">Container Class: <strong>16.9 oz Pump Bottle</strong></div>
+            <div class="spec-item">Filtration Mode: <strong>Mechanical French Press</strong></div>
+        </div>
+    </div>
+
+    <!-- RIGHT PANE: FORMULATION & SOP PROCESS -->
+    <div class="right-pane">
+        <div>
+            <h1>Chai Concentrate</h1>
+            
+            <h2>Component Mass Calibration</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width: 180px;">Ingredient</th>
+                        <th class="mass-col">Mass / Count</th>
+                        <th>Analytical Protocol Note</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Water</strong></td>
+                        <td class="mass-col">237 grams</td>
+                        <td class="note-col">Primary solvent matrix; volatile headspace must be tightly controlled.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Allulose Golden</strong></td>
+                        <td class="mass-col">192 grams</td>
+                        <td class="note-col">Provides rich honeyed depth without masking delicate volatile oils.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Loose Black Tea</strong></td>
+                        <td class="mass-col">28 grams</td>
+                        <td class="note-col">Calculated saturation ceiling to maximize extraction while preventing creaming.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Fresh Ginger</strong></td>
+                        <td class="mass-col">35 grams</td>
+                        <td class="note-col">Must be sliced paper-thin to fully optimize chemical surface area.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Cinnamon Sticks</strong></td>
+                        <td class="mass-col">12 grams</td>
+                        <td class="note-col">Must be manually cracked into small shards to expose internal bark layers.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Star Anise</strong></td>
+                        <td class="mass-col">4 pods</td>
+                        <td class="note-col">Whole pods; acts as the primary aromatic licorice flavor bridge.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Cardamom Pods</strong></td>
+                        <td class="mass-col">12 units</td>
+                        <td class="note-col">Must be thoroughly crushed/smashed to expose interior seeds.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Whole Cloves</strong></td>
+                        <td class="mass-col">12 units</td>
+                        <td class="note-col">High-eugenol component; minor deviations impact overall profile.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>Standard Operating Procedure</h2>
+            <div class="steps-container">
+                <div class="step">
+                    <strong>1. Spice Decoction:</strong> Combine the 237 grams of water, 192 grams of allulose golden, thin-sliced ginger, cracked cinnamon, star anise, cloves, and smashed cardamom pods in a saucepan. Bring to a low, steady simmer. Secure a tight-fitting **Lid On** the vessel immediately to prevent solvent evaporation. Maintain this decoction phase for exactly 20 minutes.
+                </div>
+                <div class="step">
+                    <strong>2. Thermal Descent:</strong> Remove the saucepan from the heat source. Do not open the lid. Monitor the liquid temperature until it reaches exactly **195°F**. Transfer the hot liquid and all suspended botanical elements directly into an unheated French press carafe.
+                </div>
+                <div class="step">
+                    <strong>3. Controlled Extraction:</strong> Introduce the 28 grams of loose black tea into the 195°F botanical matrix. Cover with the French press lid (plunger fully raised) and allow to steep undisturbed for exactly 6 minutes. This temperature constraint safeguards against the extraction of heavy, bitter tannins that trigger clouding.
+                </div>
+                <div class="step">
+                    <strong>4. Mechanical Recovery:</strong> Depress the French press plunger slowly and smoothly until it meets the solid bed. Apply firm, steady downward force to compress the sodden tea leaves and ginger fibers. This mechanical compression forces out the concentrated micro-liquor trapped in the botanical cells, ensuring you reach the 14 oz target.
+                </div>
+                <div class="step">
+                    <strong>5. Packaging & Equilibration:</strong> Decant the recovered concentrate through a small funnel into a clean 16.9 fluid ounce pump bottle. Allow the container to reach room temperature natively on the bench before securing the pump mechanism and transferring it to cold storage.
+                </div>
+            </div>
+        </div>
+
+        <div class="storage-footer">
+            <span>Refrigerate Post-Packing</span>
+            <span>Anti-Creaming Calibration</span>
+            <span>Application: 1 Fluid Ounce (2 tbsp) Per 10 oz Latte Target</span>
+        </div>
+    </div>
+
+</body>
+</html>
