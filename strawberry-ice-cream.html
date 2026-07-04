@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noe Good Analytical Standard - Strawberry Ice Cream Protocol</title>
+    <style>
+        /* Document Setup & Print Constraints */
+        @page {
+            size: 11in 8.5in;
+            margin: 0;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #ffffff;
+            color: #000000;
+            line-height: 1.5;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        /* Container for 11x8.5 Sheet */
+        .recipe-sheet {
+            width: 11in;
+            height: 8.5in;
+            display: flex;
+            overflow: hidden;
+            background: #ffffff;
+            border: 1px solid #e0e0e0; /* Subtle boundary for web view; hidden in print */
+        }
+
+        /* Left Pane: Technical & Analytical Branding Column */
+        .left-pane {
+            width: 3.5in;
+            height: 100%;
+            background-color: #000000;
+            color: #ffffff;
+            padding: 0.4in;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .branding-header h1 {
+            font-size: 24px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            line-height: 1.1;
+            border-bottom: 2px solid #ffffff;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+
+        .branding-header .spec-label {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #a0a0a0;
+            font-weight: 600;
+        }
+
+        .macro-matrix {
+            margin-top: 40px;
+            margin-bottom: 40px;
+        }
+
+        .macro-matrix h3 {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 15px;
+            color: #a0a0a0;
+            border-bottom: 1px solid #333333;
+            padding-bottom: 5px;
+        }
+
+        .macro-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid #222222;
+            font-size: 14px;
+        }
+
+        .macro-row .value {
+            font-weight: 700;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .technical-footer {
+            font-size: 10px;
+            color: #666666;
+            line-height: 1.4;
+            border-top: 1px solid #222222;
+            padding-top: 15px;
+        }
+
+        /* Right Pane: Content, Formulation, SOP */
+        .right-pane {
+            width: 7.5in;
+            height: 100%;
+            padding: 0.4in 0.5in;
+            display: flex;
+            flex-direction: column;
+            overflow-y: auto;
+        }
+
+        .recipe-title {
+            margin-bottom: 25px;
+        }
+
+        .recipe-title h2 {
+            font-size: 28px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
+            color: #000000;
+        }
+
+        .recipe-title p {
+            font-size: 13px;
+            color: #555555;
+            margin-top: 5px;
+            font-style: italic;
+        }
+
+        /* Table Architecture */
+        .section-title {
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 700;
+            color: #000000;
+            margin-bottom: 10px;
+            border-bottom: 2px solid #000000;
+            padding-bottom: 4px;
+        }
+
+        .formulation-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+        }
+
+        .formulation-table th {
+            background-color: #f5f5f5;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 700;
+            padding: 8px 10px;
+            text-align: left;
+            border-bottom: 1px solid #000000;
+        }
+
+        .formulation-table td {
+            padding: 8px 10px;
+            font-size: 13px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .formulation-table tr:last-child td {
+            border-bottom: 1px solid #000000;
+            font-weight: 700;
+        }
+
+        .formulation-table .numeric {
+            text-align: right;
+            font-variant-numeric: tabular-nums;
+        }
+
+        /* SOP / Procedure Styles */
+        .sop-list {
+            list-style: none;
+        }
+
+        .sop-step {
+            display: flex;
+            margin-bottom: 15px;
+            font-size: 13px;
+        }
+
+        .sop-number {
+            font-weight: 800;
+            width: 0.3in;
+            flex-shrink: 0;
+            color: #000000;
+        }
+
+        .sop-content strong {
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 0.5px;
+            display: inline-block;
+            margin-right: 5px;
+            color: #000000;
+        }
+
+        /* Screen vs Print Optimization */
+        @media print {
+            .recipe-sheet {
+                border: none;
+                page-break-inside: avoid;
+            }
+            .right-pane {
+                overflow: hidden;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="recipe-sheet">
+        <!-- LEFT BRANDING & DATA COLUMN -->
+        <div class="left-pane">
+            <div class="branding-header">
+                <span class="spec-label">Analytical Standard</span>
+                <h1>Noe Good<br>Coffee &amp;<br>Dessert</h1>
+            </div>
+
+            <div class="macro-matrix">
+                <h3>Macro Analysis (Per Serving)</h3>
+                <div class="macro-row">
+                    <span>Yield</span>
+                    <span class="value">4 Servings</span>
+                </div>
+                <div class="macro-row">
+                    <span>Calories</span>
+                    <span class="value">240 kcal</span>
+                </div>
+                <div class="macro-row">
+                    <span>Fat</span>
+                    <span class="value">20.5 grams</span>
+                </div>
+                <div class="macro-row">
+                    <span>Net Carbohydrates</span>
+                    <span class="value">6.9 grams</span>
+                </div>
+                <div class="macro-row">
+                    <span>Protein</span>
+                    <span class="value">3.6 grams</span>
+                </div>
+            </div>
+
+            <div class="technical-footer">
+                <p><strong>System Compatibility:</strong><br>Gourmia 2-QT Soft Serve (GSI1020)<br>Ninja Creami Micro-Shaver</p>
+                <p style="margin-top: 10px;">Document Rev: 2026.07.04<br>Strict Mass Compliance Required</p>
+            </div>
+        </div>
+
+        <!-- RIGHT FORMULATION & SOP COLUMN -->
+        <div class="right-pane">
+            <div class="recipe-title">
+                <h2>Fresh Strawberry Puree Ice Cream</h2>
+                <p>Low-glycemic anhydrous flavor optimization via thermal mass reduction.</p>
+            </div>
+
+            <div class="section-title">1.0 Control Formulation</div>
+            <table class="formulation-table">
+                <thead>
+                    <tr>
+                        <th>Ingredient Component</th>
+                        <th class="numeric">Mass (grams)</th>
+                        <th class="numeric">Mass %</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Fairlife Ultra-Filtered Whole Milk</td>
+                        <td class="numeric">240.00</td>
+                        <td class="numeric">39.22%</td>
+                    </tr>
+                    <tr>
+                        <td>Heavy Whipping Cream (36% Milkfat)</td>
+                        <td class="numeric">220.00</td>
+                        <td class="numeric">35.95%</td>
+                    </tr>
+                    <tr>
+                        <td>Lakanto Monkfruit with Allulose Sweetener</td>
+                        <td class="numeric">90.00</td>
+                        <td class="numeric">14.70%</td>
+                    </tr>
+                    <tr>
+                        <td>Reduced Strawberry Puree (4:1 Reduction)</td>
+                        <td class="numeric">60.00</td>
+                        <td class="numeric">9.80%</td>
+                    </tr>
+                    <tr>
+                        <td>Xanthan Gum</td>
+                        <td class="numeric">2.00</td>
+                        <td class="numeric">0.33%</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Total Target Formulation Weight</strong></td>
+                        <td class="numeric"><strong>612.00</strong></td>
+                        <td class="numeric"><strong>100.00%</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="section-title">2.0 Standard Operating Procedure</div>
+            <ul class="sop-list">
+                <li class="sop-step">
+                    <div class="sop-number">2.1</div>
+                    <div class="sop-content"><strong>Thermal Reduction:</strong> Puree two hundred and fifty grams of fresh strawberries. Simmer over medium-low heat in a small saucepan, stirring constantly, until reduced to a thick jam-like paste weighing exactly sixty grams. Cool completely.</div>
+                </li>
+                <li class="sop-step">
+                    <div class="sop-number">2.2</div>
+                    <div class="sop-content"><strong>Dry Pre-Dispersion:</strong> Whisk ninety grams of Lakanto Sweetener and two grams of xanthan gum together in a dry mixing vessel to guarantee uniform hydrocolloid dispersion.</div>
+                </li>
+                <li class="sop-step">
+                    <div class="sop-number">2.3</div>
+                    <div class="sop-content"><strong>Homogenization:</strong> Introduce two hundred and forty grams of Fairlife milk, two hundred and twenty grams of heavy cream, and sixty grams of cooled strawberry puree. Apply high shear via immersion blender for ninety seconds until emulsified.</div>
+                </li>
+                <li class="sop-step">
+                    <div class="sop-number">2.4</div>
+                    <div class="sop-content"><strong>Primary Freezing (Soft Serve):</strong> Transfer mixture to the Gourmia internal chamber. Run the standard preset automated freezing cycle until ideal soft-serve peaks are achieved (approximately twenty-five to thirty minutes).</div>
+                </li>
+                <li class="sop-step">
+                    <div class="sop-number">2.5</div>
+                    <div class="sop-content"><strong>Cryogenic Recovery Protocol:</strong> Transfer unconsumed soft serve into a standard Ninja Creami pint. Level the top surface perfectly flat. Freeze at negative eighteen degrees Celsius for twenty-four hours. Process on 'Lite Ice Cream' followed by one optional milk 'Re-Spin' if texturally required.</div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>
