@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classic Keto Chicken Salad with Apple & Pecans</title>
+    <style>
+        @page {
+            size: 11in 8.5in landscape;
+            margin: 0;
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #000000;
+            color: #000000;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .sheet {
+            width: 11in;
+            height: 8.5in;
+            background-color: #ffffff;
+            display: grid;
+            grid-template-columns: 3.5in 7.5in;
+            overflow: hidden;
+        }
+
+        /* --- Left Pane: Branding, Meta, Ingredients --- */
+        .left-pane {
+            background-color: #000000;
+            color: #ffffff;
+            padding: 0.5in;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border-right: 2px solid #000000;
+        }
+
+        .brand-header {
+            border-bottom: 2px solid #ffffff;
+            padding-bottom: 0.2in;
+        }
+
+        .brand-header h2 {
+            margin: 0;
+            font-size: 11pt;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+
+        .brand-header p {
+            margin: 4px 0 0;
+            font-size: 8pt;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: #a3a3a3;
+        }
+
+        .meta-specs {
+            margin: 0.25in 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px 0;
+            border-bottom: 1px solid #333333;
+            padding-bottom: 0.2in;
+        }
+
+        .spec-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .spec-label {
+            font-size: 7pt;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #888888;
+        }
+
+        .spec-value {
+            font-size: 9.5pt;
+            font-weight: 600;
+            margin-top: 2px;
+        }
+
+        .ingredients-section {
+            flex-grow: 1;
+        }
+
+        .section-title-light {
+            font-size: 8.5pt;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            border-bottom: 1px solid #ffffff;
+            padding-bottom: 4px;
+            margin-bottom: 10px;
+        }
+
+        .sub-group-title {
+            font-size: 7.5pt;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: #a3a3a3;
+            margin: 10px 0 4px;
+        }
+
+        .ingredient-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .ingredient-list li {
+            font-size: 8.5pt;
+            line-height: 1.35;
+            display: flex;
+            justify-content: space-between;
+            padding: 2.5px 0;
+            border-bottom: 1px dotted #262626;
+        }
+
+        .ingredient-list li span.item-name {
+            color: #d4d4d4;
+        }
+
+        .ingredient-list li span.item-amount {
+            font-weight: 600;
+            color: #ffffff;
+            text-align: right;
+            margin-left: 8px;
+            white-space: nowrap;
+        }
+
+        .left-footer {
+            border-top: 1px solid #333333;
+            padding-top: 0.15in;
+            font-size: 7pt;
+            color: #737373;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        /* --- Right Pane: Title, Analytics, Protocol --- */
+        .right-pane {
+            background-color: #ffffff;
+            padding: 0.5in;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .recipe-header {
+            margin-bottom: 0.2in;
+        }
+
+        .recipe-header h1 {
+            margin: 0;
+            font-size: 24pt;
+            line-height: 1.1;
+            font-weight: 900;
+            letter-spacing: -0.02em;
+            text-transform: uppercase;
+        }
+
+        .recipe-subtitle {
+            margin: 6px 0 0;
+            font-size: 9.5pt;
+            font-weight: 500;
+            color: #525252;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+
+        .analytics-strip {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            border: 2px solid #000000;
+            margin-bottom: 0.3in;
+        }
+
+        .stat-node {
+            padding: 8px 10px;
+            border-right: 1px solid #000000;
+            text-align: left;
+        }
+
+        .stat-node:last-child {
+            border-right: none;
+        }
+
+        .stat-kicker {
+            display: block;
+            font-size: 6.5pt;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: #525252;
+            margin-bottom: 2px;
+        }
+
+        .stat-reading {
+            font-size: 13pt;
+            font-weight: 900;
+            line-height: 1;
+        }
+
+        .stat-reading span {
+            font-size: 7.5pt;
+            font-weight: 600;
+        }
+
+        .protocol-section {
+            flex-grow: 1;
+        }
+
+        .section-title-dark {
+            font-size: 9pt;
+            font-weight: 800;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            border-bottom: 2px solid #000000;
+            padding-bottom: 4px;
+            margin-bottom: 0.18in;
+        }
+
+        .steps-container {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .step-item {
+            display: grid;
+            grid-template-columns: 0.35in 1fr;
+            align-items: baseline;
+        }
+
+        .step-index {
+            font-size: 9.5pt;
+            font-weight: 900;
+            color: #000000;
+        }
+
+        .step-content {
+            font-size: 9pt;
+            line-height: 1.45;
+            color: #171717;
+        }
+
+        .step-phase {
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #000000;
+            margin-right: 4px;
+        }
+
+        .right-footer {
+            border-top: 1px solid #e5e5e5;
+            padding-top: 0.15in;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 7.5pt;
+            color: #737373;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        @media print {
+            body {
+                background: none;
+            }
+            .sheet {
+                border: none;
+                page-break-after: always;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="sheet">
+    <!-- Left Pane -->
+    <aside class="left-pane">
+        <div>
+            <div class="brand-header">
+                <h2>Noe Good Food</h2>
+                <p>Analytical Standard Formulation</p>
+            </div>
+
+            <div class="meta-specs">
+                <div class="spec-item">
+                    <span class="spec-label">Prep Duration</span>
+                    <span class="spec-value">15 minutes</span>
+                </div>
+                <div class="spec-item">
+                    <span class="spec-label">Cook Duration</span>
+                    <span class="spec-value">0 minutes</span>
+                </div>
+                <div class="spec-item">
+                    <span class="spec-label">Target Yield</span>
+                    <span class="spec-value">4 servings</span>
+                </div>
+                <div class="spec-item">
+                    <span class="spec-label">Method</span>
+                    <span class="spec-value">Cold Emulsion Fold</span>
+                </div>
+            </div>
+
+            <div class="ingredients-section">
+                <div class="section-title-light">Formulation Components</div>
+
+                <div class="sub-group-title">Base & Solids</div>
+                <ul class="ingredient-list">
+                    <li>
+                        <span class="item-name">Chicken breast, cooked & shredded</span>
+                        <span class="item-amount">567 grams</span>
+                    </li>
+                    <li>
+                        <span class="item-name">Cheddar cheese, diced cubes</span>
+                        <span class="item-amount">100 grams</span>
+                    </li>
+                    <li>
+                        <span class="item-name">Fuji apple, finely cored & diced</span>
+                        <span class="item-amount">150 grams</span>
+                    </li>
+                    <li>
+                        <span class="item-name">Pecans, chopped</span>
+                        <span class="item-amount">60 grams</span>
+                    </li>
+                    <li>
+                        <span class="item-name">Celery, finely diced</span>
+                        <span class="item-amount">50 grams</span>
+                    </li>
+                    <li>
+                        <span class="item-name">Red onion, finely diced</span>
+                        <span class="item-amount">30 grams</span>
+                    </li>
+                </ul>
+
+                <div class="sub-group-title">Dressing & Seasoning</div>
+                <ul class="ingredient-list">
+                    <li>
+                        <span class="item-name">Full-fat mayonnaise</span>
+                        <span class="item-amount">120 grams</span>
+                    </li>
+                    <li>
+                        <span class="item-name">Dijon mustard</span>
+                        <span class="item-amount">5 milliliters</span>
+                    </li>
+                    <li>
+                        <span class="item-name">Fine sea salt</span>
+                        <span class="item-amount">To taste</span>
+                    </li>
+                    <li>
+                        <span class="item-name">Coarse black pepper</span>
+                        <span class="item-amount">To taste</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="left-footer">
+            Protocol Ref: NGF-KCS-001 &bull; Document Scale: 11 &times; 8.5
+        </div>
+    </aside>
+
+    <!-- Right Pane -->
+    <main class="right-pane">
+        <header class="recipe-header">
+            <h1>Classic Keto Chicken Salad</h1>
+            <p class="recipe-subtitle">Cold Emulsion Salad with Crisp Apple & Roasted Pecans</p>
+        </header>
+
+        <section class="analytics-strip">
+            <div class="stat-node">
+                <span class="stat-kicker">Energy</span>
+                <span class="stat-reading">505 <span>kcal</span></span>
+            </div>
+            <div class="stat-node">
+                <span class="stat-kicker">Protein</span>
+                <span class="stat-reading">45 <span>grams</span></span>
+            </div>
+            <div class="stat-node">
+                <span class="stat-kicker">Total Lipids</span>
+                <span class="stat-reading">35 <span>grams</span></span>
+            </div>
+            <div class="stat-node">
+                <span class="stat-kicker">Total Carbs</span>
+                <span class="stat-reading">7 <span>grams</span></span>
+            </div>
+            <div class="stat-node">
+                <span class="stat-kicker">Dietary Fiber</span>
+                <span class="stat-reading">1 <span>gram</span></span>
+            </div>
+            <div class="stat-node">
+                <span class="stat-kicker">Net Impact</span>
+                <span class="stat-reading">6 <span>grams</span></span>
+            </div>
+        </section>
+
+        <section class="protocol-section">
+            <div class="section-title-dark">Standard Preparation Protocol</div>
+
+            <div class="steps-container">
+                <div class="step-item">
+                    <span class="step-index">01</span>
+                    <div class="step-content">
+                        <span class="step-phase">Base Prep:</span> Shred or dice 567 grams of pre-cooked, chilled chicken breast into uniform bite-sized pieces. Transfer into a high-capacity stainless steel or glass mixing bowl.
+                    </div>
+                </div>
+
+                <div class="step-item">
+                    <span class="step-index">02</span>
+                    <div class="step-content">
+                        <span class="step-phase">Solid Integration:</span> Finely dice 150 grams of Fuji apple, 50 grams of celery stalk, and 30 grams of red onion. Add the diced produce, 100 grams of cheddar cheese cubes, and 60 grams of chopped pecans directly into the bowl with the prepared chicken.
+                    </div>
+                </div>
+
+                <div class="step-item">
+                    <span class="step-index">03</span>
+                    <div class="step-content">
+                        <span class="step-phase">Dressing Emulsion:</span> In a separate vessel, whisk together 120 grams of full-fat mayonnaise, 5 milliliters of Dijon mustard, salt, and freshly cracked black pepper until homogenous and completely emulsified.
+                    </div>
+                </div>
+
+                <div class="step-item">
+                    <span class="step-index">04</span>
+                    <div class="step-content">
+                        <span class="step-phase">Uniform Fold:</span> Pour the seasoned dressing mixture over the dry bowl contents. Using a silicone spatula, gently fold from bottom to top until the chicken, cheese cubes, and diced aromatics are evenly coated without crushing the apple structure.
+                    </div>
+                </div>
+
+                <div class="step-item">
+                    <span class="step-index">05</span>
+                    <div class="step-content">
+                        <span class="step-phase">Equilibration & Storage:</span> Sample for seasoning balance. Seal container hermetically and refrigerate at or below 4 degrees Celsius for a minimum of 30 minutes to equilibrate flavors. Stable under refrigeration for up to 4 days.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="right-footer">
+            <span>Critical Metric: 6 grams Net Carbohydrates per Serving</span>
+            <span>Batch Size: 4 Portions</span>
+        </footer>
+    </main>
+</div>
+
+</body>
+</html>
