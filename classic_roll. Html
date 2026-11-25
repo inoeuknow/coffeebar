@@ -1,0 +1,1349 @@
+<!DOCTYPE html>
+<html lang="en"><head><style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:"Inter", sans-serif;font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:"JetBrains Mono", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.pointer-events-none{pointer-events:none}.fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}.sticky{position:sticky}.bottom-2{bottom:0.5rem}.bottom-6{bottom:1.5rem}.right-0{right:0px}.right-2{right:0.5rem}.right-6{right:1.5rem}.top-0{top:0px}.z-40{z-index:40}.z-50{z-index:50}.mx-auto{margin-left:auto;margin-right:auto}.my-1{margin-top:0.25rem;margin-bottom:0.25rem}.mb-0\.5{margin-bottom:0.125rem}.mb-1{margin-bottom:0.25rem}.mb-1\.5{margin-bottom:0.375rem}.mb-5{margin-bottom:1.25rem}.mb-6{margin-bottom:1.5rem}.ml-0\.5{margin-left:0.125rem}.mt-0\.5{margin-top:0.125rem}.mt-1{margin-top:0.25rem}.mt-4{margin-top:1rem}.mt-6{margin-top:1.5rem}.ml-1{margin-left:0.25rem}.block{display:block}.inline-block{display:inline-block}.flex{display:flex}.inline-flex{display:inline-flex}.grid{display:grid}.hidden{display:none}.h-1\.5{height:0.375rem}.h-2{height:0.5rem}.h-2\.5{height:0.625rem}.h-3{height:0.75rem}.h-3\.5{height:0.875rem}.h-52{height:13rem}.h-7{height:1.75rem}.min-h-\[820px\]{min-height:820px}.min-h-\[calc\(100vh-56px\)\]{min-height:calc(100vh - 56px)}.w-1\.5{width:0.375rem}.w-14{width:3.5rem}.w-2{width:0.5rem}.w-2\.5{width:0.625rem}.w-3{width:0.75rem}.w-3\.5{width:0.875rem}.w-48{width:12rem}.w-7{width:1.75rem}.w-full{width:100%}.min-w-\[2\.2rem\]{min-width:2.2rem}.max-w-6xl{max-width:72rem}.max-w-\[1360px\]{max-width:1360px}.max-w-\[96rem\]{max-width:96rem}.flex-1{flex:1 1 0%}.flex-shrink-0{flex-shrink:0}.translate-y-20{--tw-translate-y:5rem;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.transform{transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.cursor-pointer{cursor:pointer}.select-none{-webkit-user-select:none;user-select:none}.list-disc{list-style-type:disc}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.flex-col{flex-direction:column}.flex-wrap{flex-wrap:wrap}.items-start{align-items:flex-start}.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-1\.5{gap:0.375rem}.gap-2{gap:0.5rem}.gap-3{gap:0.75rem}.gap-4{gap:1rem}.gap-6{gap:1.5rem}.gap-2\.5{gap:0.625rem}.space-y-1 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.25rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.25rem * var(--tw-space-y-reverse))}.space-y-3 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.75rem * var(--tw-space-y-reverse))}.space-y-4 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1rem * var(--tw-space-y-reverse))}.space-y-5 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1.25rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1.25rem * var(--tw-space-y-reverse))}.space-y-0\.5 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.125rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.125rem * var(--tw-space-y-reverse))}.space-y-1\.5 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.375rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.375rem * var(--tw-space-y-reverse))}.divide-x > :not([hidden]) ~ :not([hidden]){--tw-divide-x-reverse:0;border-right-width:calc(1px * var(--tw-divide-x-reverse));border-left-width:calc(1px * calc(1 - var(--tw-divide-x-reverse)))}.divide-y > :not([hidden]) ~ :not([hidden]){--tw-divide-y-reverse:0;border-top-width:calc(1px * calc(1 - var(--tw-divide-y-reverse)));border-bottom-width:calc(1px * var(--tw-divide-y-reverse))}.divide-noir > :not([hidden]) ~ :not([hidden]){--tw-divide-opacity:1;border-color:rgb(10 10 10 / var(--tw-divide-opacity, 1))}.overflow-hidden{overflow:hidden}.rounded-none{border-radius:0px}.border{border-width:1px}.border-b{border-bottom-width:1px}.border-b-2{border-bottom-width:2px}.border-l{border-left-width:1px}.border-l-2{border-left-width:2px}.border-r{border-right-width:1px}.border-t{border-top-width:1px}.border-t-2{border-top-width:2px}.border-dashed{border-style:dashed}.border-none{border-style:none}.border-ink{--tw-border-opacity:1;border-color:rgb(20 20 20 / var(--tw-border-opacity, 1))}.border-ink\/20{border-color:rgb(20 20 20 / 0.2)}.border-ink\/30{border-color:rgb(20 20 20 / 0.3)}.border-ink\/40{border-color:rgb(20 20 20 / 0.4)}.border-noir{--tw-border-opacity:1;border-color:rgb(10 10 10 / var(--tw-border-opacity, 1))}.border-rule{--tw-border-opacity:1;border-color:rgb(226 224 215 / var(--tw-border-opacity, 1))}.border-noir\/30{border-color:rgb(10 10 10 / 0.3)}.bg-\[\#f2f1ea\]{--tw-bg-opacity:1;background-color:rgb(242 241 234 / var(--tw-bg-opacity, 1))}.bg-\[\#fbfbfa\]{--tw-bg-opacity:1;background-color:rgb(251 251 250 / var(--tw-bg-opacity, 1))}.bg-noir{--tw-bg-opacity:1;background-color:rgb(10 10 10 / var(--tw-bg-opacity, 1))}.bg-parchment{--tw-bg-opacity:1;background-color:rgb(252 251 249 / var(--tw-bg-opacity, 1))}.bg-parchment\/95{background-color:rgb(252 251 249 / 0.95)}.bg-surface{--tw-bg-opacity:1;background-color:rgb(245 244 237 / var(--tw-bg-opacity, 1))}.bg-transparent{background-color:transparent}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.object-cover{object-fit:cover}.p-1{padding:0.25rem}.p-1\.5{padding:0.375rem}.p-2{padding:0.5rem}.p-2\.5{padding:0.625rem}.p-3{padding:0.75rem}.p-3\.5{padding:0.875rem}.p-4{padding:1rem}.p-6{padding:1.5rem}.px-2{padding-left:0.5rem;padding-right:0.5rem}.px-2\.5{padding-left:0.625rem;padding-right:0.625rem}.px-3{padding-left:0.75rem;padding-right:0.75rem}.px-3\.5{padding-left:0.875rem;padding-right:0.875rem}.px-4{padding-left:1rem;padding-right:1rem}.py-0\.5{padding-top:0.125rem;padding-bottom:0.125rem}.py-1{padding-top:0.25rem;padding-bottom:0.25rem}.py-1\.5{padding-top:0.375rem;padding-bottom:0.375rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.py-3{padding-top:0.75rem;padding-bottom:0.75rem}.pb-1\.5{padding-bottom:0.375rem}.pb-2{padding-bottom:0.5rem}.pb-4{padding-bottom:1rem}.pl-3{padding-left:0.75rem}.pl-4{padding-left:1rem}.pt-1{padding-top:0.25rem}.pt-1\.5{padding-top:0.375rem}.pt-2{padding-top:0.5rem}.pt-3{padding-top:0.75rem}.pt-4{padding-top:1rem}.pt-5{padding-top:1.25rem}.pt-6{padding-top:1.5rem}.pb-1{padding-bottom:0.25rem}.text-left{text-align:left}.text-center{text-align:center}.text-right{text-align:right}.font-display{font-family:"Playfair Display", Georgia, serif}.font-mono{font-family:"JetBrains Mono", monospace}.font-sans{font-family:"Inter", sans-serif}.font-serif{font-family:"Cormorant Garamond", Georgia, serif}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-\[10px\]{font-size:10px}.text-\[11px\]{font-size:11px}.text-\[8px\]{font-size:8px}.text-\[9px\]{font-size:9px}.text-base{font-size:1rem;line-height:1.5rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xs{font-size:0.75rem;line-height:1rem}.font-bold{font-weight:700}.font-semibold{font-weight:600}.uppercase{text-transform:uppercase}.italic{font-style:italic}.not-italic{font-style:normal}.leading-\[1\.08\]{line-height:1.08}.leading-relaxed{line-height:1.625}.leading-snug{line-height:1.375}.tracking-\[0\.25em\]{letter-spacing:0.25em}.tracking-\[0\.2em\]{letter-spacing:0.2em}.tracking-tight{letter-spacing:-0.025em}.tracking-wider{letter-spacing:0.05em}.tracking-widest{letter-spacing:0.1em}.text-dim{--tw-text-opacity:1;color:rgb(94 94 94 / var(--tw-text-opacity, 1))}.text-ink{--tw-text-opacity:1;color:rgb(20 20 20 / var(--tw-text-opacity, 1))}.text-ink\/90{color:rgb(20 20 20 / 0.9)}.text-noir{--tw-text-opacity:1;color:rgb(10 10 10 / var(--tw-text-opacity, 1))}.text-parchment{--tw-text-opacity:1;color:rgb(252 251 249 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.underline{-webkit-text-decoration-line:underline;text-decoration-line:underline}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.accent-noir{accent-color:#0a0a0a}.opacity-0{opacity:0}.shadow-2xl{--tw-shadow:0 25px 50px -12px rgb(0 0 0 / 0.25);--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-lg{--tw-shadow:0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-sm{--tw-shadow:0 1px 2px 0 rgb(0 0 0 / 0.05);--tw-shadow-colored:0 1px 2px 0 var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.outline-none{outline:2px solid transparent;outline-offset:2px}.ring-1{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)}.ring-noir{--tw-ring-opacity:1;--tw-ring-color:rgb(10 10 10 / var(--tw-ring-opacity, 1))}.backdrop-blur{--tw-backdrop-blur:blur(8px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-colors{transition-property:color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.duration-300{transition-duration:300ms}.\[appearance\:textfield\]{-webkit-appearance:textfield;appearance:textfield}.selection\:bg-noir *::selection{--tw-bg-opacity:1;background-color:rgb(10 10 10 / var(--tw-bg-opacity, 1))}.selection\:text-white *::selection{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.selection\:bg-noir::selection{--tw-bg-opacity:1;background-color:rgb(10 10 10 / var(--tw-bg-opacity, 1))}.selection\:text-white::selection{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.focus-within\:ring-1:focus-within{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)}.focus-within\:ring-noir:focus-within{--tw-ring-opacity:1;--tw-ring-color:rgb(10 10 10 / var(--tw-ring-opacity, 1))}.hover\:bg-dim:hover{--tw-bg-opacity:1;background-color:rgb(94 94 94 / var(--tw-bg-opacity, 1))}.hover\:bg-noir:hover{--tw-bg-opacity:1;background-color:rgb(10 10 10 / var(--tw-bg-opacity, 1))}.hover\:bg-surface:hover{--tw-bg-opacity:1;background-color:rgb(245 244 237 / var(--tw-bg-opacity, 1))}.hover\:bg-white:hover{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.hover\:text-noir:hover{--tw-text-opacity:1;color:rgb(10 10 10 / var(--tw-text-opacity, 1))}.hover\:text-white:hover{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.focus\:border-noir:focus{--tw-border-opacity:1;border-color:rgb(10 10 10 / var(--tw-border-opacity, 1))}.focus\:ring-0:focus{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(0px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)}@media (min-width: 640px){.sm\:inline{display:inline}.sm\:h-60{height:15rem}.sm\:grid-cols-6{grid-template-columns:repeat(6, minmax(0, 1fr))}.sm\:flex-row{flex-direction:row}.sm\:items-center{align-items:center}.sm\:gap-3{gap:0.75rem}.sm\:p-6{padding:1.5rem}.sm\:p-8{padding:2rem}.sm\:text-4xl{font-size:2.25rem;line-height:2.5rem}.sm\:text-base{font-size:1rem;line-height:1.5rem}.sm\:text-lg{font-size:1.125rem;line-height:1.75rem}.sm\:text-\[13px\]{font-size:13px}}@media (min-width: 768px){.md\:col-span-5{grid-column:span 5 / span 5}.md\:col-span-7{grid-column:span 7 / span 7}.md\:inline{display:inline}.md\:grid-cols-12{grid-template-columns:repeat(12, minmax(0, 1fr))}.md\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.md\:p-8{padding:2rem}.md\:p-9{padding:2.25rem}.md\:px-8{padding-left:2rem;padding-right:2rem}.md\:text-\[2\.75rem\]{font-size:2.75rem}}@media (min-width: 1024px){.lg\:col-span-5{grid-column:span 5 / span 5}.lg\:col-span-7{grid-column:span 7 / span 7}.lg\:grid-cols-12{grid-template-columns:repeat(12, minmax(0, 1fr))}.lg\:gap-8{gap:2rem}.lg\:border-b-0{border-bottom-width:0px}.lg\:border-r{border-right-width:1px}.lg\:p-10{padding:2.5rem}}.\[\&\:\:-webkit-inner-spin-button\]\:appearance-none::-webkit-inner-spin-button{-webkit-appearance:none;appearance:none}.\[\&\:\:-webkit-outer-spin-button\]\:appearance-none::-webkit-outer-spin-button{-webkit-appearance:none;appearance:none}</style></head><body class="bg-[#f2f1ea] text-ink font-sans antialiased selection:bg-noir selection:text-white">```html
+
+
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Noe Good Food Standard — Classic Dinner Rolls (Tangzhong &amp; Poolish)</title>
+  <!-- Google Fonts: Editorial Serif, Clean Sans & Monospace Accents -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&amp;family=Inter:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,900;1,400;1,600&amp;display=swap" rel="stylesheet">
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            display: ['"Playfair Display"', 'Georgia', 'serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+            sans: ['"Inter"', 'sans-serif'],
+          },
+          colors: {
+            noir: '#0a0a0a',
+            parchment: '#fcfbf9',
+            surface: '#f5f4ed',
+            ink: '#141414',
+            dim: '#5e5e5e',
+            rule: '#e2e0d7',
+            accent: '#181818'
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    /* High-contrast custom scrollbar */
+    ::-webkit-scrollbar { width: 5px; height: 5px; }
+    ::-webkit-scrollbar-track { background: #f5f4ed; }
+    ::-webkit-scrollbar-thumb { background: #0a0a0a; }
+
+    /* Cross-out checklist interaction */
+    .ingredient-check:checked + label .ingredient-text {
+      text-decoration: line-through;
+      color: #888888;
+      font-style: italic;
+    }
+    .ingredient-check:checked + label .ingredient-amount {
+      opacity: 0.45;
+      text-decoration: line-through;
+    }
+
+    /* Enforced Landscape Print Rules */
+    @page {
+      size: landscape;
+      size: 11in 8.5in landscape;
+      margin: 0.25in;
+    }
+
+    @media print {
+      *, *::before, *::after {
+        box-sizing: border-box !important;
+      }
+      html, body {
+        width: 11in !important;
+        height: 8.5in !important;
+        max-width: 11in !important;
+        max-height: 8.5in !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        background: #ffffff !important;
+        color: #000000 !important;
+        font-size: 8.5pt !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+        overflow: hidden !important;
+      }
+      .no-print {
+        display: none !important;
+      }
+      main {
+        padding: 0 !important;
+        margin: 0 !important;
+        min-height: 0 !important;
+        display: block !important;
+        width: 100% !important;
+        height: 100% !important;
+      }
+      #recipe-card,
+      .print-page-wrapper {
+        display: grid !important;
+        grid-template-columns: 3.95in 1fr !important;
+        gap: 0 !important;
+        width: 10.5in !important;
+        max-width: 10.5in !important;
+        height: 8in !important;
+        max-height: 8in !important;
+        overflow: hidden !important;
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+        page-break-after: avoid !important;
+        border: 1.5pt solid #000000 !important;
+        box-shadow: none !important;
+        background: #ffffff !important;
+      }
+      .print-pane-left {
+        border-right: 1.5pt solid #000000 !important;
+        padding: 0.20in 0.24in !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: space-between !important;
+        background: #faf9f6 !important;
+        height: 100% !important;
+        overflow: hidden !important;
+      }
+      .print-pane-right {
+        padding: 0.20in 0.26in !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: space-between !important;
+        background: #ffffff !important;
+        height: 100% !important;
+        overflow: hidden !important;
+      }
+      .print-pane-left h1 {
+        font-size: 1.42rem !important;
+        line-height: 1.08 !important;
+        margin-top: 0.12rem !important;
+        margin-bottom: 0.18rem !important;
+      }
+      .print-pane-left #view-subtitle {
+        font-size: 0.71rem !important;
+        line-height: 1.22 !important;
+      }
+      .print-hero-img {
+        height: 1.35in !important;
+        max-height: 1.35in !important;
+        width: 100% !important;
+        object-fit: cover !important;
+        border: 1pt solid #000000 !important;
+        display: block !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+      .print-pane-left .mb-6 {
+        margin-bottom: 0.30rem !important;
+      }
+      .print-pane-left .pb-4 {
+        padding-bottom: 0.22rem !important;
+      }
+      .print-pane-left .space-y-3 {
+        margin-bottom: 0.28rem !important;
+      }
+      .print-pane-left .nutrition-panel {
+        padding: 0.30rem 0.42rem !important;
+        margin-top: 0.20rem !important;
+      }
+      .print-pane-left .nutrition-panel .grid {
+        gap: 0.22rem !important;
+      }
+      .print-pane-left .nutrition-panel .p-2 {
+        padding: 0.18rem !important;
+      }
+      .print-pane-left .nutrition-panel .text-sm,
+      .print-pane-left .nutrition-panel .text-base {
+        font-size: 0.80rem !important;
+        margin-top: 0.04rem !important;
+        margin-bottom: 0.04rem !important;
+      }
+      .print-pane-right .grid-internal {
+        display: grid !important;
+        grid-template-columns: 2.55in 1fr !important;
+        gap: 0.24in !important;
+        align-items: start !important;
+      }
+      .print-pane-right .space-y-5 {
+        margin-bottom: 0.20rem !important;
+      }
+      .print-pane-right .space-y-4 {
+        margin-top: 0.18rem !important;
+      }
+      .print-pane-right .space-y-2 {
+        margin-bottom: 0.22rem !important;
+      }
+      .print-pane-right .space-y-1\.5 > li {
+        margin-bottom: 0.08rem !important;
+        line-height: 1.18 !important;
+        font-size: 7.4pt !important;
+      }
+      .print-pane-right #instructions-container > div {
+        margin-bottom: 0.22rem !important;
+      }
+      .print-pane-right #instructions-container p {
+        font-size: 7.25pt !important;
+        line-height: 1.2 !important;
+      }
+      .print-pane-right #view-field-notes {
+        font-size: 7.1pt !important;
+        line-height: 1.18 !important;
+      }
+      .print-pane-right #view-field-notes li {
+        margin-bottom: 0.08rem !important;
+      }
+      .print-checkbox {
+        border: 1pt solid #000000 !important;
+        width: 8px !important;
+        height: 8px !important;
+        margin-top: 2px !important;
+      }
+    }
+  </style>
+
+
+
+  <!-- TOP APP BAR -->
+  <header class="no-print border-b border-ink/20 bg-parchment/95 backdrop-blur sticky top-0 z-40 px-4 md:px-8 py-3 flex flex-wrap items-center justify-between gap-4">
+    <div class="flex items-center gap-3">
+      <span class="font-mono text-xs tracking-widest uppercase bg-noir text-parchment px-2.5 py-1 font-bold">
+        NOE GOOD FOOD STANDARD
+      </span>
+      <span class="text-xs tracking-widest uppercase font-mono text-dim hidden md:inline">
+        PROTOCOL NGF-STD • HYBRID PRE-FERMENT BAKING
+      </span>
+    </div>
+
+    <!-- Quick Utility Actions -->
+    <div class="flex items-center gap-2 sm:gap-3 flex-wrap">
+      <!-- Quick Copy Action Button -->
+      <div class="relative inline-block text-left" id="copy-dropdown-container">
+        <button id="btn-copy-menu" class="border border-ink bg-white px-3 py-1.5 text-xs font-mono tracking-wider uppercase hover:bg-noir hover:text-white transition-colors flex items-center gap-1.5 shadow-sm">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"></path></svg>
+          <span>Copy Recipe</span>
+          <svg class="w-3 h-3 ml-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+        </button>
+        <div id="copy-dropdown-menu" class="absolute right-0 mt-1 w-48 bg-white border border-noir shadow-lg z-50 py-1 text-xs font-mono hidden">
+          <button onclick="downloadRecipeHTML()" class="w-full text-left px-3 py-2 hover:bg-surface flex items-center justify-between font-bold text-noir">
+            <span>Download HTML (.html)</span>
+            <span class="text-[10px] text-dim font-sans">Save File</span>
+          </button>
+          <button onclick="copyRecipeMarkdown()" class="w-full text-left px-3 py-2 hover:bg-surface flex items-center justify-between border-t border-rule">
+            <span>Markdown (.md)</span>
+            <span class="text-[10px] text-dim font-sans">Formatted</span>
+          </button>
+          <button onclick="copyRecipeHTML()" class="w-full text-left px-3 py-2 hover:bg-surface flex items-center justify-between border-t border-rule">
+            <span>Copy Full HTML</span>
+            <span class="text-[10px] text-dim font-sans">Clipboard</span>
+          </button>
+          <button onclick="exportRecipeJSON()" class="w-full text-left px-3 py-2 hover:bg-surface flex items-center justify-between border-t border-rule">
+            <span>JSON Object</span>
+            <span class="text-[10px] text-dim font-sans">Export</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Live Recipe Editor Trigger (Removed on Export) -->
+      
+
+      <!-- 11x8.5 Landscape Print -->
+      <button onclick="window.print()" class="bg-noir text-parchment border border-noir px-3.5 py-1.5 text-xs font-mono tracking-wider uppercase hover:bg-white hover:text-noir transition-colors flex items-center gap-1.5 shadow-sm">
+        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path></svg>
+        <span>Print Card (11×8.5")</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- TOAST FEEDBACK NOTIFICATION -->
+  <div id="toast-notify" class="no-print fixed bottom-6 right-6 bg-noir text-parchment font-mono text-xs px-4 py-3 border border-rule shadow-2xl z-50 transform transition-all duration-300 pointer-events-none translate-y-20 opacity-0">Noe Good Food Standard Card compiled.</div>
+
+  <!-- COLLAPSIBLE FORM & JSON EDITOR MODAL (Removed on Export) -->
+  
+
+  <!-- MAIN DISPLAY WRAPPER -->
+  <main class="max-w-[96rem] mx-auto min-h-[calc(100vh-56px)] p-4 sm:p-6 md:p-8 lg:p-10 flex items-center justify-center">
+    <div id="recipe-card" class="print-page-wrapper w-full bg-white border border-noir shadow-lg grid grid-cols-1 lg:grid-cols-12 min-h-[820px] max-w-[1360px]">
+
+      <!-- ================= LEFT PANE: BRANDING, PROTOCOL TAGS, SPECIMEN & SUMMARY ================= -->
+      <aside class="print-pane-left lg:col-span-5 border-b lg:border-b-0 lg:border-r border-noir p-6 sm:p-8 md:p-9 flex flex-col justify-between bg-parchment">
+        <div>
+          <!-- Header Branding & Protocol Code -->
+          <div class="border-b-2 border-noir pb-4 mb-6">
+            <div class="flex items-start justify-between">
+              <div>
+                <span class="font-mono text-xs tracking-[0.25em] font-bold block uppercase text-noir">NOE GOOD FOOD</span>
+                <span class="font-mono text-[10px] text-dim tracking-wider uppercase block mt-0.5">THE NOE GOOD FOOD STANDARD • FORMULATION FOLIO</span>
+              </div>
+              <div class="text-right">
+                <span class="font-mono text-[11px] font-bold tracking-widest px-2 py-0.5 bg-noir text-white uppercase inline-block" id="view-doc-id">NGF-STD-3088</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Recipe Title & Subhead -->
+          <div class="space-y-3 mb-6">
+            <div class="flex items-center gap-2">
+              <span class="h-1.5 w-1.5 bg-noir inline-block"></span>
+              <p id="view-category" class="font-mono text-[11px] tracking-[0.2em] uppercase text-dim">ARTISAN VIENNOISERIE &amp; HYBRID PRE-FERMENT BAKING</p>
+            </div>
+            <h1 id="view-title" class="font-display text-3xl sm:text-4xl md:text-[2.75rem] leading-[1.08] tracking-tight font-semibold text-noir">Classic Dinner Rolls (Tangzhong &amp; Poolish)</h1>
+            <p id="view-subtitle" class="font-serif italic text-base sm:text-lg text-dim leading-snug">Ultra-soft enriched rolls utilizing water-roux gelatinization and overnight cold Poolish fermentation for superior crumb tenderness and flavor depth.</p>
+          </div>
+
+          <!-- Hero Photograph / Analytical Specimen Image -->
+          <div class="relative mb-6 border border-noir overflow-hidden group bg-surface">
+            <img id="view-image" src="https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&amp;w=1200&amp;auto=format&amp;fit=crop" alt="Classic Dinner Rolls Specimen" class="print-hero-img w-full h-52 sm:h-60 object-cover" onerror="this.src='https://placehold.co/800x550/0a0a0a/fcfbf9?text=Classic+Dinner+Rolls+Specimen'">
+            <div class="no-print absolute bottom-2 right-2 bg-noir text-[10px] text-parchment font-mono px-2 py-0.5 tracking-widest uppercase">
+              SPECIMEN FIG. 01 — HYBRID PRE-FERMENT DOUGH
+            </div>
+          </div>
+
+          <!-- Technical Metadata Grid: Prep, Cook, Rest, Yield, Temp -->
+          <div class="border border-noir divide-y divide-noir bg-white text-xs mb-6">
+            <div class="grid grid-cols-2 divide-x divide-noir">
+              <div class="p-3">
+                <span class="block font-mono text-[10px] tracking-wider uppercase text-dim">Active Preparation</span>
+                <span id="view-prep" class="font-mono font-bold text-sm text-noir">45 minutes</span>
+              </div>
+              <div class="p-3">
+                <span class="block font-mono text-[10px] tracking-wider uppercase text-dim">Thermal Cook</span>
+                <span id="view-cook" class="font-mono font-bold text-sm text-noir">20 minutes</span>
+              </div>
+            </div>
+            <div class="grid grid-cols-3 divide-x divide-noir">
+              <div class="p-2.5">
+                <span class="block font-mono text-[9px] tracking-wider uppercase text-dim">Resting Window</span>
+                <span id="view-rest" class="font-mono font-semibold text-xs text-noir">Overnight + 2 hours</span>
+              </div>
+              <div class="p-2.5">
+                <span class="block font-mono text-[9px] tracking-wider uppercase text-dim">Base Yield</span>
+                <span id="view-yield" class="font-mono font-semibold text-xs text-noir">8 rolls</span>
+              </div>
+              <div class="p-2.5">
+                <span class="block font-mono text-[9px] tracking-wider uppercase text-dim">Process Envelope</span>
+                <span id="view-temp" class="font-mono font-semibold text-xs text-noir">175°C (350°F) bake</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Formulation Tags -->
+          <div class="flex flex-wrap gap-1.5 mb-6" id="view-tags-container"><span class="font-mono text-[9px] uppercase tracking-wider px-2 py-0.5 border border-noir bg-white font-semibold">ARTISAN BREAD</span><span class="font-mono text-[9px] uppercase tracking-wider px-2 py-0.5 border border-noir bg-white font-semibold">TANGZHONG</span><span class="font-mono text-[9px] uppercase tracking-wider px-2 py-0.5 border border-noir bg-white font-semibold">POOLISH</span><span class="font-mono text-[9px] uppercase tracking-wider px-2 py-0.5 border border-noir bg-white font-semibold">ENRICHED DOUGH</span><span class="font-mono text-[9px] uppercase tracking-wider px-2 py-0.5 border border-noir bg-white font-semibold">YEAST ROLLS</span></div>
+
+          <!-- Summary Headnote -->
+          <div class="border-l-2 border-noir pl-3 py-0.5 mb-5">
+            <span class="block font-mono text-[10px] uppercase tracking-wider text-dim mb-0.5">Specification Summary</span>
+            <p id="view-notes" class="font-serif italic text-xs leading-relaxed text-ink/90">Combining a 65°C starch-gelatinized Tangzhong with an overnight cold-fermented Poolish maximizes water retention and enzymatic complexity while preventing staling.</p>
+          </div>
+
+          <!-- Complete Nutrition Formulation Panel (Boxes Only) -->
+          <div class="nutrition-panel border border-noir bg-white p-3.5 space-y-3">
+            <div class="flex items-center justify-between border-b border-noir pb-1.5">
+              <span class="font-mono text-[10px] tracking-widest uppercase font-bold text-noir flex items-center gap-1.5">
+                <span class="w-1.5 h-1.5 bg-noir inline-block"></span>
+                Nutrition Per Serving
+              </span>
+              <span id="view-nutrition-serving-size" class="font-serif italic text-[11px] text-dim">Serving Size: 1 whole roll (approx. 75 grams)</span>
+            </div>
+
+            <!-- Macro Information Boxes Grid -->
+            <div class="grid grid-cols-3 sm:grid-cols-6 gap-2 text-center font-mono">
+              <div class="border border-rule p-2 bg-surface flex flex-col justify-between">
+                <span class="block text-[9px] uppercase tracking-wider text-dim">Calories</span>
+                <span class="text-sm sm:text-base font-bold text-noir my-1"><span id="badge-nutr-calories">130</span></span>
+                <span class="text-[8px] text-dim uppercase">kcal</span>
+              </div>
+              <div class="border border-noir p-2 bg-white ring-1 ring-noir flex flex-col justify-between">
+                <span class="block text-[9px] uppercase tracking-wider font-bold text-noir">Total Fat</span>
+                <span class="text-sm sm:text-base font-bold text-noir my-1"><span id="badge-nutr-fat">0</span></span>
+                <span class="text-[8px] font-bold text-noir uppercase">grams</span>
+              </div>
+              <div class="border border-rule p-2 bg-surface flex flex-col justify-between">
+                <span class="block text-[9px] uppercase tracking-wider text-dim">Total Carbs</span>
+                <span class="text-sm sm:text-base font-bold text-noir my-1"><span id="badge-nutr-carbs">19.4</span></span>
+                <span class="text-[8px] text-dim uppercase">grams</span>
+              </div>
+              <div class="border border-noir p-2 bg-white ring-1 ring-noir flex flex-col justify-between">
+                <span class="block text-[9px] uppercase tracking-wider font-bold text-noir">Fiber</span>
+                <span class="text-sm sm:text-base font-bold text-noir my-1"><span id="badge-nutr-fiber">0.6</span></span>
+                <span class="text-[8px] font-bold text-noir uppercase">grams</span>
+              </div>
+              <div class="border border-noir p-2 bg-[#fbfbfa] border-dashed flex flex-col justify-between">
+                <span class="block text-[9px] uppercase tracking-wider font-bold text-noir">Net Carbs</span>
+                <span class="text-sm sm:text-base font-bold text-noir my-1"><span id="badge-nutr-netcarbs">18.8</span></span>
+                <span class="text-[8px] font-bold text-noir uppercase">grams</span>
+              </div>
+              <div class="border border-rule p-2 bg-surface flex flex-col justify-between">
+                <span class="block text-[9px] uppercase tracking-wider text-dim">Protein</span>
+                <span class="text-sm sm:text-base font-bold text-noir my-1"><span id="badge-nutr-protein">4.8</span></span>
+                <span class="text-[8px] text-dim uppercase">grams</span>
+              </div>
+            </div>
+
+            <div class="pt-1.5 text-[9px] font-mono text-dim flex justify-between items-center border-t border-rule">
+              <span>* Net Carbohydrates = Total Carbs minus Fiber</span>
+              <span class="uppercase">Standard Metric Form</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Left Pane Footer Authority Stamp -->
+        <div class="pt-6 border-t border-noir mt-6 flex items-center justify-between font-mono text-[10px] text-dim">
+          <span class="font-bold text-noir">NGF STANDARD RECORD</span>
+          <span>REVISION: VERIFIED MASTER</span>
+        </div>
+      </aside>
+
+      <!-- ================= RIGHT PANE: MULTIPLIER CONTROLS, INGREDIENTS & STEPS ================= -->
+      <section class="print-pane-right lg:col-span-7 p-6 sm:p-8 md:p-9 flex flex-col justify-between bg-white">
+        <div>
+          <!-- Servings Multiplier & Interactive Control Strip -->
+          <div class="no-print border border-noir p-3 mb-6 bg-surface flex flex-wrap items-center justify-between gap-3">
+            <div class="flex items-center gap-2">
+              <span class="font-mono text-[11px] uppercase tracking-wider font-bold text-noir">Yield Scaling:</span>
+              <!-- Fast Multiplier Presets -->
+              <div class="inline-flex border border-noir bg-white">
+                <button type="button" onclick="setPresetMultiplier(0.5)" id="btn-mult-half" class="multiplier-btn px-2.5 py-1 font-mono text-xs hover:bg-noir hover:text-white transition-colors border-r border-noir">0.5× (4)</button>
+                <button type="button" onclick="setPresetMultiplier(1)" id="btn-mult-one" class="multiplier-btn px-2.5 py-1 font-mono text-xs hover:bg-noir hover:text-white transition-colors border-r border-noir">1× (8)</button>
+                <button type="button" onclick="setPresetMultiplier(2)" id="btn-mult-two" class="multiplier-btn px-2.5 py-1 font-mono text-xs hover:bg-noir hover:text-white transition-colors bg-noir text-white font-bold">2× (16)</button>
+              </div>
+            </div>
+
+            <!-- Stepper controls -->
+            <div class="flex items-center gap-2">
+              <span class="font-mono text-[10px] uppercase text-dim">Exact Roll Count:</span>
+              <div class="flex items-center border border-noir bg-white focus-within:ring-1 focus-within:ring-noir">
+                <button id="btn-scale-down" type="button" class="w-7 h-7 flex items-center justify-center font-mono text-xs border-r border-noir hover:bg-noir hover:text-white transition-colors" title="Decrease Count">-</button>
+                <input type="number" id="current-servings" min="1" max="999" value="8" class="font-mono text-xs font-bold w-14 text-center border-none outline-none py-1 bg-transparent [appearance:textfield] [&amp;::-webkit-outer-spin-button]:appearance-none [&amp;::-webkit-inner-spin-button]:appearance-none" title="Type desired count and press Enter">
+                <button id="btn-scale-up" type="button" class="w-7 h-7 flex items-center justify-center font-mono text-xs border-l border-noir hover:bg-noir hover:text-white transition-colors" title="Increase Count">+</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Two-column Method & Ingredients Layout -->
+          <div class="grid-internal grid grid-cols-1 md:grid-cols-12 gap-6 lg:gap-8">
+
+            <!-- INGREDIENTS LISTING (Unabbreviated Units, Categorized, Interactive Checks) -->
+            <div class="md:col-span-5 space-y-5">
+              <div class="border-b-2 border-noir pb-2 flex items-center justify-between">
+                <h2 class="font-mono text-xs tracking-[0.2em] uppercase font-bold text-noir flex items-center gap-1.5">
+                  <span class="w-2 h-2 bg-noir inline-block"></span>
+                  Ingredients
+                </h2>
+                <button onclick="resetChecklist()" class="no-print font-mono text-[10px] text-dim hover:text-noir underline">
+                  Clear Checks
+                </button>
+              </div>
+
+              <!-- Container for dynamic categories -->
+              <div id="ingredients-container" class="space-y-4"><div class="space-y-1.5"><h3 class="font-mono text-[11px] font-bold uppercase tracking-wider text-noir border-b border-noir/30 pb-1">Tangzhong (Water Roux)</h3><ul class="space-y-1.5 text-xs"><li class="flex items-start gap-2.5">
+            <input type="checkbox" id="ing-0-0" class="ingredient-check print-checkbox mt-0.5 h-3.5 w-3.5 rounded-none border-noir text-noir focus:ring-0 accent-noir cursor-pointer">
+            <label for="ing-0-0" class="cursor-pointer select-none leading-relaxed transition-colors flex-1">
+              <span class="ingredient-amount font-mono font-bold text-noir">120 grams</span>
+              <span class="ingredient-text font-serif text-ink ml-1">bread flour</span>
+            </label>
+          </li><li class="flex items-start gap-2.5">
+            <input type="checkbox" id="ing-0-1" class="ingredient-check print-checkbox mt-0.5 h-3.5 w-3.5 rounded-none border-noir text-noir focus:ring-0 accent-noir cursor-pointer">
+            <label for="ing-0-1" class="cursor-pointer select-none leading-relaxed transition-colors flex-1">
+              <span class="ingredient-amount font-mono font-bold text-noir">150 grams</span>
+              <span class="ingredient-text font-serif text-ink ml-1">boiling water</span>
+            </label>
+          </li></ul></div><div class="space-y-1.5"><h3 class="font-mono text-[11px] font-bold uppercase tracking-wider text-noir border-b border-noir/30 pb-1">Poolish (Overnight Pre-Ferment)</h3><ul class="space-y-1.5 text-xs"><li class="flex items-start gap-2.5">
+            <input type="checkbox" id="ing-1-0" class="ingredient-check print-checkbox mt-0.5 h-3.5 w-3.5 rounded-none border-noir text-noir focus:ring-0 accent-noir cursor-pointer">
+            <label for="ing-1-0" class="cursor-pointer select-none leading-relaxed transition-colors flex-1">
+              <span class="ingredient-amount font-mono font-bold text-noir">100 grams</span>
+              <span class="ingredient-text font-serif text-ink ml-1">bread flour</span>
+            </label>
+          </li><li class="flex items-start gap-2.5">
+            <input type="checkbox" id="ing-1-1" class="ingredient-check print-checkbox mt-0.5 h-3.5 w-3.5 rounded-none border-noir text-noir focus:ring-0 accent-noir cursor-pointer">
+            <label for="ing-1-1" class="cursor-pointer select-none leading-relaxed transition-colors flex-1">
+              <span class="ingredient-amount font-mono font-bold text-noir">100 grams</span>
+              <span class="ingredient-text font-serif text-ink ml-1">water, room temperature</span>
+            </label>
+          </li><li class="flex items-start gap-2.5">
+            <input type="checkbox" id="ing-1-2" class="ingredient-check print-checkbox mt-0.5 h-3.5 w-3.5 rounded-none border-noir text-noir focus:ring-0 accent-noir cursor-pointer">
+            <label for="ing-1-2" class="cursor-pointer select-none leading-relaxed transition-colors flex-1">
+              <span class="ingredient-amount font-mono font-bold text-noir">1 grams</span>
+              <span class="ingredient-text font-serif text-ink ml-1">instant yeast</span>
+            </label>
+          </li></ul></div><div class="space-y-1.5"><h3 class="font-mono text-[11px] font-bold uppercase tracking-wider text-noir border-b border-noir/30 pb-1">Main Dough</h3><ul class="space-y-1.5 text-xs"><li class="flex items-start gap-2.5">
+            <input type="checkbox" id="ing-2-0" class="ingredient-check print-checkbox mt-0.5 h-3.5 w-3.5 rounded-none border-noir text-noir focus:ring-0 accent-noir cursor-pointer">
+            <label for="ing-2-0" class="cursor-pointer select-none leading-relaxed transition-colors flex-1">
+              <span class="ingredient-amount font-mono font-bold text-noir">380 grams</span>
+              <span class="ingredient-text font-serif text-ink ml-1">bread flour, remaining</span>
+            </label>
+          </li><li class="flex items-start gap-2.5">
+            <input type="checkbox" id="ing-2-1" class="ingredient-check print-checkbox mt-0.5 h-3.5 w-3.5 rounded-none border-noir text-noir focus:ring-0 accent-noir cursor-pointer">
+            <label for="ing-2-1" class="cursor-pointer select-none leading-relaxed transition-colors flex-1">
+              <span class="ingredient-amount font-mono font-bold text-noir">36 grams</span>
+              <span class="ingredient-text font-serif text-ink ml-1">granulated sugar (sucrose)</span>
+            </label>
+          </li><li class="flex items-start gap-2.5">
+            <input type="checkbox" id="ing-2-2" class="ingredient-check print-checkbox mt-0.5 h-3.5 w-3.5 rounded-none border-noir text-noir focus:ring-0 accent-noir cursor-pointer">
+            <label for="ing-2-2" class="cursor-pointer select-none leading-relaxed transition-colors flex-1">
+              <span class="ingredient-amount font-mono font-bold text-noir">110 grams</span>
+              <span class="ingredient-text font-serif text-ink ml-1">whole milk</span>
+            </label>
+          </li><li class="flex items-start gap-2.5">
+            <input type="checkbox" id="ing-2-3" class="ingredient-check print-checkbox mt-0.5 h-3.5 w-3.5 rounded-none border-noir text-noir focus:ring-0 accent-noir cursor-pointer">
+            <label for="ing-2-3" class="cursor-pointer select-none leading-relaxed transition-colors flex-1">
+              <span class="ingredient-amount font-mono font-bold text-noir">40 grams</span>
+              <span class="ingredient-text font-serif text-ink ml-1">unsalted butter, softened</span>
+            </label>
+          </li><li class="flex items-start gap-2.5">
+            <input type="checkbox" id="ing-2-4" class="ingredient-check print-checkbox mt-0.5 h-3.5 w-3.5 rounded-none border-noir text-noir focus:ring-0 accent-noir cursor-pointer">
+            <label for="ing-2-4" class="cursor-pointer select-none leading-relaxed transition-colors flex-1">
+              <span class="ingredient-amount font-mono font-bold text-noir">100 grams</span>
+              <span class="ingredient-text font-serif text-ink ml-1">whole egg <span class="text-dim font-mono text-[11px]">(approx. 2 whole large eggs)</span></span>
+            </label>
+          </li><li class="flex items-start gap-2.5">
+            <input type="checkbox" id="ing-2-5" class="ingredient-check print-checkbox mt-0.5 h-3.5 w-3.5 rounded-none border-noir text-noir focus:ring-0 accent-noir cursor-pointer">
+            <label for="ing-2-5" class="cursor-pointer select-none leading-relaxed transition-colors flex-1">
+              <span class="ingredient-amount font-mono font-bold text-noir">10 grams</span>
+              <span class="ingredient-text font-serif text-ink ml-1">fine salt</span>
+            </label>
+          </li></ul></div><div class="space-y-1.5"><h3 class="font-mono text-[11px] font-bold uppercase tracking-wider text-noir border-b border-noir/30 pb-1">FILLING &amp; FINISHING</h3><ul class="space-y-1.5 text-xs"><li class="flex items-start gap-2.5">
+            <input type="checkbox" id="ing-3-0" class="ingredient-check print-checkbox mt-0.5 h-3.5 w-3.5 rounded-none border-noir text-noir focus:ring-0 accent-noir cursor-pointer">
+            <label for="ing-3-0" class="cursor-pointer select-none leading-relaxed transition-colors flex-1">
+              <span class="ingredient-amount font-mono font-bold text-noir">128 grams</span>
+              <span class="ingredient-text font-serif text-ink ml-1">salted butter, cut into 8 cubes  and frozen <span class="text-dim font-mono text-[11px]">(approx. 16 grams eachs)</span></span>
+            </label>
+          </li><li class="flex items-start gap-2.5">
+            <input type="checkbox" id="ing-3-1" class="ingredient-check print-checkbox mt-0.5 h-3.5 w-3.5 rounded-none border-noir text-noir focus:ring-0 accent-noir cursor-pointer">
+            <label for="ing-3-1" class="cursor-pointer select-none leading-relaxed transition-colors flex-1">
+              <span class="ingredient-amount font-mono font-bold text-noir">2 whole large egg</span>
+              <span class="ingredient-text font-serif text-ink ml-1">for wash</span>
+            </label>
+          </li><li class="flex items-start gap-2.5">
+            <input type="checkbox" id="ing-3-2" class="ingredient-check print-checkbox mt-0.5 h-3.5 w-3.5 rounded-none border-noir text-noir focus:ring-0 accent-noir cursor-pointer">
+            <label for="ing-3-2" class="cursor-pointer select-none leading-relaxed transition-colors flex-1">
+              <span class="ingredient-amount font-mono font-bold text-noir">2 teaspoons</span>
+              <span class="ingredient-text font-serif text-ink ml-1">whole milk, dash for wash</span>
+            </label>
+          </li><li class="flex items-start gap-2.5">
+            <input type="checkbox" id="ing-3-3" class="ingredient-check print-checkbox mt-0.5 h-3.5 w-3.5 rounded-none border-noir text-noir focus:ring-0 accent-noir cursor-pointer">
+            <label for="ing-3-3" class="cursor-pointer select-none leading-relaxed transition-colors flex-1">
+              <span class="ingredient-amount font-mono font-bold text-noir">10 grams</span>
+              <span class="ingredient-text font-serif text-ink ml-1">flaky sea salt, for topping</span>
+            </label>
+          </li></ul></div></div>
+
+              <div class="p-3 bg-surface border border-noir text-[11px] font-serif italic text-dim">
+                <strong class="font-sans font-semibold not-italic text-[10px] uppercase block text-noir mb-0.5">Noe Good Food Unit Standard:</strong>
+                All measures are explicitly written out (grams, milliliters, tablespoons, teaspoons, whole). Abbreviations are prohibited.
+              </div>
+            </div>
+
+            <!-- PREPARATION STEPS & FIELD NOTES -->
+            <div class="md:col-span-7 space-y-5">
+              <div class="border-b-2 border-noir pb-2 flex items-center justify-between">
+                <h2 class="font-mono text-xs tracking-[0.2em] uppercase font-bold text-noir flex items-center gap-1.5">
+                  <span class="w-2 h-2 bg-noir inline-block"></span>
+                  Preparation Steps
+                </h2>
+                <span class="font-mono text-[10px] text-dim tracking-wider uppercase">Numbered Protocol</span>
+              </div>
+
+              <!-- Step list container -->
+              <div id="instructions-container" class="space-y-3 font-serif"><div class="flex gap-3 items-start group">
+          <div class="font-mono text-xs font-bold bg-noir text-white px-2 py-0.5 flex-shrink-0 text-center min-w-[2.2rem]">
+            01
+          </div>
+          <div class="space-y-0.5">
+            <div class="font-mono text-[10px] tracking-wider uppercase text-dim font-bold">
+              Procedure Step
+            </div>
+            <p class="text-xs sm:text-[13px] leading-relaxed text-ink/90 font-serif">
+              Prepare Pre-Ferments (Night Before): Tangzhong: Whisk 60 grams bread flour and 75 grams boiling water until a smooth paste forms; cool to ambient room temperature, cover tightly, and refrigerate overnight (8 to 12 hours). Poolish: Combine 50 grams bread flour, 50 grams room-temperature water, and 0.50 grams instant yeast; cover loosely, ferment at room temperature for 1 hour, then seal tightly and chill overnight (8 to 12 hours).
+            </p>
+          </div>
+        </div><div class="flex gap-3 items-start group">
+          <div class="font-mono text-xs font-bold bg-noir text-white px-2 py-0.5 flex-shrink-0 text-center min-w-[2.2rem]">
+            02
+          </div>
+          <div class="space-y-0.5">
+            <div class="font-mono text-[10px] tracking-wider uppercase text-dim font-bold">
+              Procedure Step
+            </div>
+            <p class="text-xs sm:text-[13px] leading-relaxed text-ink/90 font-serif">
+              Mix the Dough: In a stand mixer bowl, combine the chilled Tangzhong (straight from the refrigerator), chilled Poolish (straight from the refrigerator), 55 grams whole milk, 50 grams whole egg, 18 grams granulated sugar, and 5 grams fine salt. Mix on low speed until homogeneous.
+            </p>
+          </div>
+        </div><div class="flex gap-3 items-start group">
+          <div class="font-mono text-xs font-bold bg-noir text-white px-2 py-0.5 flex-shrink-0 text-center min-w-[2.2rem]">
+            03
+          </div>
+          <div class="space-y-0.5">
+            <div class="font-mono text-[10px] tracking-wider uppercase text-dim font-bold">
+              Procedure Step
+            </div>
+            <p class="text-xs sm:text-[13px] leading-relaxed text-ink/90 font-serif">
+              Add Flour and Knead (Autolyse): Add the remaining 190 grams bread flour. Mix on low speed for 2 minutes until hydrated, then rest the dough covered for 10 minutes (autolyse). Knead on medium-low speed for 5 to 7 minutes until smooth.
+            </p>
+          </div>
+        </div><div class="flex gap-3 items-start group">
+          <div class="font-mono text-xs font-bold bg-noir text-white px-2 py-0.5 flex-shrink-0 text-center min-w-[2.2rem]">
+            04
+          </div>
+          <div class="space-y-0.5">
+            <div class="font-mono text-[10px] tracking-wider uppercase text-dim font-bold">
+              Procedure Step
+            </div>
+            <p class="text-xs sm:text-[13px] leading-relaxed text-ink/90 font-serif">
+              Incorporate Butter to Windowpane: Add 20 grams softened unsalted butter one small piece at a time, mixing until fully absorbed after each addition. Continue kneading for 5 to 10 minutes until the dough is silky, elastic, and stretches into a thin translucent windowpane without tearing.
+            </p>
+          </div>
+        </div><div class="flex gap-3 items-start group">
+          <div class="font-mono text-xs font-bold bg-noir text-white px-2 py-0.5 flex-shrink-0 text-center min-w-[2.2rem]">
+            05
+          </div>
+          <div class="space-y-0.5">
+            <div class="font-mono text-[10px] tracking-wider uppercase text-dim font-bold">
+              Procedure Step
+            </div>
+            <p class="text-xs sm:text-[13px] leading-relaxed text-ink/90 font-serif">
+              First Rise (Bulk Fermentation): Transfer dough to a lightly oiled bowl and cover. For Same-Day Rise: Ferment in a warm environment for 1.5 to 2 hours until doubled in volume. For Cold Rise (Overnight Flavor): Cover tightly and refrigerate for 8 to 12 hours for slow enzymatic fermentation.
+            </p>
+          </div>
+        </div><div class="flex gap-3 items-start group">
+          <div class="font-mono text-xs font-bold bg-noir text-white px-2 py-0.5 flex-shrink-0 text-center min-w-[2.2rem]">
+            06
+          </div>
+          <div class="space-y-0.5">
+            <div class="font-mono text-[10px] tracking-wider uppercase text-dim font-bold">
+              Procedure Step
+            </div>
+            <p class="text-xs sm:text-[13px] leading-relaxed text-ink/90 font-serif">
+              Temper, Pre-Shape &amp; Final Shape: If cold-risen, temper covered at room temperature for 45 to 60 minutes. Deflate gently and divide into 8 equal portions (approx. 72 grams each). Round into rough balls, cover, and rest on the bench for 15 minutes. Flatten each rested ball into a disk roughly 9 centimeters (3.5 inches) wide, keeping the center slightly thicker than the edges. Place 1 frozen 8-gram salted butter cube in the center, pull the edges up over the butter, and pinch the seam tightly at the bottom. Arrange seam-side down and spaced at least 5 centimeters (2 inches) apart on a parchment-lined baking sheet.
+            </p>
+          </div>
+        </div><div class="flex gap-3 items-start group">
+          <div class="font-mono text-xs font-bold bg-noir text-white px-2 py-0.5 flex-shrink-0 text-center min-w-[2.2rem]">
+            07
+          </div>
+          <div class="space-y-0.5">
+            <div class="font-mono text-[10px] tracking-wider uppercase text-dim font-bold">
+              Procedure Step
+            </div>
+            <p class="text-xs sm:text-[13px] leading-relaxed text-ink/90 font-serif">
+              Second Rise, Egg Wash &amp; Bake: Cover loosely and proof in a warm spot for 45 to 60 minutes until puffy. Whisk 1 whole large egg with 1 teaspoon whole milk, brush gently over the proofed tops, and sprinkle 5 grams flaky sea salt over the center of each crown. Bake in a preheated 200°C (400°F) oven for 14 to 17 minutes until the tops are deep golden brown and the bottoms are crisp and butter-fried. Cool on the sheet pan for 3 to 5 minutes before serving so the crisp bottom sets.
+            </p>
+          </div>
+        </div></div>
+
+              <!-- Chef's Field Notes -->
+              <div class="border-t border-noir pt-3 mt-4">
+                <div class="flex items-center gap-2 mb-1.5">
+                  <span class="font-mono text-[10px] tracking-wider uppercase font-bold bg-noir text-white px-2 py-0.5">Chef's Analytical Notes</span>
+                </div>
+                <ul id="view-field-notes" class="list-disc pl-4 font-serif text-xs leading-relaxed space-y-1 text-dim"><li>Pre-ferment temperature control: Incorporate both the Tangzhong and Poolish directly from refrigeration to moderate dough friction temperature during extended stand-mixer kneading.</li><li>Bench rest relaxation: The 15-minute rest after dividing into 72-gram portions relaxes gluten tension so final shaping forms tight, smooth surface tension without tearing.</li><li>Windowpane verification: Knead after butter incorporation until a small dough sample stretches into a translucent membrane without breaking.</li></ul>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Right Pane Footer Stamp -->
+        <div class="border-t-2 border-noir pt-4 mt-6 flex flex-col sm:flex-row justify-between items-start sm:items-center text-xs font-mono text-dim gap-2">
+          <div class="flex items-center gap-2">
+            <span class="inline-block w-2 h-2 bg-noir"></span>
+            <span class="font-semibold text-noir">NOE GOOD FOOD STANDARD ARCHIVE</span>
+            <span class="hidden sm:inline">• PRECISION RATIOS • ZERO COMPROMISE</span>
+          </div>
+          <div class="italic font-serif text-ink text-sm">
+            "Balance, precision, and proportion in culinary formulation."
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <script>
+    // Canonical Recipe abide by the Noe Good Food Standard
+    const defaultRecipe = {
+      docId: "NGF-STD-3088",
+      category: "ARTISAN VIENNOISERIE & HYBRID PRE-FERMENT BAKING",
+      title: "Classic Dinner Rolls (Tangzhong & Poolish)",
+      subtitle: "Ultra-soft enriched rolls utilizing water-roux gelatinization and overnight cold Poolish fermentation for superior crumb tenderness and flavor depth.",
+      notes: "Combining a 65°C starch-gelatinized Tangzhong with an overnight cold-fermented Poolish maximizes water retention and enzymatic complexity while preventing staling.",
+      nutrition: {
+        servingSize: "Serving Size: 1 whole roll (approx. 75 grams)",
+        calories: 130,
+        proteinGrams: 4.8,
+        fatGrams: 5.0,
+        carbsGrams: 19.4,
+        fiberGrams: 0.6
+      },
+      image: "https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=1200&auto=format&fit=crop",
+      prepTime: "45 minutes",
+      cookTime: "20 minutes",
+      restTime: "Overnight + 2 hours",
+      baseYield: 8,
+      processTemp: "175°C (350°F) bake",
+      tags: ["ARTISAN BREAD", "TANGZHONG", "POOLISH", "ENRICHED DOUGH", "YEAST ROLLS"],
+      fieldNotes: [
+        "Pre-ferment temperature control: Incorporate both the Tangzhong and Poolish directly from refrigeration to moderate dough friction temperature during extended stand-mixer kneading.",
+        "Bench rest relaxation: The 15-minute rest after dividing into 72-gram portions relaxes gluten tension so final shaping forms tight, smooth surface tension without tearing.",
+        "Windowpane verification: Knead after butter incorporation until a small dough sample stretches into a translucent membrane without breaking."
+      ],
+      ingredientGroups: [
+        {
+          groupName: "Tangzhong (Water Roux)",
+          items: [
+            { amount: 60, unit: "grams", item: "bread flour" },
+            { amount: 75, unit: "grams", item: "boiling water" }
+          ]
+        },
+        {
+          groupName: "Poolish (Overnight Pre-Ferment)",
+          items: [
+            { amount: 50, unit: "grams", item: "bread flour" },
+            { amount: 50, unit: "grams", item: "water, room temperature" },
+            { amount: 0.5, unit: "grams", item: "instant yeast" }
+          ]
+        },
+        {
+          groupName: "Final Enriched Dough",
+          items: [
+            { amount: 190, unit: "grams", item: "bread flour, remaining" },
+            { amount: 18, unit: "grams", item: "granulated sugar (sucrose)" },
+            { amount: 55, unit: "grams", item: "whole milk" },
+            { amount: 20, unit: "grams", item: "unsalted butter, softened" },
+            { amount: 50, unit: "grams", item: "whole egg (approx. 1 whole large egg)" },
+            { amount: 5, unit: "grams", item: "fine salt" }
+          ]
+        },
+        {
+          groupName: "Finishing (Egg Wash & Glaze)",
+          items: [
+            { amount: 1, unit: "whole large", item: "egg, for wash" },
+            { amount: 1, unit: "teaspoon", item: "whole milk, dash for wash" },
+            { amount: 14, unit: "grams", item: "unsalted butter, melted for brushing (approx. 1 tablespoon)" }
+          ]
+        }
+      ],
+      steps: [
+        {
+          index: "01",
+          phase: "Prepare Pre-Ferments (Night Before)",
+          text: "Tangzhong: Whisk 60 grams bread flour and 75 grams boiling water until a smooth paste forms; cool to ambient room temperature, cover tightly, and refrigerate overnight (8 to 12 hours). Poolish: Combine 50 grams bread flour, 50 grams room-temperature water, and 0.5 grams instant yeast; cover loosely, ferment at room temperature for 1 hour, then seal tightly and chill overnight (8 to 12 hours)."
+        },
+        {
+          index: "02",
+          phase: "Mix the Dough",
+          text: "In a stand mixer bowl, combine the chilled Tangzhong (straight from the refrigerator), chilled Poolish (straight from the refrigerator), 55 grams whole milk, 50 grams whole egg, 18 grams granulated sugar, and 5 grams fine salt. Mix on low speed until homogeneous."
+        },
+        {
+          index: "03",
+          phase: "Add Flour and Knead (Autolyse)",
+          text: "Add the remaining 190 grams bread flour. Mix on low speed for 2 minutes until hydrated, then rest the dough covered for 10 minutes (autolyse). Knead on medium-low speed for 5 to 7 minutes until smooth."
+        },
+        {
+          index: "04",
+          phase: "Incorporate Butter to Windowpane",
+          text: "Add 20 grams softened unsalted butter one small piece at a time, mixing until fully absorbed after each addition. Continue kneading for 5 to 10 minutes until the dough is silky, elastic, and stretches into a thin translucent windowpane without tearing."
+        },
+        {
+          index: "05",
+          phase: "First Rise (Bulk Fermentation)",
+          text: "Transfer dough to a lightly oiled bowl and cover. For Same-Day Rise: Ferment in a warm environment for 1.5 to 2 hours until doubled in volume. For Cold Rise (Overnight Flavor): Cover tightly and refrigerate for 8 to 12 hours for slow enzymatic fermentation."
+        },
+        {
+          index: "06",
+          phase: "Temper, Pre-Shape & Final Shape",
+          text: "If cold-risen, temper covered at room temperature for 45 to 60 minutes. Deflate gently and divide into 8 equal portions (approx. 72 grams each). Round into rough balls, cover, and rest on the bench for 15 minutes. Pull edges down and pinch seams tight at the base; arrange seam-side down in a greased baking pan."
+        },
+        {
+          index: "07",
+          phase: "Second Rise, Egg Wash & Bake",
+          text: "Cover loosely and proof in a warm spot for 45 to 60 minutes until puffy. Whisk 1 whole large egg with 1 teaspoon whole milk and brush gently over the proofed tops. Bake in a preheated 175°C (350°F) oven for 18 to 22 minutes until deep golden brown. Brush warm rolls immediately with 14 grams melted unsalted butter."
+        }
+      ]
+    };
+
+    // State management
+    let recipeState = JSON.parse(JSON.stringify(defaultRecipe));
+    let currentServingScale = recipeState.baseYield;
+
+    function formatAmount(baseAmount, baseYield, currentYield) {
+      if (!baseAmount || isNaN(baseAmount)) return '';
+      const scaled = (baseAmount / baseYield) * currentYield;
+      if (Math.abs(scaled - Math.round(scaled)) < 0.04) {
+        return Math.round(scaled);
+      }
+      return scaled.toFixed(scaled < 1 ? 2 : 1).replace(/\.0$/, '');
+    }
+
+    function parseApproxMeasure(rawVal) {
+      if (rawVal.includes('/')) {
+        const parts = rawVal.split(/\s+/);
+        if (parts.length === 2) {
+          const [num, den] = parts[1].split('/').map(Number);
+          return Number(parts[0]) + (den ? num / den : 0);
+        } else {
+          const [num, den] = parts[0].split('/').map(Number);
+          return den ? num / den : 0;
+        }
+      }
+      return parseFloat(rawVal);
+    }
+
+    function formatScaledItemText(item, baseYield, currentYield) {
+      const baseText = item.item || '';
+
+      if (item.approxAmount !== undefined && item.approxAmount !== null && item.approxUnit) {
+        const scaledApprox = formatAmount(item.approxAmount, baseYield, currentYield);
+        let unit = item.approxUnit;
+        const num = parseFloat(scaledApprox);
+        if (num === 1 && unit.endsWith('s') && !unit.endsWith('ss')) {
+          unit = unit.slice(0, -1);
+        } else if (num !== 1 && !unit.endsWith('s')) {
+          unit = unit + 's';
+        }
+        return `${baseText} <span class="text-dim font-mono text-[11px]">(approx. ${scaledApprox} ${unit})</span>`;
+      }
+
+      const approxRegex = /\((?:approx\.?\s*)?([\d\s\.\/]+)\s*([a-zA-Z\s]+)\)/i;
+      const match = baseText.match(approxRegex);
+      if (match) {
+        const numericVal = parseApproxMeasure(match[1].trim());
+        const rawUnit = match[2].trim();
+
+        if (!isNaN(numericVal) && numericVal > 0) {
+          const scaledVal = formatAmount(numericVal, baseYield, currentYield);
+          let unit = rawUnit;
+          const num = parseFloat(scaledVal);
+          if (num === 1 && unit.endsWith('s') && !unit.endsWith('ss')) {
+            unit = unit.slice(0, -1);
+          } else if (num > 1 && !unit.endsWith('s')) {
+            unit = unit + 's';
+          }
+          const cleanPrefix = baseText.replace(match[0], '').trim();
+          return `${cleanPrefix} <span class="text-dim font-mono text-[11px]">(approx. ${scaledVal} ${unit})</span>`;
+        }
+      }
+
+      return baseText;
+    }
+
+    function getScaledItemPlainText(item, baseYield, currentYield) {
+      const baseText = item.item || '';
+
+      if (item.approxAmount !== undefined && item.approxAmount !== null && item.approxUnit) {
+        const scaledApprox = formatAmount(item.approxAmount, baseYield, currentYield);
+        let unit = item.approxUnit;
+        const num = parseFloat(scaledApprox);
+        if (num === 1 && unit.endsWith('s') && !unit.endsWith('ss')) {
+          unit = unit.slice(0, -1);
+        } else if (num !== 1 && !unit.endsWith('s')) {
+          unit = unit + 's';
+        }
+        return `${baseText} (approx. ${scaledApprox} ${unit})`;
+      }
+
+      const approxRegex = /\((?:approx\.?\s*)?([\d\s\.\/]+)\s*([a-zA-Z\s]+)\)/i;
+      const match = baseText.match(approxRegex);
+      if (match) {
+        const numericVal = parseApproxMeasure(match[1].trim());
+        const rawUnit = match[2].trim();
+
+        if (!isNaN(numericVal) && numericVal > 0) {
+          const scaledVal = formatAmount(numericVal, baseYield, currentYield);
+          let unit = rawUnit;
+          const num = parseFloat(scaledVal);
+          if (num === 1 && unit.endsWith('s') && !unit.endsWith('ss')) {
+            unit = unit.slice(0, -1);
+          } else if (num > 1 && !unit.endsWith('s')) {
+            unit = unit + 's';
+          }
+          const cleanPrefix = baseText.replace(match[0], '').trim();
+          return `${cleanPrefix} (approx. ${scaledVal} ${unit})`;
+        }
+      }
+
+      return baseText;
+    }
+
+    function showToast(message) {
+      const toast = document.getElementById('toast-notify');
+      toast.textContent = message;
+      toast.classList.remove('translate-y-20', 'opacity-0');
+      setTimeout(() => {
+        toast.classList.add('translate-y-20', 'opacity-0');
+      }, 2500);
+    }
+
+    function renderView() {
+      document.getElementById('view-doc-id').textContent = recipeState.docId || 'NGF-STD-3088';
+      document.getElementById('view-category').textContent = recipeState.category || 'NOE GOOD FOOD STANDARD RECIPE';
+      document.getElementById('view-title').textContent = recipeState.title;
+      document.getElementById('view-subtitle').textContent = recipeState.subtitle;
+      document.getElementById('view-prep').textContent = recipeState.prepTime;
+      document.getElementById('view-cook').textContent = recipeState.cookTime;
+      document.getElementById('view-rest').textContent = recipeState.restTime || 'None';
+      document.getElementById('view-temp').textContent = recipeState.processTemp || 'Ambient';
+      document.getElementById('view-yield').textContent = `${recipeState.baseYield} rolls`;
+      document.getElementById('view-notes').textContent = recipeState.notes || '';
+
+      const servingsInput = document.getElementById('current-servings');
+      if (servingsInput && document.activeElement !== servingsInput) {
+        servingsInput.value = currentServingScale;
+      }
+
+      const nutr = recipeState.nutrition || {
+        servingSize: "Serving Size: 1 portion",
+        calories: 0,
+        proteinGrams: 0,
+        fatGrams: 0,
+        carbsGrams: 0,
+        fiberGrams: 0
+      };
+
+      const netCarbs = Math.max(0, parseFloat(((Number(nutr.carbsGrams) || 0) - (Number(nutr.fiberGrams) || 0)).toFixed(1)));
+
+      const setSafeText = (id, val) => {
+        const el = document.getElementById(id);
+        if (el) el.textContent = val;
+      };
+
+      setSafeText('view-nutrition-serving-size', nutr.servingSize || "Serving Size: 1 whole roll (approx. 75 grams)");
+      setSafeText('badge-nutr-calories', nutr.calories ?? 0);
+      setSafeText('badge-nutr-fat', nutr.fatGrams ?? 0);
+      setSafeText('badge-nutr-carbs', nutr.carbsGrams ?? 0);
+      setSafeText('badge-nutr-fiber', nutr.fiberGrams ?? 0);
+      setSafeText('badge-nutr-netcarbs', netCarbs);
+      setSafeText('badge-nutr-protein', nutr.proteinGrams ?? 0);
+
+      const imgElem = document.getElementById('view-image');
+      if (recipeState.image) {
+        imgElem.src = recipeState.image;
+        imgElem.classList.remove('hidden');
+      } else {
+        imgElem.classList.add('hidden');
+      }
+
+      const tagContainer = document.getElementById('view-tags-container');
+      tagContainer.innerHTML = '';
+      (recipeState.tags || []).forEach(tag => {
+        const badge = document.createElement('span');
+        badge.className = 'font-mono text-[9px] uppercase tracking-wider px-2 py-0.5 border border-noir bg-white font-semibold';
+        badge.textContent = tag;
+        tagContainer.appendChild(badge);
+      });
+
+      const notesList = document.getElementById('view-field-notes');
+      notesList.innerHTML = '';
+      (recipeState.fieldNotes || []).forEach(note => {
+        const li = document.createElement('li');
+        li.textContent = note;
+        notesList.appendChild(li);
+      });
+
+      const ingContainer = document.getElementById('ingredients-container');
+      ingContainer.innerHTML = '';
+
+      recipeState.ingredientGroups.forEach((group, gIdx) => {
+        const groupWrap = document.createElement('div');
+        groupWrap.className = 'space-y-1.5';
+
+        const title = document.createElement('h3');
+        title.className = 'font-mono text-[11px] font-bold uppercase tracking-wider text-noir border-b border-noir/30 pb-1';
+        title.textContent = group.groupName;
+        groupWrap.appendChild(title);
+
+        const list = document.createElement('ul');
+        list.className = 'space-y-1.5 text-xs';
+
+        group.items.forEach((item, iIdx) => {
+          const checkId = `ing-${gIdx}-${iIdx}`;
+          const li = document.createElement('li');
+          li.className = 'flex items-start gap-2.5';
+
+          const scaledAmount = formatAmount(item.amount, recipeState.baseYield, currentServingScale);
+          const formattedItem = formatScaledItemText(item, recipeState.baseYield, currentServingScale);
+
+          let unitDisplay = item.unit;
+          const numAmt = parseFloat(scaledAmount);
+          if (unitDisplay === 'teaspoon' && numAmt !== 1) {
+            unitDisplay = 'teaspoons';
+          }
+
+          li.innerHTML = `
+            <input type="checkbox" id="${checkId}" class="ingredient-check print-checkbox mt-0.5 h-3.5 w-3.5 rounded-none border-noir text-noir focus:ring-0 accent-noir cursor-pointer">
+            <label for="${checkId}" class="cursor-pointer select-none leading-relaxed transition-colors flex-1">
+              <span class="ingredient-amount font-mono font-bold text-noir">${scaledAmount} ${unitDisplay}</span>
+              <span class="ingredient-text font-serif text-ink ml-1">${formattedItem}</span>
+            </label>
+          `;
+          list.appendChild(li);
+        });
+
+        groupWrap.appendChild(list);
+        ingContainer.appendChild(groupWrap);
+      });
+
+      const stepContainer = document.getElementById('instructions-container');
+      stepContainer.innerHTML = '';
+
+      recipeState.steps.forEach((step, idx) => {
+        const stepEl = document.createElement('div');
+        stepEl.className = 'flex gap-3 items-start group';
+
+        const stepNum = step.index || (idx + 1).toString().padStart(2, '0');
+
+        stepEl.innerHTML = `
+          <div class="font-mono text-xs font-bold bg-noir text-white px-2 py-0.5 flex-shrink-0 text-center min-w-[2.2rem]">
+            ${stepNum}
+          </div>
+          <div class="space-y-0.5">
+            <div class="font-mono text-[10px] tracking-wider uppercase text-dim font-bold">
+              ${step.phase || 'Procedure Step'}
+            </div>
+            <p class="text-xs sm:text-[13px] leading-relaxed text-ink/90 font-serif">
+              ${step.text}
+            </p>
+          </div>
+        `;
+        stepContainer.appendChild(stepEl);
+      });
+    }
+
+    function setPresetMultiplier(factor) {
+      currentServingScale = Math.max(1, Math.round(recipeState.baseYield * factor));
+
+      document.querySelectorAll('.multiplier-btn').forEach(btn => {
+        btn.classList.remove('bg-noir', 'text-white', 'font-bold');
+      });
+      if (factor === 0.5) document.getElementById('btn-mult-half').classList.add('bg-noir', 'text-white', 'font-bold');
+      if (factor === 1) document.getElementById('btn-mult-one').classList.add('bg-noir', 'text-white', 'font-bold');
+      if (factor === 2) document.getElementById('btn-mult-two').classList.add('bg-noir', 'text-white', 'font-bold');
+
+      renderView();
+    }
+
+    document.getElementById('btn-scale-down').addEventListener('click', () => {
+      if (currentServingScale > 1) {
+        currentServingScale -= 1;
+        checkPresetMatch();
+        renderView();
+      }
+    });
+
+    document.getElementById('btn-scale-up').addEventListener('click', () => {
+      if (currentServingScale < 999) {
+        currentServingScale += 1;
+        checkPresetMatch();
+        renderView();
+      }
+    });
+
+    const servingsInputField = document.getElementById('current-servings');
+
+    function applyManualServings() {
+      const val = parseInt(servingsInputField.value, 10);
+      if (!isNaN(val) && val > 0) {
+        currentServingScale = Math.min(Math.max(1, val), 999);
+        checkPresetMatch();
+        renderView();
+        showToast(`Yield scaled to ${currentServingScale} rolls.`);
+      } else {
+        servingsInputField.value = currentServingScale;
+      }
+    }
+
+    servingsInputField.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        applyManualServings();
+        servingsInputField.blur();
+      }
+    });
+
+    servingsInputField.addEventListener('change', () => {
+      applyManualServings();
+    });
+
+    function checkPresetMatch() {
+      clearMultiplierActive();
+      const half = Math.round(recipeState.baseYield * 0.5);
+      const one = recipeState.baseYield;
+      const two = Math.round(recipeState.baseYield * 2);
+
+      if (currentServingScale === half) {
+        document.getElementById('btn-mult-half')?.classList.add('bg-noir', 'text-white', 'font-bold');
+      } else if (currentServingScale === one) {
+        document.getElementById('btn-mult-one')?.classList.add('bg-noir', 'text-white', 'font-bold');
+      } else if (currentServingScale === two) {
+        document.getElementById('btn-mult-two')?.classList.add('bg-noir', 'text-white', 'font-bold');
+      }
+    }
+
+    function clearMultiplierActive() {
+      document.querySelectorAll('.multiplier-btn').forEach(btn => {
+        btn.classList.remove('bg-noir', 'text-white', 'font-bold');
+      });
+    }
+
+    function resetChecklist() {
+      document.querySelectorAll('.ingredient-check').forEach(chk => chk.checked = false);
+      showToast("Checklist reset to unchecked state.");
+    }
+
+    const editorPane = document.getElementById('recipe-editor-pane');
+    const toggleEditorBtn = document.getElementById('btn-toggle-editor');
+    const closeEditorBtn = document.getElementById('btn-close-editor');
+    const applyEditorBtn = document.getElementById('btn-apply-editor');
+    const resetDefaultBtn = document.getElementById('btn-reset-default');
+
+    function populateEditorForm() {
+      document.getElementById('edit-doc-id').value = recipeState.docId || 'NGF-STD-3088';
+      document.getElementById('edit-category').value = recipeState.category || '';
+      document.getElementById('edit-title').value = recipeState.title;
+      document.getElementById('edit-subtitle').value = recipeState.subtitle;
+      document.getElementById('edit-notes').value = recipeState.notes || '';
+      document.getElementById('edit-image').value = recipeState.image || '';
+      document.getElementById('edit-prep').value = recipeState.prepTime;
+      document.getElementById('edit-cook').value = recipeState.cookTime;
+      document.getElementById('edit-rest').value = recipeState.restTime || '';
+      document.getElementById('edit-base-yield').value = recipeState.baseYield;
+      document.getElementById('edit-temp').value = recipeState.processTemp || '';
+      document.getElementById('edit-tags').value = (recipeState.tags || []).join(', ');
+
+      const nutr = recipeState.nutrition || {};
+      const setSafeVal = (id, val) => {
+        const el = document.getElementById(id);
+        if (el) el.value = val;
+      };
+
+      setSafeVal('edit-nutr-serving-size', nutr.servingSize || '');
+      setSafeVal('edit-nutr-calories', nutr.calories ?? '');
+      setSafeVal('edit-nutr-protein', nutr.proteinGrams ?? '');
+      setSafeVal('edit-nutr-fat', nutr.fatGrams ?? '');
+      setSafeVal('edit-nutr-carbs', nutr.carbsGrams ?? '');
+      setSafeVal('edit-nutr-fiber', nutr.fiberGrams ?? '');
+
+      document.getElementById('edit-json-payload').value = JSON.stringify({
+        ingredientGroups: recipeState.ingredientGroups,
+        steps: recipeState.steps,
+        fieldNotes: recipeState.fieldNotes
+      }, null, 2);
+    }
+
+    toggleEditorBtn.addEventListener('click', () => {
+      const isHidden = editorPane.classList.contains('hidden');
+      if (isHidden) {
+        populateEditorForm();
+        editorPane.classList.remove('hidden');
+        document.getElementById('editor-btn-label').textContent = 'Hide Form';
+      } else {
+        editorPane.classList.add('hidden');
+        document.getElementById('editor-btn-label').textContent = 'Edit Card';
+      }
+    });
+
+    closeEditorBtn.addEventListener('click', () => {
+      editorPane.classList.add('hidden');
+      document.getElementById('editor-btn-label').textContent = 'Edit Card';
+    });
+
+    applyEditorBtn.addEventListener('click', () => {
+      try {
+        const parsed = JSON.parse(document.getElementById('edit-json-payload').value);
+
+        recipeState.docId = document.getElementById('edit-doc-id').value || "NGF-STD-3088";
+        recipeState.category = document.getElementById('edit-category').value || "NOE GOOD FOOD STANDARD";
+        recipeState.title = document.getElementById('edit-title').value || "Classic Dinner Rolls (Tangzhong & Poolish)";
+        recipeState.subtitle = document.getElementById('edit-subtitle').value || "";
+        recipeState.notes = document.getElementById('edit-notes').value || "";
+        recipeState.image = document.getElementById('edit-image').value || "";
+        recipeState.prepTime = document.getElementById('edit-prep').value || "0 minutes";
+        recipeState.cookTime = document.getElementById('edit-cook').value || "0 minutes";
+        recipeState.restTime = document.getElementById('edit-rest').value || "None";
+        recipeState.baseYield = parseInt(document.getElementById('edit-base-yield').value, 10) || 8;
+        recipeState.processTemp = document.getElementById('edit-temp').value || "Standard";
+
+        recipeState.nutrition = {
+          servingSize: document.getElementById('edit-nutr-serving-size').value || "Serving Size: 1 whole roll (approx. 75 grams)",
+          calories: Number(document.getElementById('edit-nutr-calories').value) || 0,
+          proteinGrams: Number(document.getElementById('edit-nutr-protein').value) || 0,
+          fatGrams: Number(document.getElementById('edit-nutr-fat').value) || 0,
+          carbsGrams: Number(document.getElementById('edit-nutr-carbs').value) || 0,
+          fiberGrams: Number(document.getElementById('edit-nutr-fiber').value) || 0
+        };
+
+        const rawTags = document.getElementById('edit-tags').value;
+        recipeState.tags = rawTags.split(',').map(t => t.trim()).filter(Boolean);
+
+        if (parsed.ingredientGroups) recipeState.ingredientGroups = parsed.ingredientGroups;
+        if (parsed.steps) recipeState.steps = parsed.steps;
+        if (parsed.fieldNotes) recipeState.fieldNotes = parsed.fieldNotes;
+
+        currentServingScale = recipeState.baseYield;
+        renderView();
+        editorPane.classList.add('hidden');
+        document.getElementById('editor-btn-label').textContent = 'Edit Card';
+        showToast("Noe Good Food Standard Card compiled.");
+      } catch (err) {
+        showToast("JSON Syntax error in ingredients/steps payload.");
+      }
+    });
+
+    resetDefaultBtn.addEventListener('click', () => {
+      recipeState = JSON.parse(JSON.stringify(defaultRecipe));
+      currentServingScale = recipeState.baseYield;
+      populateEditorForm();
+      renderView();
+      showToast("Reset to master default standard.");
+    });
+
+    const copyMenuBtn = document.getElementById('btn-copy-menu');
+    const copyDropdown = document.getElementById('copy-dropdown-menu');
+
+    copyMenuBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      copyDropdown.classList.toggle('hidden');
+    });
+
+    document.addEventListener('click', () => {
+      if (!copyDropdown.classList.contains('hidden')) {
+        copyDropdown.classList.add('hidden');
+      }
+    });
+
+    function copyStringToClipboard(str, successMsg) {
+      const el = document.createElement('textarea');
+      el.value = str;
+      el.setAttribute('readonly', '');
+      el.style.position = 'absolute';
+      el.style.left = '-9999px';
+      document.body.appendChild(el);
+      el.select();
+      try {
+        document.execCommand('copy');
+        showToast(successMsg);
+      } catch (err) {
+        showToast("Unable to copy to clipboard.");
+      }
+      document.body.removeChild(el);
+    }
+
+    function generateStandaloneHTMLDocument() {
+      const clone = document.documentElement.cloneNode(true);
+
+      const editorBtn = clone.querySelector('#btn-toggle-editor');
+      if (editorBtn) editorBtn.remove();
+
+      const editorDrawer = clone.querySelector('#recipe-editor-pane');
+      if (editorDrawer) editorDrawer.remove();
+
+      const dropdown = clone.querySelector('#copy-dropdown-menu');
+      if (dropdown) dropdown.classList.add('hidden');
+
+      const scriptTag = clone.querySelector('script:not([src])');
+      if (scriptTag) {
+        let scriptContent = scriptTag.textContent;
+        const serializedState = JSON.stringify(recipeState, null, 2);
+        scriptContent = scriptContent.replace(
+          /const defaultRecipe = \{[\s\S]*?\};\n\s*\/\/ State management/,
+          `const defaultRecipe = ${serializedState};\n\n    // State management`
+        );
+        scriptTag.textContent = scriptContent;
+      }
+
+      return "<!DOCTYPE html>\n" + clone.outerHTML;
+    }
+
+    function downloadRecipeHTML() {
+      const htmlContent = generateStandaloneHTMLDocument();
+      const sanitizedTitle = (recipeState.title || 'recipe')
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/^-|-$/g, '');
+      const fileName = `${recipeState.docId || 'NGF-STD'}-${sanitizedTitle}.html`;
+
+      try {
+        const blob = new Blob([htmlContent], { type: 'text/html;charset=utf-8' });
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = fileName;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        setTimeout(() => URL.revokeObjectURL(url), 1500);
+        showToast(`Downloaded clean reader file: "${fileName}"`);
+      } catch (err) {
+        copyStringToClipboard(htmlContent, "Download blocked by environment; clean reader HTML copied to clipboard!");
+      }
+    }
+
+    function copyRecipeMarkdown() {
+      let md = `# ${recipeState.title}\n`;
+      md += `*The Noe Good Food Standard — Formulation ID: ${recipeState.docId}*\n\n`;
+      md += `> ${recipeState.subtitle}\n\n`;
+      md += `**Active Prep:** ${recipeState.prepTime} | **Cook:** ${recipeState.cookTime} | **Rest:** ${recipeState.restTime} | **Yield:** ${currentServingScale} rolls (Scaled)\n\n`;
+
+      if (recipeState.nutrition) {
+        const n = recipeState.nutrition;
+        const netCarbs = Math.max(0, parseFloat(((Number(n.carbsGrams) || 0) - (Number(n.fiberGrams) || 0)).toFixed(1)));
+        md += `### Nutrition Per Serving\n`;
+        md += `*${n.servingSize || 'Per roll'}*\n`;
+        md += `- **Calories:** ${n.calories} calories\n`;
+        md += `- **Total Fat:** ${n.fatGrams} grams\n`;
+        md += `- **Total Carbohydrates:** ${n.carbsGrams} grams\n`;
+        md += `- **Fiber (Dietary Fiber):** ${n.fiberGrams} grams\n`;
+        md += `- **Net Carbohydrates:** ${netCarbs} grams\n`;
+        md += `- **Protein:** ${n.proteinGrams} grams\n\n`;
+      }
+
+      md += `### Ingredients (Unabbreviated Units)\n`;
+      recipeState.ingredientGroups.forEach(grp => {
+        md += `\n**${grp.groupName}**\n`;
+        grp.items.forEach(it => {
+          const amt = formatAmount(it.amount, recipeState.baseYield, currentServingScale);
+          const itemText = getScaledItemPlainText(it, recipeState.baseYield, currentServingScale);
+          md += `- [ ] **${amt} ${it.unit}** ${itemText}\n`;
+        });
+      });
+      md += `\n### Method\n`;
+      recipeState.steps.forEach((st, idx) => {
+        const num = st.index || (idx + 1).toString().padStart(2, '0');
+        md += `${num}. **${st.phase}** — ${st.text}\n\n`;
+      });
+      if (recipeState.fieldNotes && recipeState.fieldNotes.length) {
+        md += `### Chef's Analytical Notes\n`;
+        recipeState.fieldNotes.forEach(note => {
+          md += `- ${note}\n`;
+        });
+      }
+      copyStringToClipboard(md, "Recipe copied as Markdown (.md)");
+    }
+
+    function copyRecipeHTML() {
+      const fullDoc = generateStandaloneHTMLDocument();
+      copyStringToClipboard(fullDoc, "Clean reader HTML copied to clipboard (editor removed).");
+    }
+
+    function exportRecipeJSON() {
+      const jsonStr = JSON.stringify(recipeState, null, 2);
+      copyStringToClipboard(jsonStr, "Formulation JSON copied to clipboard.");
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      renderView();
+    });
+  </script>
+
+
+```</body></html>
