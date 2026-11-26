@@ -1,0 +1,1455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Noe Good Food Standard — Classic Banana Pudding</title>
+  <!-- Google Fonts: Editorial Serif, Clean Sans & Monospace Accents -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,900;1,400;1,600&display=swap" rel="stylesheet">
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            display: ['"Playfair Display"', 'Georgia', 'serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+            sans: ['"Inter"', 'sans-serif'],
+          },
+          colors: {
+            noir: '#0a0a0a',
+            parchment: '#fcfbf9',
+            surface: '#f5f4ed',
+            ink: '#141414',
+            dim: '#5e5e5e',
+            rule: '#e2e0d7',
+            accent: '#181818'
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    /* High-contrast custom scrollbar */
+    ::-webkit-scrollbar { width: 5px; height: 5px; }
+    ::-webkit-scrollbar-track { background: #f5f4ed; }
+    ::-webkit-scrollbar-thumb { background: #0a0a0a; }
+
+    /* Cross-out checklist interaction for ingredients and steps */
+    .ingredient-check:checked + label .ingredient-text {
+      text-decoration: line-through;
+      color: #888888;
+      font-style: italic;
+    }
+    .ingredient-check:checked + label .ingredient-amount {
+      opacity: 0.45;
+      text-decoration: line-through;
+    }
+    .step-check:checked + label .step-body {
+      text-decoration: line-through;
+      color: #888888;
+      font-style: italic;
+    }
+
+    /* Enforced 11in x 8.5in Landscape Print Rules */
+    @page {
+      size: 11in 8.5in landscape;
+      margin: 0.25in;
+    }
+
+    @media print {
+      *, *::before, *::after {
+        box-sizing: border-box !important;
+      }
+      html, body {
+        width: 100% !important;
+        height: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        background: #ffffff !important;
+        color: #000000 !important;
+        font-size: 8pt !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+        overflow: hidden !important;
+      }
+      .no-print {
+        display: none !important;
+      }
+      main {
+        padding: 0 !important;
+        margin: 0 !important;
+        min-height: 0 !important;
+        display: flex !important;
+        align-items: stretch !important;
+        justify-content: stretch !important;
+        width: 100% !important;
+        height: 100vh !important;
+      }
+      #recipe-card,
+      .print-page-wrapper {
+        display: grid !important;
+        grid-template-columns: 37% 63% !important;
+        gap: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        min-height: 0 !important;
+        height: 100% !important;
+        max-height: 100% !important;
+        overflow: hidden !important;
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+        page-break-after: avoid !important;
+        border: 1.5pt solid #000000 !important;
+        box-shadow: none !important;
+        background: #ffffff !important;
+      }
+      .print-pane-left {
+        border-right: 1.5pt solid #000000 !important;
+        padding: 0.16in 0.20in !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: space-between !important;
+        background: #faf9f6 !important;
+        height: 100% !important;
+        overflow: hidden !important;
+      }
+      .print-pane-right {
+        padding: 0.16in 0.22in !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: space-between !important;
+        background: #ffffff !important;
+        height: 100% !important;
+        overflow: hidden !important;
+      }
+      .print-pane-left h1 {
+        font-size: 1.28rem !important;
+        line-height: 1.06 !important;
+        margin-top: 0.08rem !important;
+        margin-bottom: 0.12rem !important;
+      }
+      .print-pane-left #view-subtitle {
+        font-size: 0.66rem !important;
+        line-height: 1.18 !important;
+      }
+      .print-hero-img {
+        height: 1.12in !important;
+        max-height: 1.12in !important;
+        width: 100% !important;
+        object-fit: cover !important;
+        border: 1pt solid #000000 !important;
+        display: block !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+      .print-pane-left .mb-6 {
+        margin-bottom: 0.22rem !important;
+      }
+      .print-pane-left .mb-5 {
+        margin-bottom: 0.18rem !important;
+      }
+      .print-pane-left .pb-4 {
+        padding-bottom: 0.16rem !important;
+      }
+      .print-pane-left .pt-6 {
+        padding-top: 0.16rem !important;
+      }
+      .print-pane-left .mt-6 {
+        margin-top: 0.16rem !important;
+      }
+      .print-pane-left .space-y-3 {
+        margin-bottom: 0.20rem !important;
+      }
+      .print-pane-left .p-3 {
+        padding: 0.22rem 0.35rem !important;
+      }
+      .print-pane-left .p-2\.5 {
+        padding: 0.18rem 0.28rem !important;
+      }
+      .print-pane-left #view-notes {
+        font-size: 0.64rem !important;
+        line-height: 1.15 !important;
+      }
+      .print-pane-left .nutrition-panel {
+        padding: 0.22rem 0.32rem !important;
+        margin-top: 0.12rem !important;
+      }
+      .print-pane-left .nutrition-panel .grid {
+        grid-template-columns: repeat(6, minmax(0, 1fr)) !important;
+        gap: 0.16rem !important;
+      }
+      .print-pane-left .nutrition-panel .p-2 {
+        padding: 0.12rem 0.08rem !important;
+      }
+      .print-pane-left .nutrition-panel .text-sm,
+      .print-pane-left .nutrition-panel .text-base {
+        font-size: 0.72rem !important;
+        margin-top: 0.02rem !important;
+        margin-bottom: 0.02rem !important;
+      }
+      .print-pane-right .grid-internal {
+        display: grid !important;
+        grid-template-columns: 38% 62% !important;
+        gap: 0.18in !important;
+        align-items: start !important;
+      }
+      .print-pane-right .space-y-5 {
+        margin-bottom: 0.12rem !important;
+      }
+      .print-pane-right .space-y-4 {
+        margin-top: 0.10rem !important;
+      }
+      .print-pane-right .space-y-1\.5 {
+        margin-bottom: 0.12rem !important;
+      }
+      .print-pane-right .space-y-1\.5 > li {
+        margin-bottom: 0.04rem !important;
+        line-height: 1.13 !important;
+        font-size: 6.7pt !important;
+      }
+      .print-pane-right .p-3.bg-surface {
+        padding: 0.18rem 0.28rem !important;
+        font-size: 6.4pt !important;
+        line-height: 1.12 !important;
+        margin-top: 0.12rem !important;
+      }
+      .print-pane-right #instructions-container > div {
+        margin-bottom: 0.12rem !important;
+      }
+      .print-pane-right #instructions-container p,
+      .print-pane-right #instructions-container .step-body span:last-child {
+        font-size: 6.65pt !important;
+        line-height: 1.14 !important;
+      }
+      .print-pane-right #view-field-notes {
+        font-size: 6.5pt !important;
+        line-height: 1.13 !important;
+      }
+      .print-pane-right #view-field-notes li {
+        margin-bottom: 0.04rem !important;
+      }
+      .print-pane-right .pt-4 {
+        padding-top: 0.14rem !important;
+      }
+      .print-pane-right .mt-6 {
+        margin-top: 0.14rem !important;
+      }
+      .print-checkbox {
+        border: 1pt solid #000000 !important;
+        width: 8px !important;
+        height: 8px !important;
+        margin-top: 2px !important;
+      }
+    }
+  </style>
+</head>
+<body class="bg-[#f2f1ea] text-ink font-sans antialiased selection:bg-noir selection:text-white">
+
+  <!-- TOP APP BAR -->
+  <header class="no-print border-b border-ink/20 bg-parchment/95 backdrop-blur sticky top-0 z-40 px-4 md:px-8 py-3 flex flex-wrap items-center justify-between gap-4">
+    <div class="flex items-center gap-3">
+      <span class="font-mono text-xs tracking-widest uppercase bg-noir text-parchment px-2.5 py-1 font-bold">
+        NOE GOOD FOOD STANDARD
+      </span>
+      <span class="text-xs tracking-widest uppercase font-mono text-dim hidden md:inline">
+        PROTOCOL NGF-STD • CHILLED CUSTARD &amp; LAYERING FORMULATION
+      </span>
+    </div>
+
+    <!-- Quick Utility Actions -->
+    <div class="flex items-center gap-2 sm:gap-3 flex-wrap">
+      <!-- Quick Copy Action Button -->
+      <div class="relative inline-block text-left" id="copy-dropdown-container">
+        <button id="btn-copy-menu" type="button" class="border border-ink bg-white px-3 py-1.5 text-xs font-mono tracking-wider uppercase hover:bg-noir hover:text-white transition-colors flex items-center gap-1.5 shadow-sm">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"></path></svg>
+          <span>Copy Recipe</span>
+          <svg class="w-3 h-3 ml-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+        </button>
+        <div id="copy-dropdown-menu" class="absolute right-0 mt-1 w-48 bg-white border border-noir shadow-lg z-50 py-1 text-xs font-mono hidden">
+          <button onclick="downloadRecipeHTML()" type="button" class="w-full text-left px-3 py-2 hover:bg-surface flex items-center justify-between font-bold text-noir">
+            <span>Download HTML (.html)</span>
+            <span class="text-[10px] text-dim font-sans">Save File</span>
+          </button>
+          <button onclick="copyRecipeMarkdown()" type="button" class="w-full text-left px-3 py-2 hover:bg-surface flex items-center justify-between border-t border-rule">
+            <span>Markdown (.md)</span>
+            <span class="text-[10px] text-dim font-sans">Formatted</span>
+          </button>
+          <button onclick="copyRecipeHTML()" type="button" class="w-full text-left px-3 py-2 hover:bg-surface flex items-center justify-between border-t border-rule">
+            <span>Copy Full HTML</span>
+            <span class="text-[10px] text-dim font-sans">Clipboard</span>
+          </button>
+          <button onclick="exportRecipeJSON()" type="button" class="w-full text-left px-3 py-2 hover:bg-surface flex items-center justify-between border-t border-rule">
+            <span>JSON Object</span>
+            <span class="text-[10px] text-dim font-sans">Export</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Live Recipe Editor Trigger (Removed on Export) -->
+      <button id="btn-toggle-editor" type="button" class="border border-ink bg-white px-3 py-1.5 text-xs font-mono tracking-wider uppercase hover:bg-noir hover:text-white transition-colors flex items-center gap-1.5 shadow-sm">
+        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
+        <span id="editor-btn-label">Edit Card</span>
+      </button>
+
+      <!-- 11x8.5 Landscape Print -->
+      <button id="btn-print-card" type="button" class="bg-noir text-parchment border border-noir px-3.5 py-1.5 text-xs font-mono tracking-wider uppercase hover:bg-white hover:text-noir transition-colors flex items-center gap-1.5 shadow-sm">
+        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path></svg>
+        <span>Print Card (11×8.5")</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- TOAST FEEDBACK NOTIFICATION -->
+  <div id="toast-notify" class="no-print fixed bottom-6 right-6 bg-noir text-parchment font-mono text-xs px-4 py-3 border border-rule shadow-2xl z-50 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none">
+    Notice message goes here
+  </div>
+
+  <!-- COLLAPSIBLE FORM & JSON EDITOR MODAL (Removed on Export) -->
+  <div id="recipe-editor-pane" class="hidden no-print bg-white border-b-2 border-noir p-6 shadow-2xl transition-all duration-300">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex items-center justify-between pb-4 border-b border-ink/20">
+        <div>
+          <h2 class="text-sm font-mono uppercase tracking-widest font-bold flex items-center gap-2">
+            <span class="w-2.5 h-2.5 bg-noir inline-block"></span>
+            Noe Good Food Standard — Card Specification Editor
+          </h2>
+          <p class="text-xs text-dim font-serif italic mt-0.5">All units must strictly follow full spelled-out names (grams, cups, cans, boxes, whole large). Abbreviations are prohibited.</p>
+        </div>
+        <button id="btn-close-editor" type="button" class="text-xs font-mono uppercase underline hover:text-noir text-dim transition-colors">Close Editor</button>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-5 text-xs font-mono">
+        <!-- Identification Column -->
+        <div class="space-y-3">
+          <label class="block font-bold uppercase tracking-wider text-noir">Formulation ID &amp; Title</label>
+          <div class="grid grid-cols-2 gap-2">
+            <input type="text" id="edit-doc-id" class="w-full border border-ink/30 p-2 focus:border-noir outline-none" placeholder="Standard ID (e.g., NGF-STD-2025)">
+            <input type="text" id="edit-category" class="w-full border border-ink/30 p-2 focus:border-noir outline-none" placeholder="Category">
+          </div>
+          <input type="text" id="edit-title" class="w-full border border-ink/30 p-2 font-display text-sm focus:border-noir outline-none" placeholder="Recipe Title">
+          <input type="text" id="edit-subtitle" class="w-full border border-ink/30 p-2 font-serif italic text-xs focus:border-noir outline-none" placeholder="Subtitle / Sensory Descriptor">
+          <input type="text" id="edit-image" class="w-full border border-ink/30 p-2 focus:border-noir outline-none" placeholder="Image URL">
+          <textarea id="edit-notes" rows="3" class="w-full border border-ink/30 p-2 font-serif text-xs focus:border-noir outline-none" placeholder="Summary specification note..."></textarea>
+        </div>
+
+        <!-- Technical Parameters Column -->
+        <div class="space-y-3">
+          <label class="block font-bold uppercase tracking-wider text-noir">Process Metadata</label>
+          <div class="grid grid-cols-2 gap-2">
+            <div>
+              <span class="text-[10px] text-dim block uppercase">Active Prep</span>
+              <input type="text" id="edit-prep" class="w-full border border-ink/30 p-2 outline-none" placeholder="Prep Time">
+            </div>
+            <div>
+              <span class="text-[10px] text-dim block uppercase">Chill Time</span>
+              <input type="text" id="edit-cook" class="w-full border border-ink/30 p-2 outline-none" placeholder="Chill Time">
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-2">
+            <div>
+              <span class="text-[10px] text-dim block uppercase">Resting Window</span>
+              <input type="text" id="edit-rest" class="w-full border border-ink/30 p-2 outline-none" placeholder="Rest Window">
+            </div>
+            <div>
+              <span class="text-[10px] text-dim block uppercase">Base Yield (Servings)</span>
+              <input type="number" id="edit-base-yield" class="w-full border border-ink/30 p-2 outline-none" placeholder="Base Yield">
+            </div>
+          </div>
+          <div class="space-y-1">
+            <span class="text-[10px] text-dim block uppercase">Process Envelope</span>
+            <input type="text" id="edit-temp" class="w-full border border-ink/30 p-2 outline-none" placeholder="e.g., chilled custard & layering">
+          </div>
+          <div class="space-y-1">
+            <span class="text-[10px] text-dim block uppercase">Formulation Tags (comma separated)</span>
+            <input type="text" id="edit-tags" class="w-full border border-ink/30 p-2 outline-none" placeholder="NO-BAKE, BANANA PUDDING, CUSTARD">
+          </div>
+
+          <!-- Nutrition Form Inputs -->
+          <div class="space-y-1 pt-2 border-t border-rule">
+            <span class="text-[10px] font-bold uppercase tracking-wider text-noir block">Nutrition Per Serving</span>
+            <input type="text" id="edit-nutr-serving-size" class="w-full border border-ink/30 p-1.5 outline-none text-[11px] mb-1" placeholder="Serving Size Descriptor">
+            <div class="grid grid-cols-3 gap-1.5">
+              <div>
+                <span class="text-[9px] text-dim uppercase block">Calories</span>
+                <input type="number" id="edit-nutr-calories" class="w-full border border-ink/30 p-1 outline-none text-[11px]" placeholder="kcal">
+              </div>
+              <div>
+                <span class="text-[9px] text-dim uppercase block font-bold text-noir">Total Fat (grams)</span>
+                <input type="number" step="0.1" id="edit-nutr-fat" class="w-full border border-ink/30 p-1 outline-none text-[11px] font-bold" placeholder="grams">
+              </div>
+              <div>
+                <span class="text-[9px] text-dim uppercase block font-bold text-noir">Fiber (grams)</span>
+                <input type="number" step="0.1" id="edit-nutr-fiber" class="w-full border border-ink/30 p-1 outline-none text-[11px] font-bold" placeholder="grams">
+              </div>
+            </div>
+            <div class="grid grid-cols-2 gap-1.5 pt-1">
+              <div>
+                <span class="text-[9px] text-dim uppercase block">Total Carbs (grams)</span>
+                <input type="number" step="0.1" id="edit-nutr-carbs" class="w-full border border-ink/30 p-1 outline-none text-[11px]" placeholder="grams">
+              </div>
+              <div>
+                <span class="text-[9px] text-dim uppercase block">Protein (grams)</span>
+                <input type="number" step="0.1" id="edit-nutr-protein" class="w-full border border-ink/30 p-1 outline-none text-[11px]" placeholder="grams">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- JSON Data Model & Apply -->
+        <div class="space-y-3">
+          <div class="flex justify-between items-center">
+            <label class="block font-bold uppercase tracking-wider text-noir">Ingredients &amp; Protocol Matrix</label>
+            <span class="text-[10px] text-dim uppercase">JSON Format</span>
+          </div>
+          <textarea id="edit-json-payload" rows="8" class="w-full font-mono text-[11px] p-2 bg-[#fbfbfa] border border-ink/30 focus:border-noir outline-none leading-relaxed"></textarea>
+          <div class="flex gap-2">
+            <button id="btn-apply-editor" type="button" class="flex-1 bg-noir text-white py-2 text-xs font-mono tracking-widest uppercase hover:bg-dim transition-colors">
+              Update Card
+            </button>
+            <button id="btn-reset-default" type="button" class="border border-ink/40 px-3 py-2 text-xs font-mono uppercase hover:bg-surface transition-colors" title="Reset back to standard recipe">
+              Reset
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN DISPLAY WRAPPER -->
+  <main class="max-w-[96rem] mx-auto min-h-[calc(100vh-56px)] p-4 sm:p-6 md:p-8 lg:p-10 flex items-center justify-center">
+    <div id="recipe-card" class="print-page-wrapper w-full bg-white border border-noir shadow-lg grid grid-cols-1 lg:grid-cols-12 min-h-[820px] max-w-[1360px]">
+
+      <!-- ================= LEFT PANE: BRANDING, PROTOCOL TAGS, SPECIMEN & SUMMARY ================= -->
+      <aside class="print-pane-left lg:col-span-5 border-b lg:border-b-0 lg:border-r border-noir p-6 sm:p-8 md:p-9 flex flex-col justify-between bg-parchment">
+        <div>
+          <!-- Header Branding & Protocol Code -->
+          <div class="border-b-2 border-noir pb-4 mb-6">
+            <div class="flex items-start justify-between">
+              <div>
+                <span class="font-mono text-xs tracking-[0.25em] font-bold block uppercase text-noir">NOE GOOD FOOD</span>
+                <span class="font-mono text-[10px] text-dim tracking-wider uppercase block mt-0.5">THE NOE GOOD FOOD STANDARD • FORMULATION FOLIO</span>
+              </div>
+              <div class="text-right">
+                <span class="font-mono text-[11px] font-bold tracking-widest px-2 py-0.5 bg-noir text-white uppercase inline-block" id="view-doc-id">NGF-STD-2025</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Recipe Title & Subhead -->
+          <div class="space-y-3 mb-6">
+            <div class="flex items-center gap-2">
+              <span class="h-1.5 w-1.5 bg-noir inline-block"></span>
+              <p id="view-category" class="font-mono text-[11px] tracking-[0.2em] uppercase text-dim">CHILLED CUSTARD &amp; LAYERING FORMULATION</p>
+            </div>
+            <h1 id="view-title" class="font-display text-3xl sm:text-4xl md:text-[2.75rem] leading-[1.08] tracking-tight font-semibold text-noir">Magnolia Bakery Classic Banana Pudding</h1>
+            <p id="view-subtitle" class="font-serif italic text-base sm:text-lg text-dim leading-snug">No-bake vanilla custard folded with stiff-peaked heavy cream, ripe sliced bananas, and softened vanilla wafers.</p>
+          </div>
+
+          <!-- Hero Photograph / Analytical Specimen Image -->
+          <div class="relative mb-6 border border-noir overflow-hidden group bg-surface">
+            <img id="view-image" src="https://images.unsplash.com/photo-1587314168485-3236d6710814?q=80&w=1200&auto=format&fit=crop" alt="Magnolia Bakery Classic Banana Pudding" class="print-hero-img w-full h-52 sm:h-60 object-cover" onerror="this.src='https://images.unsplash.com/photo-1574071318508-1cdbab80d002?q=80&w=1200&auto=format&fit=crop'">
+            <div class="no-print absolute bottom-2 right-2 bg-noir text-[10px] text-parchment font-mono px-2 py-0.5 tracking-widest uppercase">
+              SPECIMEN FIG. 01 — CHILLED CUSTARD &amp; WAFER MATRIX
+            </div>
+          </div>
+
+          <!-- Technical Metadata Grid: Prep, Chill, Rest, Yield, Process Envelope -->
+          <div class="border border-noir divide-y divide-noir bg-white text-xs mb-6">
+            <div class="grid grid-cols-2 divide-x divide-noir">
+              <div class="p-3">
+                <span class="block font-mono text-[10px] tracking-wider uppercase text-dim">Prep Time</span>
+                <span id="view-prep" class="font-mono font-bold text-sm text-noir">15 minutes</span>
+              </div>
+              <div class="p-3">
+                <span class="block font-mono text-[10px] tracking-wider uppercase text-dim">Chill Time</span>
+                <span id="view-cook" class="font-mono font-bold text-sm text-noir">4 hours plus</span>
+              </div>
+            </div>
+            <div class="grid grid-cols-3 divide-x divide-noir">
+              <div class="p-2.5">
+                <span class="block font-mono text-[9px] tracking-wider uppercase text-dim">Initial Set</span>
+                <span id="view-rest" class="font-mono font-semibold text-xs text-noir">3 to 4 hours</span>
+              </div>
+              <div class="p-2.5">
+                <span class="block font-mono text-[9px] tracking-wider uppercase text-dim">Base Yield</span>
+                <span id="view-yield" class="font-mono font-semibold text-xs text-noir">10 servings</span>
+              </div>
+              <div class="p-2.5">
+                <span class="block font-mono text-[9px] tracking-wider uppercase text-dim">Process Envelope</span>
+                <span id="view-temp" class="font-mono font-semibold text-xs text-noir">chilled custard &amp; layering</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Formulation Tags -->
+          <div class="flex flex-wrap gap-1.5 mb-6" id="view-tags-container">
+            <span class="font-mono text-[9px] uppercase tracking-wider px-2 py-0.5 border border-noir bg-white font-semibold">NO-BAKE</span>
+            <span class="font-mono text-[9px] uppercase tracking-wider px-2 py-0.5 border border-noir bg-white font-semibold">BANANA PUDDING</span>
+            <span class="font-mono text-[9px] uppercase tracking-wider px-2 py-0.5 border border-noir bg-white font-semibold">VANILLA CUSTARD</span>
+            <span class="font-mono text-[9px] uppercase tracking-wider px-2 py-0.5 border border-noir bg-white font-semibold">CHILLED DESSERT</span>
+            <span class="font-mono text-[9px] uppercase tracking-wider px-2 py-0.5 border border-noir bg-white font-semibold">VANILLA WAFERS</span>
+          </div>
+
+          <!-- Summary Headnote -->
+          <div class="border-l-2 border-noir pl-3 py-0.5 mb-5">
+            <span class="block font-mono text-[10px] uppercase tracking-wider text-dim mb-0.5">Specification Summary</span>
+            <p id="view-notes" class="font-serif italic text-xs leading-relaxed text-ink/90">Chilling the condensed milk and instant vanilla pudding base for at least 3 to 4 hours before folding into stiff-peaked heavy cream produces an airy, scoopable custard. A final 4-hour refrigeration rest hydrates the vanilla wafers into a tender, cake-like crumb.</p>
+          </div>
+
+          <!-- Complete Nutrition Formulation Panel (6 Boxes) -->
+          <div class="nutrition-panel border border-noir bg-white p-3.5 space-y-3">
+            <div class="flex items-center justify-between border-b border-noir pb-1.5">
+              <span class="font-mono text-[10px] tracking-widest uppercase font-bold text-noir flex items-center gap-1.5">
+                <span class="w-1.5 h-1.5 bg-noir inline-block"></span>
+                Nutrition Per Serving
+              </span>
+              <span id="view-nutrition-serving-size" class="font-serif italic text-[11px] text-dim">Serving Size: 1 portion (estimated per 10 servings)</span>
+            </div>
+
+            <!-- Macro Information Boxes Grid -->
+            <div class="grid grid-cols-3 sm:grid-cols-6 gap-2 text-center font-mono">
+              <div class="border border-rule p-2 bg-surface flex flex-col justify-between">
+                <span class="block text-[9px] uppercase tracking-wider text-dim">Calories</span>
+                <span class="text-sm sm:text-base font-bold text-noir my-1"><span id="badge-nutr-calories">490</span></span>
+                <span class="text-[8px] text-dim uppercase">kcal</span>
+              </div>
+              <div class="border border-noir p-2 bg-white ring-1 ring-noir flex flex-col justify-between">
+                <span class="block text-[9px] uppercase tracking-wider font-bold text-noir">Total Fat</span>
+                <span class="text-sm sm:text-base font-bold text-noir my-1"><span id="badge-nutr-fat">23</span></span>
+                <span class="text-[8px] font-bold text-noir uppercase">grams</span>
+              </div>
+              <div class="border border-rule p-2 bg-surface flex flex-col justify-between">
+                <span class="block text-[9px] uppercase tracking-wider text-dim">Total Carbs</span>
+                <span class="text-sm sm:text-base font-bold text-noir my-1"><span id="badge-nutr-carbs">65</span></span>
+                <span class="text-[8px] text-dim uppercase">grams</span>
+              </div>
+              <div class="border border-noir p-2 bg-white ring-1 ring-noir flex flex-col justify-between">
+                <span class="block text-[9px] uppercase tracking-wider font-bold text-noir">Fiber</span>
+                <span class="text-sm sm:text-base font-bold text-noir my-1"><span id="badge-nutr-fiber">1</span></span>
+                <span class="text-[8px] font-bold text-noir uppercase">grams</span>
+              </div>
+              <div class="border border-noir p-2 bg-[#fbfbfa] border-dashed flex flex-col justify-between">
+                <span class="block text-[9px] uppercase tracking-wider font-bold text-noir">Net Carbs</span>
+                <span class="text-sm sm:text-base font-bold text-noir my-1"><span id="badge-nutr-netcarbs">64</span></span>
+                <span class="text-[8px] font-bold text-noir uppercase">grams</span>
+              </div>
+              <div class="border border-rule p-2 bg-surface flex flex-col justify-between">
+                <span class="block text-[9px] uppercase tracking-wider text-dim">Protein</span>
+                <span class="text-sm sm:text-base font-bold text-noir my-1"><span id="badge-nutr-protein">6</span></span>
+                <span class="text-[8px] text-dim uppercase">grams</span>
+              </div>
+            </div>
+
+            <div class="pt-1.5 text-[9px] font-mono text-dim flex justify-between items-center border-t border-rule">
+              <span>* Net Carbohydrates = Total Carbs minus Fiber</span>
+              <span class="uppercase">Standard Metric Form</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Left Pane Footer Authority Stamp -->
+        <div class="pt-6 border-t border-noir mt-6 flex items-center justify-between font-mono text-[10px] text-dim">
+          <span class="font-bold text-noir">NGF STANDARD RECORD</span>
+          <span>REVISION: VERIFIED MASTER</span>
+        </div>
+      </aside>
+
+      <!-- ================= RIGHT PANE: MULTIPLIER CONTROLS, INGREDIENTS & STEPS ================= -->
+      <section class="print-pane-right lg:col-span-7 p-6 sm:p-8 md:p-9 flex flex-col justify-between bg-white">
+        <div>
+          <!-- Servings Multiplier & Interactive Control Strip -->
+          <div class="no-print border border-noir p-3 mb-6 bg-surface flex flex-wrap items-center justify-between gap-3">
+            <div class="flex items-center gap-2">
+              <span class="font-mono text-[11px] uppercase tracking-wider font-bold text-noir">Yield Scaling:</span>
+              <!-- Fast Multiplier Presets: 0.5x = 5, 1x = 10, 2x = 20 -->
+              <div class="inline-flex border border-noir bg-white">
+                <button type="button" onclick="setPresetMultiplier(0.5)" id="btn-mult-half" class="multiplier-btn px-2.5 py-1 font-mono text-xs hover:bg-noir hover:text-white transition-colors border-r border-noir">0.5× (5)</button>
+                <button type="button" onclick="setPresetMultiplier(1)" id="btn-mult-one" class="multiplier-btn px-2.5 py-1 font-mono text-xs bg-noir text-white hover:bg-noir hover:text-white transition-colors border-r border-noir font-bold">1× (10)</button>
+                <button type="button" onclick="setPresetMultiplier(2)" id="btn-mult-two" class="multiplier-btn px-2.5 py-1 font-mono text-xs hover:bg-noir hover:text-white transition-colors">2× (20)</button>
+              </div>
+            </div>
+
+            <!-- Stepper controls -->
+            <div class="flex items-center gap-2">
+              <span class="font-mono text-[10px] uppercase text-dim">Exact Serving Count:</span>
+              <div class="flex items-center border border-noir bg-white focus-within:ring-1 focus-within:ring-noir">
+                <button id="btn-scale-down" type="button" class="w-7 h-7 flex items-center justify-center font-mono text-xs border-r border-noir hover:bg-noir hover:text-white transition-colors" title="Decrease Count">-</button>
+                <input type="number" id="current-servings" min="1" max="999" value="10" class="font-mono text-xs font-bold w-14 text-center border-none outline-none py-1 bg-transparent [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none" title="Type desired count and press Enter">
+                <button id="btn-scale-up" type="button" class="w-7 h-7 flex items-center justify-center font-mono text-xs border-l border-noir hover:bg-noir hover:text-white transition-colors" title="Increase Count">+</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Two-column Method & Ingredients Layout -->
+          <div class="grid-internal grid grid-cols-1 md:grid-cols-12 gap-6 lg:gap-8">
+
+            <!-- INGREDIENTS LISTING (Fully Spelled-Out Units, Categorized, Interactive Checks) -->
+            <div class="md:col-span-5 space-y-5">
+              <div class="border-b-2 border-noir pb-2 flex items-center justify-between">
+                <h2 class="font-mono text-xs tracking-[0.2em] uppercase font-bold text-noir flex items-center gap-1.5">
+                  <span class="w-2 h-2 bg-noir inline-block"></span>
+                  Ingredients
+                </h2>
+                <button onclick="resetChecklist()" type="button" class="no-print font-mono text-[10px] text-dim hover:text-noir underline">
+                  Clear Checks
+                </button>
+              </div>
+
+              <!-- Container for dynamic categories -->
+              <div id="ingredients-container" class="space-y-4"></div>
+
+              <div class="p-3 bg-surface border border-noir text-[11px] font-serif italic text-dim">
+                <strong class="font-sans font-semibold not-italic text-[10px] uppercase block text-noir mb-0.5">Noe Good Food Unit Standard:</strong>
+                All measures are explicitly written out (grams, cups, cans, boxes, whole large). Abbreviations are prohibited.
+              </div>
+            </div>
+
+            <!-- PREPARATION STEPS & ANALYTICAL NOTES -->
+            <div class="md:col-span-7 space-y-5">
+              <div class="border-b-2 border-noir pb-2 flex items-center justify-between">
+                <h2 class="font-mono text-xs tracking-[0.2em] uppercase font-bold text-noir flex items-center gap-1.5">
+                  <span class="w-2 h-2 bg-noir inline-block"></span>
+                  Preparation Steps
+                </h2>
+                <span class="font-mono text-[10px] text-dim tracking-wider uppercase">Numbered Protocol</span>
+              </div>
+
+              <!-- Step list container with checkable items -->
+              <div id="instructions-container" class="space-y-3 font-serif"></div>
+
+              <!-- Chef's Analytical Notes -->
+              <div class="border-t border-noir pt-3 mt-4">
+                <div class="flex items-center gap-2 mb-1.5">
+                  <span class="font-mono text-[10px] tracking-wider uppercase font-bold bg-noir text-white px-2 py-0.5">Chef's Analytical Notes</span>
+                </div>
+                <ul id="view-field-notes" class="list-disc pl-4 font-serif text-xs leading-relaxed space-y-1 text-dim"></ul>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Right Pane Footer Stamp -->
+        <div class="border-t-2 border-noir pt-4 mt-6 flex flex-col sm:flex-row justify-between items-start sm:items-center text-xs font-mono text-dim gap-2">
+          <div class="flex items-center gap-2">
+            <span class="inline-block w-2 h-2 bg-noir"></span>
+            <span class="font-semibold text-noir">NOE GOOD FOOD STANDARD ARCHIVE</span>
+            <span class="hidden sm:inline">• PRECISION RATIOS • ZERO COMPROMISE</span>
+          </div>
+          <div class="italic font-serif text-ink text-sm">
+            "Balance, precision, and proportion in culinary formulation."
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <script>
+    // Canonical Recipe abiding by the Noe Good Food Standard
+    const defaultRecipe = {
+      docId: "NGF-STD-2025",
+      category: "CHILLED CUSTARD & LAYERING FORMULATION",
+      title: "Magnolia Bakery Classic Banana Pudding",
+      subtitle: "No-bake vanilla custard folded with stiff-peaked heavy cream, ripe sliced bananas, and softened vanilla wafers.",
+      notes: "Chilling the condensed milk and instant vanilla pudding base for at least 3 to 4 hours before folding into stiff-peaked heavy cream produces an airy, scoopable custard. A final 4-hour refrigeration rest hydrates the vanilla wafers into a tender, cake-like crumb.",
+      nutrition: {
+        servingSize: "Serving Size: 1 portion (estimated per 10 servings)",
+        calories: 490,
+        proteinGrams: 6,
+        fatGrams: 23,
+        carbsGrams: 65,
+        fiberGrams: 1
+      },
+      image: "https://images.unsplash.com/photo-1587314168485-3236d6710814?q=80&w=1200&auto=format&fit=crop",
+      prepTime: "15 minutes",
+      cookTime: "4 hours plus",
+      restTime: "3 to 4 hours",
+      baseYield: 10,
+      processTemp: "chilled custard & layering",
+      tags: ["NO-BAKE", "BANANA PUDDING", "VANILLA CUSTARD", "CHILLED DESSERT", "VANILLA WAFERS"],
+      fieldNotes: [
+        "Cold custard prerequisite: Chill the condensed milk, ice-cold water, and instant vanilla pudding mixture thoroughly for 3 to 4 hours (or overnight) until thick and scoopable before folding into whipped heavy cream.",
+        "Whipped cream & banana selection: Whip cold heavy cream to stiff peaks without over-whipping, and choose yellow bananas with minimal brown spots sliced one-quarter inch thick to maintain structure.",
+        "Hydration window & service timing: Chill the layered pudding for at least 4 hours until the vanilla wafers soften into a cakey texture, garnish just before serving, and enjoy within 12 to 24 hours."
+      ],
+      ingredientGroups: [
+        {
+          groupName: "Classic Pudding Base",
+          items: [
+            { amount: 1, unit: "can", item: "sweetened condensed milk (14 ounces)" },
+            { amount: 1.5, unit: "cups", item: "ice-cold water" },
+            { amount: 1, unit: "box", item: "instant vanilla pudding mix (3.4 ounces, dry)" }
+          ]
+        },
+        {
+          groupName: "Cream & Layering",
+          items: [
+            { amount: 3, unit: "cups", item: "cold heavy cream" },
+            { amount: 1, unit: "box", item: "vanilla wafers (11 ounces)" },
+            { amount: 4, unit: "cups", item: "ripe bananas, sliced one-quarter inch thick" }
+          ]
+        }
+      ],
+      steps: [
+        {
+          index: "01",
+          phase: "Make Pudding Mixture",
+          text: "In a large bowl, whisk together {{1|can}} sweetened condensed milk and {{1.5|cups}} ice-cold water until combined. Add {{1|box}} dry instant vanilla pudding mix and beat with a mixer or whisk for 2 minutes until smooth."
+        },
+        {
+          index: "02",
+          phase: "First Chill",
+          text: "Cover the bowl with plastic wrap and refrigerate for at least 3 to 4 hours (or overnight) until the mixture is thick and set. It must be completely cold and scoopable before proceeding."
+        },
+        {
+          index: "03",
+          phase: "Whip Heavy Cream",
+          text: "In a separate, cold bowl, whip {{3|cups}} cold heavy cream until stiff peaks form. Do not over-whip."
+        },
+        {
+          index: "04",
+          phase: "Fold & Combine",
+          text: "Gently fold the chilled vanilla pudding mixture from Step 2 into the whipped cream from Step 3 using a rubber spatula until smooth and no streaks of pudding remain."
+        },
+        {
+          index: "05",
+          phase: "Prep Bananas",
+          text: "Slice {{4|cups}} ripe bananas about one-quarter inch thick. Use yellow bananas with minimal brown spots to prevent excess mushiness or rapid browning."
+        },
+        {
+          index: "06",
+          phase: "Layer the Pudding",
+          text: "In a large trifle bowl or 9-by-13-inch dish, spread a thin layer of pudding base, then layer one-third of {{1|box}} vanilla wafers, one-third of the sliced bananas, and a thick layer of pudding base. Repeat twice more and finish with a thick layer of pudding base on top."
+        },
+        {
+          index: "07",
+          phase: "Final Chill & Serve",
+          text: "Cover tightly and refrigerate for another 4 hours or until the wafers are soft and cakey. Garnish with whole or crushed wafers just before serving, and enjoy within 12 to 24 hours."
+        }
+      ]
+    };
+
+    // State management
+    let recipeState = JSON.parse(JSON.stringify(defaultRecipe));
+    let currentServingScale = recipeState.baseYield;
+
+    function formatAmount(baseAmount, baseYield, currentYield) {
+      if (baseAmount === undefined || baseAmount === null || isNaN(baseAmount)) return '';
+      const scaled = (baseAmount / baseYield) * currentYield;
+      if (Math.abs(scaled - Math.round(scaled)) < 0.02) {
+        return Math.round(scaled).toString();
+      }
+      if (scaled < 1) {
+        return parseFloat(scaled.toFixed(2)).toString();
+      }
+      return parseFloat(scaled.toFixed(1)).toString();
+    }
+
+    function formatUnitLabel(unit, amountNum) {
+      if (!unit) return '';
+      const val = parseFloat(amountNum);
+      const isSingular = Math.abs(val - 1) < 0.001;
+      const mapSingularToPlural = {
+        cup: 'cups',
+        can: 'cans',
+        box: 'boxes',
+        gram: 'grams',
+        tablespoon: 'tablespoons',
+        teaspoon: 'teaspoons'
+      };
+      const mapPluralToSingular = {
+        cups: 'cup',
+        cans: 'can',
+        boxes: 'box',
+        grams: 'gram',
+        tablespoons: 'tablespoon',
+        teaspoons: 'teaspoon'
+      };
+      if (isSingular && mapPluralToSingular[unit]) {
+        return mapPluralToSingular[unit];
+      }
+      if (!isSingular && mapSingularToPlural[unit]) {
+        return mapSingularToPlural[unit];
+      }
+      return unit;
+    }
+
+    function formatStepUnitPhrase(rawUnit, scaledAmountStr) {
+      const num = parseFloat(scaledAmountStr);
+      const isSingular = Math.abs(num - 1) < 0.001;
+      const trimmed = rawUnit.trim();
+
+      if (/^cup(s)?$/i.test(trimmed)) {
+        return isSingular ? 'cup' : 'cups';
+      }
+      if (/^can(s)?$/i.test(trimmed)) {
+        return isSingular ? 'can' : 'cans';
+      }
+      if (/^box(es)?$/i.test(trimmed)) {
+        return isSingular ? 'box' : 'boxes';
+      }
+      if (/^gram(s)?$/i.test(trimmed)) {
+        return isSingular ? 'gram' : 'grams';
+      }
+      if (/^tablespoon(s)?$/i.test(trimmed)) {
+        return isSingular ? 'tablespoon' : 'tablespoons';
+      }
+      if (/^teaspoon(s)?$/i.test(trimmed)) {
+        return isSingular ? 'teaspoon' : 'teaspoons';
+      }
+      return trimmed;
+    }
+
+    function formatScaledStepText(text, baseYield, currentYield) {
+      if (!text) return '';
+      return text.replace(/\{\{\s*([\d.]+)\s*\|\s*([^}]+?)\s*\}\}/g, (_, rawAmt, rawUnit) => {
+        const baseVal = parseFloat(rawAmt);
+        if (isNaN(baseVal)) return rawAmt;
+        const scaledVal = formatAmount(baseVal, baseYield, currentYield);
+        const unitLabel = formatStepUnitPhrase(rawUnit, scaledVal);
+        return `<span class="font-mono font-bold text-noir">${scaledVal} ${unitLabel}</span>`;
+      });
+    }
+
+    function getScaledStepPlainText(text, baseYield, currentYield) {
+      if (!text) return '';
+      return text.replace(/\{\{\s*([\d.]+)\s*\|\s*([^}]+?)\s*\}\}/g, (_, rawAmt, rawUnit) => {
+        const baseVal = parseFloat(rawAmt);
+        if (isNaN(baseVal)) return rawAmt;
+        const scaledVal = formatAmount(baseVal, baseYield, currentYield);
+        const unitLabel = formatStepUnitPhrase(rawUnit, scaledVal);
+        return `${scaledVal} ${unitLabel}`;
+      });
+    }
+
+    function parseApproxMeasure(rawVal) {
+      if (rawVal.includes('/')) {
+        const parts = rawVal.split(/\s+/);
+        if (parts.length === 2) {
+          const [num, den] = parts[1].split('/').map(Number);
+          return Number(parts[0]) + (den ? num / den : 0);
+        } else {
+          const [num, den] = parts[0].split('/').map(Number);
+          return den ? num / den : 0;
+        }
+      }
+      return parseFloat(rawVal);
+    }
+
+    function formatScaledItemText(item, baseYield, currentYield) {
+      const baseText = item.item || '';
+
+      if (item.approxAmount !== undefined && item.approxAmount !== null && item.approxUnit) {
+        const scaledApprox = formatAmount(item.approxAmount, baseYield, currentYield);
+        let unit = item.approxUnit;
+        const num = parseFloat(scaledApprox);
+        if (num === 1 && unit.endsWith('s') && !unit.endsWith('ss')) {
+          unit = unit.slice(0, -1);
+        } else if (num !== 1 && !unit.endsWith('s')) {
+          unit = unit + 's';
+        }
+        return `${baseText} <span class="text-dim font-mono text-[11px]">(approx. ${scaledApprox} ${unit})</span>`;
+      }
+
+      const approxRegex = /\((?:approx\.?\s*)?([\d\s\.\/]+)\s*([a-zA-Z\s]+)\)/i;
+      const match = baseText.match(approxRegex);
+      if (match) {
+        const numericVal = parseApproxMeasure(match[1].trim());
+        const rawUnit = match[2].trim();
+
+        if (!isNaN(numericVal) && numericVal > 0) {
+          const scaledVal = formatAmount(numericVal, baseYield, currentYield);
+          let unit = rawUnit;
+          const num = parseFloat(scaledVal);
+          if (num === 1 && unit.endsWith('s') && !unit.endsWith('ss')) {
+            unit = unit.slice(0, -1);
+          } else if (num !== 1 && !unit.endsWith('s')) {
+            unit = unit + 's';
+          }
+          const cleanPrefix = baseText.replace(match[0], '').trim();
+          return `${cleanPrefix} <span class="text-dim font-mono text-[11px]">(approx. ${scaledVal} ${unit})</span>`;
+        }
+      }
+
+      return baseText;
+    }
+
+    function getScaledItemPlainText(item, baseYield, currentYield) {
+      const baseText = item.item || '';
+
+      if (item.approxAmount !== undefined && item.approxAmount !== null && item.approxUnit) {
+        const scaledApprox = formatAmount(item.approxAmount, baseYield, currentYield);
+        let unit = item.approxUnit;
+        const num = parseFloat(scaledApprox);
+        if (num === 1 && unit.endsWith('s') && !unit.endsWith('ss')) {
+          unit = unit.slice(0, -1);
+        } else if (num !== 1 && !unit.endsWith('s')) {
+          unit = unit + 's';
+        }
+        return `${baseText} (approx. ${scaledApprox} ${unit})`;
+      }
+
+      const approxRegex = /\((?:approx\.?\s*)?([\d\s\.\/]+)\s*([a-zA-Z\s]+)\)/i;
+      const match = baseText.match(approxRegex);
+      if (match) {
+        const numericVal = parseApproxMeasure(match[1].trim());
+        const rawUnit = match[2].trim();
+
+        if (!isNaN(numericVal) && numericVal > 0) {
+          const scaledVal = formatAmount(numericVal, baseYield, currentYield);
+          let unit = rawUnit;
+          const num = parseFloat(scaledVal);
+          if (num === 1 && unit.endsWith('s') && !unit.endsWith('ss')) {
+            unit = unit.slice(0, -1);
+          } else if (num !== 1 && !unit.endsWith('s')) {
+            unit = unit + 's';
+          }
+          const cleanPrefix = baseText.replace(match[0], '').trim();
+          return `${cleanPrefix} (approx. ${scaledVal} ${unit})`;
+        }
+      }
+
+      return baseText;
+    }
+
+    function showToast(message) {
+      const toast = document.getElementById('toast-notify');
+      if (!toast) return;
+      toast.textContent = message;
+      toast.classList.remove('translate-y-20', 'opacity-0');
+      setTimeout(() => {
+        toast.classList.add('translate-y-20', 'opacity-0');
+      }, 2800);
+    }
+
+    function renderView() {
+      document.getElementById('view-doc-id').textContent = recipeState.docId || 'NGF-STD-2025';
+      document.getElementById('view-category').textContent = recipeState.category || 'NOE GOOD FOOD STANDARD RECIPE';
+      document.getElementById('view-title').textContent = recipeState.title;
+      document.getElementById('view-subtitle').textContent = recipeState.subtitle;
+      document.getElementById('view-prep').textContent = recipeState.prepTime;
+      document.getElementById('view-cook').textContent = recipeState.cookTime;
+      document.getElementById('view-rest').textContent = recipeState.restTime || 'None';
+      document.getElementById('view-temp').textContent = recipeState.processTemp || 'Ambient';
+      document.getElementById('view-yield').textContent = `${recipeState.baseYield} servings`;
+      document.getElementById('view-notes').textContent = recipeState.notes || '';
+
+      const servingsInput = document.getElementById('current-servings');
+      if (servingsInput && document.activeElement !== servingsInput) {
+        servingsInput.value = currentServingScale;
+      }
+
+      const nutr = recipeState.nutrition || {
+        servingSize: "Serving Size: 1 portion (estimated per 10 servings)",
+        calories: 490,
+        proteinGrams: 6,
+        fatGrams: 23,
+        carbsGrams: 65,
+        fiberGrams: 1
+      };
+
+      const netCarbs = Math.max(0, parseFloat(((Number(nutr.carbsGrams) || 0) - (Number(nutr.fiberGrams) || 0)).toFixed(1)));
+
+      const setSafeText = (id, val) => {
+        const el = document.getElementById(id);
+        if (el) el.textContent = val;
+      };
+
+      setSafeText('view-nutrition-serving-size', nutr.servingSize || "Serving Size: 1 portion (estimated per 10 servings)");
+      setSafeText('badge-nutr-calories', nutr.calories ?? 0);
+      setSafeText('badge-nutr-fat', nutr.fatGrams ?? 0);
+      setSafeText('badge-nutr-carbs', nutr.carbsGrams ?? 0);
+      setSafeText('badge-nutr-fiber', nutr.fiberGrams ?? 0);
+      setSafeText('badge-nutr-netcarbs', netCarbs);
+      setSafeText('badge-nutr-protein', nutr.proteinGrams ?? 0);
+
+      const imgElem = document.getElementById('view-image');
+      if (recipeState.image) {
+        imgElem.src = recipeState.image;
+        imgElem.classList.remove('hidden');
+      } else {
+        imgElem.classList.add('hidden');
+      }
+
+      const tagContainer = document.getElementById('view-tags-container');
+      tagContainer.innerHTML = '';
+      (recipeState.tags || []).forEach(tag => {
+        const badge = document.createElement('span');
+        badge.className = 'font-mono text-[9px] uppercase tracking-wider px-2 py-0.5 border border-noir bg-white font-semibold';
+        badge.textContent = tag;
+        tagContainer.appendChild(badge);
+      });
+
+      const notesList = document.getElementById('view-field-notes');
+      notesList.innerHTML = '';
+      (recipeState.fieldNotes || []).forEach(note => {
+        const li = document.createElement('li');
+        li.textContent = note;
+        notesList.appendChild(li);
+      });
+
+      const ingContainer = document.getElementById('ingredients-container');
+      ingContainer.innerHTML = '';
+
+      recipeState.ingredientGroups.forEach((group, gIdx) => {
+        const groupWrap = document.createElement('div');
+        groupWrap.className = 'space-y-1.5';
+
+        const title = document.createElement('h3');
+        title.className = 'font-mono text-[11px] font-bold uppercase tracking-wider text-noir border-b border-noir/30 pb-1';
+        title.textContent = group.groupName;
+        groupWrap.appendChild(title);
+
+        const list = document.createElement('ul');
+        list.className = 'space-y-1.5 text-xs';
+
+        group.items.forEach((item, iIdx) => {
+          const checkId = `ing-${gIdx}-${iIdx}`;
+          const li = document.createElement('li');
+          li.className = 'flex items-start gap-2.5';
+
+          const scaledAmount = formatAmount(item.amount, recipeState.baseYield, currentServingScale);
+          const unitLabel = formatUnitLabel(item.unit, scaledAmount);
+          const formattedItem = formatScaledItemText(item, recipeState.baseYield, currentServingScale);
+
+          li.innerHTML = `
+            <input type="checkbox" id="${checkId}" class="ingredient-check print-checkbox mt-0.5 h-3.5 w-3.5 rounded-none border-noir text-noir focus:ring-0 accent-noir cursor-pointer">
+            <label for="${checkId}" class="cursor-pointer select-none leading-relaxed transition-colors flex-1">
+              <span class="ingredient-amount font-mono font-bold text-noir">${scaledAmount} ${unitLabel}</span>
+              <span class="ingredient-text font-serif text-ink ml-1">${formattedItem}</span>
+            </label>
+          `;
+          list.appendChild(li);
+        });
+
+        groupWrap.appendChild(list);
+        ingContainer.appendChild(groupWrap);
+      });
+
+      const stepContainer = document.getElementById('instructions-container');
+      stepContainer.innerHTML = '';
+
+      recipeState.steps.forEach((step, idx) => {
+        const stepCheckId = `step-${idx}`;
+        const stepEl = document.createElement('div');
+        stepEl.className = 'flex gap-3 items-start group';
+
+        const stepNum = step.index || (idx + 1).toString().padStart(2, '0');
+        const renderedStepText = formatScaledStepText(step.text, recipeState.baseYield, currentServingScale);
+
+        stepEl.innerHTML = `
+          <div class="font-mono text-xs font-bold bg-noir text-white px-2 py-0.5 flex-shrink-0 text-center min-w-[2.2rem]">
+            ${stepNum}
+          </div>
+          <div class="flex items-start gap-2 flex-1">
+            <input type="checkbox" id="${stepCheckId}" class="step-check print-checkbox mt-1 h-3.5 w-3.5 rounded-none border-noir text-noir focus:ring-0 accent-noir cursor-pointer flex-shrink-0">
+            <label for="${stepCheckId}" class="cursor-pointer select-none space-y-0.5 flex-1">
+              <span class="step-body block space-y-0.5">
+                <span class="font-mono text-[10px] tracking-wider uppercase text-dim font-bold block">
+                  ${step.phase || 'Procedure Step'}
+                </span>
+                <span class="text-xs sm:text-[13px] leading-relaxed text-ink/90 font-serif block">
+                  ${renderedStepText}
+                </span>
+              </span>
+            </label>
+          </div>
+        `;
+        stepContainer.appendChild(stepEl);
+      });
+    }
+
+    function setPresetMultiplier(factor) {
+      currentServingScale = Math.max(1, Math.round(recipeState.baseYield * factor));
+
+      document.querySelectorAll('.multiplier-btn').forEach(btn => {
+        btn.classList.remove('bg-noir', 'text-white', 'font-bold');
+      });
+      if (Math.abs(factor - 0.5) < 0.01) document.getElementById('btn-mult-half')?.classList.add('bg-noir', 'text-white', 'font-bold');
+      if (Math.abs(factor - 1) < 0.01) document.getElementById('btn-mult-one')?.classList.add('bg-noir', 'text-white', 'font-bold');
+      if (Math.abs(factor - 2) < 0.01) document.getElementById('btn-mult-two')?.classList.add('bg-noir', 'text-white', 'font-bold');
+
+      renderView();
+    }
+
+    const scaleDownBtn = document.getElementById('btn-scale-down');
+    if (scaleDownBtn) {
+      scaleDownBtn.addEventListener('click', () => {
+        if (currentServingScale > 1) {
+          currentServingScale -= 1;
+          checkPresetMatch();
+          renderView();
+        }
+      });
+    }
+
+    const scaleUpBtn = document.getElementById('btn-scale-up');
+    if (scaleUpBtn) {
+      scaleUpBtn.addEventListener('click', () => {
+        if (currentServingScale < 999) {
+          currentServingScale += 1;
+          checkPresetMatch();
+          renderView();
+        }
+      });
+    }
+
+    const servingsInputField = document.getElementById('current-servings');
+
+    function applyManualServings() {
+      if (!servingsInputField) return;
+      const val = parseInt(servingsInputField.value, 10);
+      if (!isNaN(val) && val > 0) {
+        currentServingScale = Math.min(Math.max(1, val), 999);
+        checkPresetMatch();
+        renderView();
+        showToast(`Yield scaled to ${currentServingScale} servings.`);
+      } else {
+        servingsInputField.value = currentServingScale;
+      }
+    }
+
+    if (servingsInputField) {
+      servingsInputField.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+          e.preventDefault();
+          applyManualServings();
+          servingsInputField.blur();
+        }
+      });
+
+      servingsInputField.addEventListener('change', () => {
+        applyManualServings();
+      });
+    }
+
+    function checkPresetMatch() {
+      clearMultiplierActive();
+      const half = Math.round(recipeState.baseYield * 0.5);
+      const one = recipeState.baseYield;
+      const two = Math.round(recipeState.baseYield * 2);
+
+      if (currentServingScale === half) {
+        document.getElementById('btn-mult-half')?.classList.add('bg-noir', 'text-white', 'font-bold');
+      } else if (currentServingScale === one) {
+        document.getElementById('btn-mult-one')?.classList.add('bg-noir', 'text-white', 'font-bold');
+      } else if (currentServingScale === two) {
+        document.getElementById('btn-mult-two')?.classList.add('bg-noir', 'text-white', 'font-bold');
+      }
+    }
+
+    function clearMultiplierActive() {
+      document.querySelectorAll('.multiplier-btn').forEach(btn => {
+        btn.classList.remove('bg-noir', 'text-white', 'font-bold');
+      });
+    }
+
+    function resetChecklist() {
+      document.querySelectorAll('.ingredient-check, .step-check').forEach(chk => {
+        chk.checked = false;
+      });
+      showToast("Checklist reset to unchecked state.");
+    }
+
+    // Dedicated Print Button Handler with Fallback
+    const printCardBtn = document.getElementById('btn-print-card');
+    if (printCardBtn) {
+      printCardBtn.addEventListener('click', () => {
+        try {
+          window.focus();
+          window.print();
+          showToast("Press Ctrl+P / Cmd+P if the print dialog does not appear.");
+        } catch (err) {
+          showToast("Press Ctrl+P / Cmd+P to print");
+        }
+      });
+    }
+
+    // Null-Safe Live Editor Bindings (Stripped cleanly on standalone export)
+    const editorPane = document.getElementById('recipe-editor-pane');
+    const toggleEditorBtn = document.getElementById('btn-toggle-editor');
+    const closeEditorBtn = document.getElementById('btn-close-editor');
+    const applyEditorBtn = document.getElementById('btn-apply-editor');
+    const resetDefaultBtn = document.getElementById('btn-reset-default');
+
+    function populateEditorForm() {
+      if (!editorPane) return;
+      document.getElementById('edit-doc-id').value = recipeState.docId || 'NGF-STD-2025';
+      document.getElementById('edit-category').value = recipeState.category || '';
+      document.getElementById('edit-title').value = recipeState.title;
+      document.getElementById('edit-subtitle').value = recipeState.subtitle;
+      document.getElementById('edit-notes').value = recipeState.notes || '';
+      document.getElementById('edit-image').value = recipeState.image || '';
+      document.getElementById('edit-prep').value = recipeState.prepTime;
+      document.getElementById('edit-cook').value = recipeState.cookTime;
+      document.getElementById('edit-rest').value = recipeState.restTime || '';
+      document.getElementById('edit-base-yield').value = recipeState.baseYield;
+      document.getElementById('edit-temp').value = recipeState.processTemp || '';
+      document.getElementById('edit-tags').value = (recipeState.tags || []).join(', ');
+
+      const nutr = recipeState.nutrition || {};
+      const setSafeVal = (id, val) => {
+        const el = document.getElementById(id);
+        if (el) el.value = val;
+      };
+
+      setSafeVal('edit-nutr-serving-size', nutr.servingSize || '');
+      setSafeVal('edit-nutr-calories', nutr.calories ?? '');
+      setSafeVal('edit-nutr-protein', nutr.proteinGrams ?? '');
+      setSafeVal('edit-nutr-fat', nutr.fatGrams ?? '');
+      setSafeVal('edit-nutr-carbs', nutr.carbsGrams ?? '');
+      setSafeVal('edit-nutr-fiber', nutr.fiberGrams ?? '');
+
+      document.getElementById('edit-json-payload').value = JSON.stringify({
+        ingredientGroups: recipeState.ingredientGroups,
+        steps: recipeState.steps,
+        fieldNotes: recipeState.fieldNotes
+      }, null, 2);
+    }
+
+    if (toggleEditorBtn && editorPane) {
+      toggleEditorBtn.addEventListener('click', () => {
+        const isHidden = editorPane.classList.contains('hidden');
+        if (isHidden) {
+          populateEditorForm();
+          editorPane.classList.remove('hidden');
+          const label = document.getElementById('editor-btn-label');
+          if (label) label.textContent = 'Hide Form';
+        } else {
+          editorPane.classList.add('hidden');
+          const label = document.getElementById('editor-btn-label');
+          if (label) label.textContent = 'Edit Card';
+        }
+      });
+    }
+
+    if (closeEditorBtn && editorPane) {
+      closeEditorBtn.addEventListener('click', () => {
+        editorPane.classList.add('hidden');
+        const label = document.getElementById('editor-btn-label');
+        if (label) label.textContent = 'Edit Card';
+      });
+    }
+
+    if (applyEditorBtn && editorPane) {
+      applyEditorBtn.addEventListener('click', () => {
+        try {
+          const parsed = JSON.parse(document.getElementById('edit-json-payload').value);
+
+          recipeState.docId = document.getElementById('edit-doc-id').value || "NGF-STD-2025";
+          recipeState.category = document.getElementById('edit-category').value || "NOE GOOD FOOD STANDARD";
+          recipeState.title = document.getElementById('edit-title').value || "Magnolia Bakery Classic Banana Pudding";
+          recipeState.subtitle = document.getElementById('edit-subtitle').value || "";
+          recipeState.notes = document.getElementById('edit-notes').value || "";
+          recipeState.image = document.getElementById('edit-image').value || "";
+          recipeState.prepTime = document.getElementById('edit-prep').value || "15 minutes";
+          recipeState.cookTime = document.getElementById('edit-cook').value || "4 hours plus";
+          recipeState.restTime = document.getElementById('edit-rest').value || "None";
+          recipeState.baseYield = parseInt(document.getElementById('edit-base-yield').value, 10) || 10;
+          recipeState.processTemp = document.getElementById('edit-temp').value || "Standard";
+
+          recipeState.nutrition = {
+            servingSize: document.getElementById('edit-nutr-serving-size').value || "Serving Size: 1 portion (estimated per 10 servings)",
+            calories: Number(document.getElementById('edit-nutr-calories').value) || 0,
+            proteinGrams: Number(document.getElementById('edit-nutr-protein').value) || 0,
+            fatGrams: Number(document.getElementById('edit-nutr-fat').value) || 0,
+            carbsGrams: Number(document.getElementById('edit-nutr-carbs').value) || 0,
+            fiberGrams: Number(document.getElementById('edit-nutr-fiber').value) || 0
+          };
+
+          const rawTags = document.getElementById('edit-tags').value;
+          recipeState.tags = rawTags.split(',').map(t => t.trim()).filter(Boolean);
+
+          if (parsed.ingredientGroups) recipeState.ingredientGroups = parsed.ingredientGroups;
+          if (parsed.steps) recipeState.steps = parsed.steps;
+          if (parsed.fieldNotes) recipeState.fieldNotes = parsed.fieldNotes;
+
+          currentServingScale = recipeState.baseYield;
+          checkPresetMatch();
+          renderView();
+          editorPane.classList.add('hidden');
+          const label = document.getElementById('editor-btn-label');
+          if (label) label.textContent = 'Edit Card';
+          showToast("Noe Good Food Standard Card compiled.");
+        } catch (err) {
+          showToast("JSON Syntax error in ingredients/steps payload.");
+        }
+      });
+    }
+
+    if (resetDefaultBtn) {
+      resetDefaultBtn.addEventListener('click', () => {
+        recipeState = JSON.parse(JSON.stringify(defaultRecipe));
+        currentServingScale = recipeState.baseYield;
+        checkPresetMatch();
+        populateEditorForm();
+        renderView();
+        showToast("Reset to master default standard.");
+      });
+    }
+
+    const copyMenuBtn = document.getElementById('btn-copy-menu');
+    const copyDropdown = document.getElementById('copy-dropdown-menu');
+
+    if (copyMenuBtn && copyDropdown) {
+      copyMenuBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        copyDropdown.classList.toggle('hidden');
+      });
+
+      document.addEventListener('click', () => {
+        if (!copyDropdown.classList.contains('hidden')) {
+          copyDropdown.classList.add('hidden');
+        }
+      });
+    }
+
+    function copyStringToClipboard(str, successMsg) {
+      const el = document.createElement('textarea');
+      el.value = str;
+      el.setAttribute('readonly', '');
+      el.style.position = 'absolute';
+      el.style.left = '-9999px';
+      document.body.appendChild(el);
+      el.select();
+      try {
+        document.execCommand('copy');
+        showToast(successMsg);
+      } catch (err) {
+        showToast("Unable to copy to clipboard.");
+      }
+      document.body.removeChild(el);
+    }
+
+    function generateStandaloneHTMLDocument() {
+      const clone = document.documentElement.cloneNode(true);
+
+      // Remove compiled Tailwind runtime style tags so the exported file stays clean and relies on the Tailwind CDN
+      clone.querySelectorAll('head style').forEach(styleEl => {
+        if (styleEl.textContent.includes('--tw-border-spacing-x')) {
+          styleEl.remove();
+        }
+      });
+
+      // Prune editor trigger button and drawer from exported DOM
+      const editorBtn = clone.querySelector('#btn-toggle-editor');
+      if (editorBtn) editorBtn.remove();
+
+      const editorDrawer = clone.querySelector('#recipe-editor-pane');
+      if (editorDrawer) editorDrawer.remove();
+
+      // Reset transient UI states
+      const dropdown = clone.querySelector('#copy-dropdown-menu');
+      if (dropdown) dropdown.classList.add('hidden');
+
+      const toast = clone.querySelector('#toast-notify');
+      if (toast) {
+        toast.classList.add('translate-y-20', 'opacity-0');
+        toast.textContent = 'Notice message goes here';
+      }
+
+      // Sync active recipeState JSON into the embedded script cleanly
+      const scriptTag = clone.querySelector('script:not([src])');
+      if (scriptTag) {
+        let scriptContent = scriptTag.textContent;
+        const serializedState = JSON.stringify(recipeState, null, 2);
+        scriptContent = scriptContent.replace(
+          /const defaultRecipe = \{[\s\S]*?\};\n\s*\/\/ State management/,
+          `const defaultRecipe = ${serializedState};\n\n    // State management`
+        );
+        scriptTag.textContent = scriptContent;
+      }
+
+      return "<!DOCTYPE html>\n" + clone.outerHTML;
+    }
+
+    function downloadRecipeHTML() {
+      const htmlContent = generateStandaloneHTMLDocument();
+      const sanitizedTitle = (recipeState.title || 'recipe')
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/^-|-$/g, '');
+      const fileName = `${recipeState.docId || 'NGF-STD'}-${sanitizedTitle}.html`;
+
+      try {
+        const blob = new Blob([htmlContent], { type: 'text/html;charset=utf-8' });
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = fileName;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        setTimeout(() => URL.revokeObjectURL(url), 1500);
+        showToast(`Downloaded clean reader file: "${fileName}"`);
+      } catch (err) {
+        copyStringToClipboard(htmlContent, "Download blocked by environment; clean reader HTML copied to clipboard!");
+      }
+    }
+
+    function copyRecipeMarkdown() {
+      let md = `# ${recipeState.title}\n`;
+      md += `*The Noe Good Food Standard — Formulation ID: ${recipeState.docId}*\n\n`;
+      md += `> ${recipeState.subtitle}\n\n`;
+      md += `**Prep Time:** ${recipeState.prepTime} | **Chill Time:** ${recipeState.cookTime} | **Initial Set:** ${recipeState.restTime} | **Yield:** ${currentServingScale} servings (Scaled)\n\n`;
+
+      if (recipeState.nutrition) {
+        const n = recipeState.nutrition;
+        const netCarbs = Math.max(0, parseFloat(((Number(n.carbsGrams) || 0) - (Number(n.fiberGrams) || 0)).toFixed(1)));
+        md += `### Nutrition Per Serving\n`;
+        md += `*${n.servingSize || 'Per portion'}*\n`;
+        md += `- **Calories:** ${n.calories} calories\n`;
+        md += `- **Total Fat:** ${n.fatGrams} grams\n`;
+        md += `- **Total Carbohydrates:** ${n.carbsGrams} grams\n`;
+        md += `- **Fiber:** ${n.fiberGrams} grams\n`;
+        md += `- **Net Carbohydrates:** ${netCarbs} grams\n`;
+        md += `- **Protein:** ${n.proteinGrams} grams\n\n`;
+      }
+
+      md += `### Ingredients (Unabbreviated Units)\n`;
+      recipeState.ingredientGroups.forEach(grp => {
+        md += `\n**${grp.groupName}**\n`;
+        grp.items.forEach(it => {
+          const amt = formatAmount(it.amount, recipeState.baseYield, currentServingScale);
+          const unitLabel = formatUnitLabel(it.unit, amt);
+          const itemText = getScaledItemPlainText(it, recipeState.baseYield, currentServingScale);
+          md += `- [ ] **${amt} ${unitLabel}** ${itemText}\n`;
+        });
+      });
+      md += `\n### Preparation Steps\n`;
+      recipeState.steps.forEach((st, idx) => {
+        const num = st.index || (idx + 1).toString().padStart(2, '0');
+        const scaledStepProse = getScaledStepPlainText(st.text, recipeState.baseYield, currentServingScale);
+        md += `${num}. **${st.phase}** — ${scaledStepProse}\n\n`;
+      });
+      if (recipeState.fieldNotes && recipeState.fieldNotes.length) {
+        md += `### Chef's Analytical Notes\n`;
+        recipeState.fieldNotes.forEach(note => {
+          md += `- ${note}\n`;
+        });
+      }
+      copyStringToClipboard(md, "Recipe copied as Markdown (.md)");
+    }
+
+    function copyRecipeHTML() {
+      const fullDoc = generateStandaloneHTMLDocument();
+      copyStringToClipboard(fullDoc, "Clean reader HTML copied to clipboard (editor removed).");
+    }
+
+    function exportRecipeJSON() {
+      const jsonStr = JSON.stringify(recipeState, null, 2);
+      copyStringToClipboard(jsonStr, "Formulation JSON copied to clipboard.");
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      renderView();
+    });
+  </script>
+</body>
+</html>
