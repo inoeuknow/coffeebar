@@ -1,485 +1,1543 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Classic Keto Chicken Salad - Analytical Standard</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,700;1,900&family=Inter:wght@400;500;600;700;800;900&display=swap');
-
-        @page {
-            size: 11in 8.5in landscape;
-            margin: 0;
+<html lang="en"><head><script>(function(){
+function slug(s){
+  try{return s.trim().toLowerCase().replace(/[^\p{L}\p{N}\s_-]/gu,'').replace(/\s+/g,'-');}
+  catch(e){return s.trim().toLowerCase().replace(/[^a-z0-9\s_-]/g,'').replace(/\s+/g,'-');}
+}
+function findHashTarget(hash){
+  if(!hash||hash==='#')return null;
+  var raw=hash.charAt(0)==='#'?hash.slice(1):hash;
+  var dec=raw;
+  try{dec=decodeURIComponent(raw);}catch(e){}
+  var el=document.getElementById(raw)||document.getElementById(dec);
+  if(el)return el;
+  try{
+    if(typeof CSS!=='undefined'&&CSS.escape){
+      el=document.querySelector('[name="'+CSS.escape(raw)+'"]')||
+         document.querySelector('[name="'+CSS.escape(dec)+'"]');
+    }else{
+      var named=document.getElementsByName(raw);
+      if(named&&named.length>0)return named[0];
+    }
+  }catch(e){}
+  if(el)return el;
+  var targetSlug=slug(dec);
+  if(targetSlug){
+    var headings=document.querySelectorAll('h1,h2,h3,h4,h5,h6');
+    for(var i=0;i<headings.length;i++){
+      if(slug(headings[i].textContent||'')===targetSlug)return headings[i];
+    }
+  }
+  return null;
+}
+function getInPageHash(a,href){
+  if(href.charAt(0)==='#')return href;
+  try{
+    var u=new URL(href,window.location.href);
+    if(u.hash&&u.origin===window.location.origin&&u.pathname===window.location.pathname){
+      return u.hash;
+    }
+  }catch(e){}
+  return null;
+}
+function findAnchor(target){
+  var el=target instanceof Element?target:(target&&target.parentElement?target.parentElement:null);
+  return el&&typeof el.closest==='function'?el.closest('a'):null;
+}
+function configureAnchor(a){
+  var href=a.getAttribute('href');
+  if(!href||href.trim().toLowerCase().indexOf('javascript:')===0||a.hasAttribute('download'))return;
+  if(getInPageHash(a,href)!==null)return;
+  var t=a.getAttribute('target');
+  if(!t||t.toLowerCase()!=='_blank'){a.setAttribute('target','_blank');}
+  if(!a.getAttribute('rel')){a.setAttribute('rel','noopener noreferrer');}
+}
+function configureAllAnchors(){
+  var anchors=document.querySelectorAll('a[href]');
+  for(var i=0;i<anchors.length;i++){configureAnchor(anchors[i]);}
+}
+if(document.readyState==='loading'){
+  document.addEventListener('DOMContentLoaded',configureAllAnchors,{once:true});
+}else{
+  configureAllAnchors();
+}
+document.addEventListener('click',function(event){
+  var a=findAnchor(event.target);
+  if(a)configureAnchor(a);
+},{capture:true});
+document.addEventListener('click',function(event){
+  if(event.defaultPrevented)return;
+  var a=findAnchor(event.target);
+  if(!a)return;
+  var href=a.getAttribute('href');
+  if(!href||href.trim().toLowerCase().indexOf('javascript:')===0||a.hasAttribute('download'))return;
+  var hash=getInPageHash(a,href);
+  if(hash===null)return;
+  event.preventDefault();
+  if(hash==='#'){window.scrollTo({top:0,behavior:'smooth'});return;}
+  var targetEl=findHashTarget(hash);
+  if(targetEl){targetEl.scrollIntoView({behavior:'smooth',block:'start'});}
+});
+})();</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Noe Good Food Standard — Classic Keto Chicken Salad</title>
+  <!-- Google Fonts: Editorial Serif, Clean Sans & Monospace Accents -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&amp;family=Inter:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,900;1,400;1,600&amp;display=swap" rel="stylesheet">
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            display: ['"Playfair Display"', 'Georgia', 'serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+            sans: ['"Inter"', 'sans-serif'],
+          },
+          colors: {
+            noir: '#0a0a0a',
+            parchment: '#fcfbf9',
+            surface: '#f5f4ed',
+            ink: '#141414',
+            dim: '#5e5e5e',
+            rule: '#e2e0d7',
+            accent: '#181818'
+          }
         }
+      }
+    }
+  </script>
+  <style>
+    /* High-contrast custom scrollbar */
+    ::-webkit-scrollbar { width: 5px; height: 5px; }
+    ::-webkit-scrollbar-track { background: #f5f4ed; }
+    ::-webkit-scrollbar-thumb { background: #0a0a0a; }
 
-        *, *::before, *::after {
-            box-sizing: border-box;
-        }
+    /* Cross-out checklist interaction for ingredients and steps */
+    .ingredient-check:checked + label .ingredient-text {
+      text-decoration: line-through;
+      color: #888888;
+      font-style: italic;
+    }
+    .ingredient-check:checked + label .ingredient-amount {
+      opacity: 0.45;
+      text-decoration: line-through;
+    }
+    .step-check:checked + label .step-body {
+      text-decoration: line-through;
+      color: #888888;
+      font-style: italic;
+    }
 
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: #1a1a1a;
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            -webkit-font-smoothing: antialiased;
-        }
+    /* Enforced 11in x 8.5in Landscape Print Rules */
+    @page {
+      size: 11in 8.5in landscape;
+      margin: 0.25in;
+    }
 
-        .sheet {
-            width: 11in;
-            height: 8.5in;
-            background-color: #ffffff;
-            display: grid;
-            grid-template-columns: 2.75in 8.25in;
-            overflow: hidden;
-        }
-
-        /* --- Left Black Panel --- */
-        .left-pane {
-            background-color: #000000;
-            color: #ffffff;
-            padding: 0.45in 0.35in;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .brand-header h1 {
-            margin: 0;
-            font-size: 16pt;
-            font-weight: 900;
-            letter-spacing: 0.16em;
-            text-transform: uppercase;
-        }
-
-        .brand-header p {
-            margin: 6px 0 0;
-            font-size: 7.5pt;
-            font-weight: 700;
-            letter-spacing: 0.22em;
-            text-transform: uppercase;
-            color: #ffffff;
-        }
-
-        /* Boxed Macro Profile Table */
-        .macro-card {
-            border: 1.5px solid #ffffff;
-            padding: 10px 12px 8px;
-            margin-top: 0.3in;
-        }
-
-        .macro-card-title {
-            font-size: 7.5pt;
-            font-weight: 900;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            border-bottom: 1.5px solid #ffffff;
-            padding-bottom: 6px;
-            margin-bottom: 8px;
-        }
-
-        .macro-row {
-            display: flex;
-            justify-content: space-between;
-            font-size: 6.8pt;
-            line-height: 1.55;
-            text-transform: uppercase;
-            letter-spacing: 0.04em;
-        }
-
-        .macro-row .label {
-            font-weight: 600;
-            color: #d4d4d4;
-        }
-
-        .macro-row .value {
-            font-weight: 800;
-            color: #ffffff;
-        }
-
-        .macro-row.highlight .value {
-            font-weight: 900;
-        }
-
-        .macro-note {
-            margin-top: 8px;
-            padding-top: 6px;
-            border-top: 0.5px solid #404040;
-            font-size: 5.5pt;
-            line-height: 1.35;
-            color: #888888;
-        }
-
-        /* Bottom Specifications Block */
-        .spec-list {
-            margin-top: auto;
-            display: flex;
-            flex-direction: column;
-            gap: 9px;
-        }
-
-        .spec-entry {
-            font-size: 6.8pt;
-            line-height: 1.35;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-        }
-
-        .spec-entry .label {
-            font-weight: 700;
-            color: #8a8a8a;
-            display: inline;
-        }
-
-        .spec-entry .value {
-            font-weight: 900;
-            color: #ffffff;
-            display: inline;
-        }
-
-        /* --- Right White Main Section --- */
-        .right-pane {
-            background-color: #ffffff;
-            color: #000000;
-            padding: 0.45in 0.5in 0.4in 0.5in;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .title-container {
-            margin-bottom: 0.15in;
-        }
-
-        .recipe-title {
-            margin: 0;
-            font-family: 'Playfair Display', Georgia, serif;
-            font-style: italic;
-            font-weight: 900;
-            font-size: 26pt;
-            line-height: 1.05;
-            letter-spacing: -0.01em;
-            color: #000000;
-        }
-
-        .title-divider {
-            width: 100%;
-            height: 3px;
-            background-color: #000000;
-            margin-top: 10px;
-        }
-
-        /* Section Headings */
-        .section-header {
-            font-size: 8pt;
-            font-weight: 900;
-            letter-spacing: 0.16em;
-            text-transform: uppercase;
-            border-bottom: 1.5px solid #000000;
-            padding-bottom: 4px;
-            margin-bottom: 0.12in;
-        }
-
-        /* Component Mass Calibration Table */
-        .calibration-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 0.22in;
-        }
-
-        .calibration-table th {
-            text-align: left;
-            font-size: 7.2pt;
-            font-weight: 900;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-            padding-bottom: 6px;
-            border-bottom: 1.5px solid #000000;
-        }
-
-        .calibration-table td {
-            vertical-align: top;
-            padding: 6px 0;
-            font-size: 7.5pt;
-            line-height: 1.35;
-            border-bottom: 0.5px solid #e5e5e5;
-        }
-
-        .calibration-table tr:last-child td {
-            border-bottom: none;
-        }
-
-        .col-ing {
-            width: 25%;
-            font-weight: 800;
-            color: #000000;
-            padding-right: 12px;
-        }
-
-        .col-mass {
-            width: 16%;
-            font-weight: 800;
-            color: #000000;
-            padding-right: 12px;
-            white-space: nowrap;
-        }
-
-        .col-notes {
-            width: 59%;
-            color: #333333;
-            font-weight: 400;
-        }
-
-        /* Standard Operating Procedure */
-        .sop-container {
-            flex-grow: 1;
-        }
-
-        .sop-list {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
-
-        .sop-step {
-            font-size: 7.2pt;
-            line-height: 1.45;
-            color: #171717;
-            text-align: justify;
-        }
-
-        .sop-step strong {
-            font-weight: 900;
-            letter-spacing: 0.04em;
-            color: #000000;
-            text-transform: uppercase;
-        }
-
-        /* Bottom Status Footer Strip */
-        .bottom-divider {
-            width: 100%;
-            height: 2px;
-            background-color: #000000;
-            margin-bottom: 6px;
-        }
-
-        .status-strip {
-            display: grid;
-            grid-template-columns: 1.4fr 1.6fr 1fr;
-            gap: 12px;
-            font-size: 6.5pt;
-            line-height: 1.35;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-        }
-
-        .status-block .kicker {
-            font-weight: 900;
-            color: #000000;
-            display: inline;
-        }
-
-        .status-block .meta {
-            font-weight: 700;
-            color: #404040;
-            display: inline;
-            margin-left: 3px;
-        }
-
-        @media print {
-            body {
-                background: none;
-            }
-            .sheet {
-                page-break-after: always;
-            }
-        }
-    </style>
+    @media print {
+      *, *::before, *::after {
+        box-sizing: border-box !important;
+      }
+      html, body {
+        width: 100% !important;
+        height: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        background: #ffffff !important;
+        color: #000000 !important;
+        font-size: 8pt !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+        overflow: hidden !important;
+      }
+      .no-print {
+        display: none !important;
+      }
+      main {
+        padding: 0 !important;
+        margin: 0 !important;
+        min-height: 0 !important;
+        display: flex !important;
+        align-items: stretch !important;
+        justify-content: stretch !important;
+        width: 100% !important;
+        height: 100vh !important;
+      }
+      #recipe-card,
+      .print-page-wrapper {
+        display: grid !important;
+        grid-template-columns: 37% 63% !important;
+        gap: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        min-height: 0 !important;
+        height: 100% !important;
+        max-height: 100% !important;
+        overflow: hidden !important;
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+        page-break-after: avoid !important;
+        border: 1.5pt solid #000000 !important;
+        box-shadow: none !important;
+        background: #ffffff !important;
+      }
+      .print-pane-left {
+        border-right: 1.5pt solid #000000 !important;
+        padding: 0.16in 0.20in !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: space-between !important;
+        background: #faf9f6 !important;
+        height: 100% !important;
+        overflow: hidden !important;
+      }
+      .print-pane-right {
+        padding: 0.16in 0.22in !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: space-between !important;
+        background: #ffffff !important;
+        height: 100% !important;
+        overflow: hidden !important;
+      }
+      .print-pane-left h1 {
+        font-size: 1.28rem !important;
+        line-height: 1.06 !important;
+        margin-top: 0.08rem !important;
+        margin-bottom: 0.12rem !important;
+      }
+      .print-pane-left #view-subtitle {
+        font-size: 0.66rem !important;
+        line-height: 1.18 !important;
+      }
+      .print-hero-img {
+        height: 1.12in !important;
+        max-height: 1.12in !important;
+        width: 100% !important;
+        object-fit: cover !important;
+        border: 1pt solid #000000 !important;
+        display: block !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+      .print-pane-left .mb-6 {
+        margin-bottom: 0.22rem !important;
+      }
+      .print-pane-left .mb-5 {
+        margin-bottom: 0.18rem !important;
+      }
+      .print-pane-left .pb-4 {
+        padding-bottom: 0.16rem !important;
+      }
+      .print-pane-left .pt-6 {
+        padding-top: 0.16rem !important;
+      }
+      .print-pane-left .mt-6 {
+        margin-top: 0.16rem !important;
+      }
+      .print-pane-left .space-y-3 {
+        margin-bottom: 0.20rem !important;
+      }
+      .print-pane-left .p-3 {
+        padding: 0.22rem 0.35rem !important;
+      }
+      .print-pane-left .p-2\.5 {
+        padding: 0.18rem 0.28rem !important;
+      }
+      .print-pane-left #view-notes {
+        font-size: 0.64rem !important;
+        line-height: 1.15 !important;
+      }
+      .print-pane-left .nutrition-panel {
+        padding: 0.22rem 0.32rem !important;
+        margin-top: 0.12rem !important;
+      }
+      .print-pane-left .nutrition-panel .grid {
+        grid-template-columns: repeat(6, minmax(0, 1fr)) !important;
+        gap: 0.16rem !important;
+      }
+      .print-pane-left .nutrition-panel .p-2 {
+        padding: 0.12rem 0.08rem !important;
+      }
+      .print-pane-left .nutrition-panel .text-sm,
+      .print-pane-left .nutrition-panel .text-base {
+        font-size: 0.72rem !important;
+        margin-top: 0.02rem !important;
+        margin-bottom: 0.02rem !important;
+      }
+      .print-pane-right .grid-internal {
+        display: grid !important;
+        grid-template-columns: 38% 62% !important;
+        gap: 0.18in !important;
+        align-items: start !important;
+      }
+      .print-pane-right .space-y-5 {
+        margin-bottom: 0.12rem !important;
+      }
+      .print-pane-right .space-y-4 {
+        margin-top: 0.10rem !important;
+      }
+      .print-pane-right .space-y-1\.5 {
+        margin-bottom: 0.12rem !important;
+      }
+      .print-pane-right .space-y-1\.5 > li {
+        margin-bottom: 0.04rem !important;
+        line-height: 1.13 !important;
+        font-size: 6.7pt !important;
+      }
+      .print-pane-right .p-3.bg-surface {
+        padding: 0.18rem 0.28rem !important;
+        font-size: 6.4pt !important;
+        line-height: 1.12 !important;
+        margin-top: 0.12rem !important;
+      }
+      .print-pane-right #instructions-container > div {
+        margin-bottom: 0.12rem !important;
+      }
+      .print-pane-right #instructions-container p,
+      .print-pane-right #instructions-container .step-body span:last-child {
+        font-size: 6.65pt !important;
+        line-height: 1.14 !important;
+      }
+      .print-pane-right #view-field-notes {
+        font-size: 6.5pt !important;
+        line-height: 1.13 !important;
+      }
+      .print-pane-right #view-field-notes li {
+        margin-bottom: 0.04rem !important;
+      }
+      .print-pane-right .pt-4 {
+        padding-top: 0.14rem !important;
+      }
+      .print-pane-right .mt-6 {
+        margin-top: 0.14rem !important;
+      }
+      .print-checkbox {
+        border: 1pt solid #000000 !important;
+        width: 8px !important;
+        height: 8px !important;
+        margin-top: 2px !important;
+      }
+    }
+  </style>
 </head>
-<body>
+<body class="bg-[#f2f1ea] text-ink font-sans antialiased selection:bg-noir selection:text-white">
 
-<div class="sheet">
-    <!-- Left Black Column -->
-    <aside class="left-pane">
+  <!-- TOP APP BAR -->
+  <header class="no-print border-b border-ink/20 bg-parchment/95 backdrop-blur sticky top-0 z-40 px-4 md:px-8 py-3 flex flex-wrap items-center justify-between gap-4">
+    <div class="flex items-center gap-3">
+      <span class="font-mono text-xs tracking-widest uppercase bg-noir text-parchment px-2.5 py-1 font-bold">
+        NOE GOOD FOOD STANDARD
+      </span>
+      <span class="text-xs tracking-widest uppercase font-mono text-dim hidden md:inline">
+        PROTOCOL NGF-STD • COLD-MATRIX LIPID EMULSION
+      </span>
+    </div>
+
+    <!-- Quick Utility Actions -->
+    <div class="flex items-center gap-2 sm:gap-3 flex-wrap">
+      <!-- Quick Copy Action Button -->
+      <div class="relative inline-block text-left" id="copy-dropdown-container">
+        <button id="btn-copy-menu" type="button" class="border border-ink bg-white px-3 py-1.5 text-xs font-mono tracking-wider uppercase hover:bg-noir hover:text-white transition-colors flex items-center gap-1.5 shadow-sm">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"></path></svg>
+          <span>Copy Recipe</span>
+          <svg class="w-3 h-3 ml-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+        </button>
+        <div id="copy-dropdown-menu" class="absolute right-0 mt-1 w-48 bg-white border border-noir shadow-lg z-50 py-1 text-xs font-mono hidden">
+          <button onclick="downloadRecipeHTML()" type="button" class="w-full text-left px-3 py-2 hover:bg-surface flex items-center justify-between font-bold text-noir">
+            <span>Download HTML (.html)</span>
+            <span class="text-[10px] text-dim font-sans">Save File</span>
+          </button>
+          <button onclick="copyRecipeMarkdown()" type="button" class="w-full text-left px-3 py-2 hover:bg-surface flex items-center justify-between border-t border-rule">
+            <span>Markdown (.md)</span>
+            <span class="text-[10px] text-dim font-sans">Formatted</span>
+          </button>
+          <button onclick="copyRecipeHTML()" type="button" class="w-full text-left px-3 py-2 hover:bg-surface flex items-center justify-between border-t border-rule">
+            <span>Copy Full HTML</span>
+            <span class="text-[10px] text-dim font-sans">Clipboard</span>
+          </button>
+          <button onclick="exportRecipeJSON()" type="button" class="w-full text-left px-3 py-2 hover:bg-surface flex items-center justify-between border-t border-rule">
+            <span>JSON Object</span>
+            <span class="text-[10px] text-dim font-sans">Export</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Live Recipe Editor Trigger (Removed on Export) -->
+      
+
+      <!-- 11x8.5 Landscape Print -->
+      <button id="btn-print-card" type="button" class="bg-noir text-parchment border border-noir px-3.5 py-1.5 text-xs font-mono tracking-wider uppercase hover:bg-white hover:text-noir transition-colors flex items-center gap-1.5 shadow-sm">
+        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path></svg>
+        <span>Print Card (11×8.5")</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- TOAST FEEDBACK NOTIFICATION -->
+  <div id="toast-notify" class="no-print fixed bottom-6 right-6 bg-noir text-parchment font-mono text-xs px-4 py-3 border border-rule shadow-2xl z-50 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none">Notice message goes here</div>
+
+  <!-- COLLAPSIBLE FORM & JSON EDITOR MODAL (Removed on Export) -->
+  
+
+  <!-- MAIN DISPLAY WRAPPER -->
+  <main class="max-w-[96rem] mx-auto min-h-[calc(100vh-56px)] p-4 sm:p-6 md:p-8 lg:p-10 flex items-center justify-center">
+    <div id="recipe-card" class="print-page-wrapper w-full bg-white border border-noir shadow-lg grid grid-cols-1 lg:grid-cols-12 min-h-[820px] max-w-[1360px]">
+
+      <!-- ================= LEFT PANE: BRANDING, PROTOCOL TAGS, SPECIMEN & SUMMARY ================= -->
+      <aside class="print-pane-left lg:col-span-5 border-b lg:border-b-0 lg:border-r border-noir p-6 sm:p-8 md:p-9 flex flex-col justify-between bg-parchment">
         <div>
-            <div class="brand-header">
-                <h1>Noe Good</h1>
-                <p>Analytical Standard</p>
+          <!-- Header Branding & Protocol Code -->
+          <div class="border-b-2 border-noir pb-4 mb-6">
+            <div class="flex items-start justify-between">
+              <div>
+                <span class="font-mono text-xs tracking-[0.25em] font-bold block uppercase text-noir">NOE GOOD FOOD</span>
+                <span class="font-mono text-[10px] text-dim tracking-wider uppercase block mt-0.5">THE NOE GOOD FOOD STANDARD • FORMULATION FOLIO</span>
+              </div>
+              <div class="text-right">
+                <span class="font-mono text-[11px] font-bold tracking-widest px-2 py-0.5 bg-noir text-white uppercase inline-block" id="view-doc-id">NGF-STD-6104</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Recipe Title & Subhead -->
+          <div class="space-y-3 mb-6">
+            <div class="flex items-center gap-2">
+              <span class="h-1.5 w-1.5 bg-noir inline-block"></span>
+              <p id="view-category" class="font-mono text-[11px] tracking-[0.2em] uppercase text-dim">APPLE &amp; PECAN COLD CRUNCH • KETO POULTRY MATRIX</p>
+            </div>
+            <h1 id="view-title" class="font-display text-3xl sm:text-4xl md:text-[2.75rem] leading-[1.08] tracking-tight font-semibold text-noir">Classic Keto Chicken Salad</h1>
+            <p id="view-subtitle" class="font-serif italic text-base sm:text-lg text-dim leading-snug">Chilled shredded chicken breast suspended in a Dijon-mayonnaise lipid emulsion with crisp Fuji apple, toasted pecans, celery, and sharp cheddar.</p>
+          </div>
+
+          <!-- Hero Photograph / Analytical Specimen Image -->
+          <div class="relative mb-6 border border-noir overflow-hidden group bg-surface">
+            <img id="view-image" src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&amp;w=1200&amp;auto=format&amp;fit=crop" alt="Classic Keto Chicken Salad Specimen" class="print-hero-img w-full h-52 sm:h-60 object-cover" onerror="this.src='https://placehold.co/800x550/0a0a0a/fcfbf9?text=Classic+Keto+Chicken+Salad'">
+            <div class="no-print absolute bottom-2 right-2 bg-noir text-[10px] text-parchment font-mono px-2 py-0.5 tracking-widest uppercase">
+              SPECIMEN FIG. 01 — APPLE &amp; PECAN COLD CRUNCH
+            </div>
+          </div>
+
+          <!-- Technical Metadata Grid: Prep, Cook, Rest, Yield, Temp -->
+          <div class="border border-noir divide-y divide-noir bg-white text-xs mb-6">
+            <div class="grid grid-cols-2 divide-x divide-noir">
+              <div class="p-3">
+                <span class="block font-mono text-[10px] tracking-wider uppercase text-dim">Active Preparation</span>
+                <span id="view-prep" class="font-mono font-bold text-sm text-noir">20 minutes</span>
+              </div>
+              <div class="p-3">
+                <span class="block font-mono text-[10px] tracking-wider uppercase text-dim">Thermal Cook</span>
+                <span id="view-cook" class="font-mono font-bold text-sm text-noir">0 minutes (pre-cooked)</span>
+              </div>
+            </div>
+            <div class="grid grid-cols-3 divide-x divide-noir">
+              <div class="p-2.5">
+                <span class="block font-mono text-[9px] tracking-wider uppercase text-dim">Equilibration</span>
+                <span id="view-rest" class="font-mono font-semibold text-xs text-noir">30 minutes chill</span>
+              </div>
+              <div class="p-2.5">
+                <span class="block font-mono text-[9px] tracking-wider uppercase text-dim">Base Yield</span>
+                <span id="view-yield" class="font-mono font-semibold text-xs text-noir">4 portions</span>
+              </div>
+              <div class="p-2.5">
+                <span class="block font-mono text-[9px] tracking-wider uppercase text-dim">Thermal Limit</span>
+                <span id="view-temp" class="font-mono font-semibold text-xs text-noir">≤ 4°C (40°F) hold</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Formulation Tags -->
+          <div class="flex flex-wrap gap-1.5 mb-6" id="view-tags-container"><span class="font-mono text-[9px] uppercase tracking-wider px-2 py-0.5 border border-noir bg-white font-semibold">KETO</span><span class="font-mono text-[9px] uppercase tracking-wider px-2 py-0.5 border border-noir bg-white font-semibold">POULTRY</span><span class="font-mono text-[9px] uppercase tracking-wider px-2 py-0.5 border border-noir bg-white font-semibold">HIGH PROTEIN</span><span class="font-mono text-[9px] uppercase tracking-wider px-2 py-0.5 border border-noir bg-white font-semibold">COLD MATRIX</span><span class="font-mono text-[9px] uppercase tracking-wider px-2 py-0.5 border border-noir bg-white font-semibold">MEAL PREP</span></div>
+
+          <!-- Summary Headnote -->
+          <div class="border-l-2 border-noir pl-3 py-0.5 mb-5">
+            <span class="block font-mono text-[10px] uppercase tracking-wider text-dim mb-0.5">Specification Summary</span>
+            <p id="view-notes" class="font-serif italic text-xs leading-relaxed text-ink/90">Pre-chilling cooked chicken breast prevents lipid separation when folded into the Dijon-mayonnaise emulsion. Uniform small-dice Fuji apple, celery, and red onion preserve cellular crunch across a 4-day refrigerated hold window (approx. 4.2 cups total batch volume).</p>
+          </div>
+
+          <!-- Complete Nutrition Formulation Panel (6 Boxes) -->
+          <div class="nutrition-panel border border-noir bg-white p-3.5 space-y-3">
+            <div class="flex items-center justify-between border-b border-noir pb-1.5">
+              <span class="font-mono text-[10px] tracking-widest uppercase font-bold text-noir flex items-center gap-1.5">
+                <span class="w-1.5 h-1.5 bg-noir inline-block"></span>
+                Nutrition Per Serving
+              </span>
+              <span id="view-nutrition-serving-size" class="font-serif italic text-[11px] text-dim">Serving Size: 1 portion (240 grams)</span>
             </div>
 
-            <div class="macro-card">
-                <div class="macro-card-title">Macro Profile</div>
-                <div class="macro-row">
-                    <span class="label">Serving Size:</span>
-                    <span class="value">1 Portion (240 g)</span>
-                </div>
-                <div class="macro-row">
-                    <span class="label">Calories:</span>
-                    <span class="value">505 kcal</span>
-                </div>
-                <div class="macro-row">
-                    <span class="label">Total Fat:</span>
-                    <span class="value">35 grams</span>
-                </div>
-                <div class="macro-row">
-                    <span class="label">Total Carbs:</span>
-                    <span class="value">7 grams</span>
-                </div>
-                <div class="macro-row">
-                    <span class="label">Dietary Fiber:</span>
-                    <span class="value">1 gram</span>
-                </div>
-                <div class="macro-row highlight">
-                    <span class="label">Net Carbs:</span>
-                    <span class="value">6 grams</span>
-                </div>
-                <div class="macro-row highlight">
-                    <span class="label">Protein:</span>
-                    <span class="value">45 grams</span>
-                </div>
-                <div class="macro-note">
-                    *Values reflect single portion macro density across uniform 4-serving batch partitioning.
-                </div>
+            <!-- Macro Information Boxes Grid -->
+            <div class="grid grid-cols-3 sm:grid-cols-6 gap-2 text-center font-mono">
+              <div class="border border-rule p-2 bg-surface flex flex-col justify-between">
+                <span class="block text-[9px] uppercase tracking-wider text-dim">Calories</span>
+                <span class="text-sm sm:text-base font-bold text-noir my-1"><span id="badge-nutr-calories">505</span></span>
+                <span class="text-[8px] text-dim uppercase">kcal</span>
+              </div>
+              <div class="border border-noir p-2 bg-white ring-1 ring-noir flex flex-col justify-between">
+                <span class="block text-[9px] uppercase tracking-wider font-bold text-noir">Total Fat</span>
+                <span class="text-sm sm:text-base font-bold text-noir my-1"><span id="badge-nutr-fat">35</span></span>
+                <span class="text-[8px] font-bold text-noir uppercase">grams</span>
+              </div>
+              <div class="border border-rule p-2 bg-surface flex flex-col justify-between">
+                <span class="block text-[9px] uppercase tracking-wider text-dim">Total Carbs</span>
+                <span class="text-sm sm:text-base font-bold text-noir my-1"><span id="badge-nutr-carbs">7</span></span>
+                <span class="text-[8px] text-dim uppercase">grams</span>
+              </div>
+              <div class="border border-noir p-2 bg-white ring-1 ring-noir flex flex-col justify-between">
+                <span class="block text-[9px] uppercase tracking-wider font-bold text-noir">Fiber</span>
+                <span class="text-sm sm:text-base font-bold text-noir my-1"><span id="badge-nutr-fiber">1</span></span>
+                <span class="text-[8px] font-bold text-noir uppercase">grams</span>
+              </div>
+              <div class="border border-noir p-2 bg-[#fbfbfa] border-dashed flex flex-col justify-between">
+                <span class="block text-[9px] uppercase tracking-wider font-bold text-noir">Net Carbs</span>
+                <span class="text-sm sm:text-base font-bold text-noir my-1"><span id="badge-nutr-netcarbs">6</span></span>
+                <span class="text-[8px] font-bold text-noir uppercase">grams</span>
+              </div>
+              <div class="border border-rule p-2 bg-surface flex flex-col justify-between">
+                <span class="block text-[9px] uppercase tracking-wider text-dim">Protein</span>
+                <span class="text-sm sm:text-base font-bold text-noir my-1"><span id="badge-nutr-protein">45</span></span>
+                <span class="text-[8px] text-dim uppercase">grams</span>
+              </div>
             </div>
+
+            <div class="pt-1.5 text-[9px] font-mono text-dim flex justify-between items-center border-t border-rule">
+              <span>* Net Carbohydrates = Total Carbs minus Dietary Fiber</span>
+              <span class="uppercase">Standard Metric Form</span>
+            </div>
+          </div>
         </div>
 
-        <div class="spec-list">
-            <div class="spec-entry">
-                <span class="label">Formulation: </span>
-                <span class="value">Apple & Pecan Cold Crunch</span>
-            </div>
-            <div class="spec-entry">
-                <span class="label">Target Yield: </span>
-                <span class="value">4 Portions</span>
-            </div>
-            <div class="spec-entry">
-                <span class="label">Volumetric Yield: </span>
-                <span class="value">Approx. 4.2 Cups</span>
-            </div>
-            <div class="spec-entry">
-                <span class="label">Container Class: </span>
-                <span class="value">Glass Airtight Lock</span>
-            </div>
-            <div class="spec-entry">
-                <span class="label">Thermal Limit: </span>
-                <span class="value">&le; 40&deg;F (Hold Temp)</span>
-            </div>
+        <!-- Left Pane Footer Authority Stamp -->
+        <div class="pt-6 border-t border-noir mt-6 flex items-center justify-between font-mono text-[10px] text-dim">
+          <span class="font-bold text-noir">NGF STANDARD RECORD</span>
+          <span>REVISION: VERIFIED MASTER</span>
         </div>
-    </aside>
+      </aside>
 
-    <!-- Right White Panel -->
-    <main class="right-pane">
+      <!-- ================= RIGHT PANE: MULTIPLIER CONTROLS, INGREDIENTS & STEPS ================= -->
+      <section class="print-pane-right lg:col-span-7 p-6 sm:p-8 md:p-9 flex flex-col justify-between bg-white">
         <div>
-            <div class="title-container">
-                <h1 class="recipe-title">Classic Keto Chicken Salad</h1>
-                <div class="title-divider"></div>
+          <!-- Servings Multiplier & Interactive Control Strip -->
+          <div class="no-print border border-noir p-3 mb-6 bg-surface flex flex-wrap items-center justify-between gap-3">
+            <div class="flex items-center gap-2">
+              <span class="font-mono text-[11px] uppercase tracking-wider font-bold text-noir">Yield Scaling:</span>
+              <!-- Fast Multiplier Presets -->
+              <div class="inline-flex border border-noir bg-white">
+                <button type="button" onclick="setPresetMultiplier(0.5)" id="btn-mult-half" class="multiplier-btn px-2.5 py-1 font-mono text-xs hover:bg-noir hover:text-white transition-colors border-r border-noir">0.5× (2)</button>
+                <button type="button" onclick="setPresetMultiplier(1)" id="btn-mult-one" class="multiplier-btn px-2.5 py-1 font-mono text-xs bg-noir text-white hover:bg-noir hover:text-white transition-colors border-r border-noir font-bold">1× (4)</button>
+                <button type="button" onclick="setPresetMultiplier(2)" id="btn-mult-two" class="multiplier-btn px-2.5 py-1 font-mono text-xs hover:bg-noir hover:text-white transition-colors">2× (8)</button>
+              </div>
             </div>
 
-            <!-- Table: Component Mass Calibration -->
-            <div class="section-header">Component Mass Calibration</div>
-            <table class="calibration-table">
-                <thead>
-                    <tr>
-                        <th class="col-ing">Ingredient</th>
-                        <th class="col-mass">Mass</th>
-                        <th class="col-notes">Analytical Protocol Note</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="col-ing">Chicken Breast</td>
-                        <td class="col-mass">567 grams</td>
-                        <td class="col-notes">Pre-cooked and fully chilled; shredded or diced into uniform bite-sized pieces.</td>
-                    </tr>
-                    <tr>
-                        <td class="col-ing">Cheddar Cheese</td>
-                        <td class="col-mass">100 grams</td>
-                        <td class="col-notes">Dense lipid/protein block; cut into sharp, uniform cubes for structured mouthfeel.</td>
-                    </tr>
-                    <tr>
-                        <td class="col-ing">Fuji Apple</td>
-                        <td class="col-mass">150 grams</td>
-                        <td class="col-notes">Cored and finely diced; adds crisp structural crunch and controlled sweet acidity.</td>
-                    </tr>
-                    <tr>
-                        <td class="col-ing">Chopped Pecans</td>
-                        <td class="col-mass">60 grams</td>
-                        <td class="col-notes">Toasted lipid solids; coarse chop introduces rich textural contrast across matrix.</td>
-                    </tr>
-                    <tr>
-                        <td class="col-ing">Celery Stalk</td>
-                        <td class="col-mass">50 grams</td>
-                        <td class="col-notes">Finely diced; provides aqueous crunch and fresh vegetal backbone without excess moisture.</td>
-                    </tr>
-                    <tr>
-                        <td class="col-ing">Red Onion</td>
-                        <td class="col-mass">30 grams</td>
-                        <td class="col-notes">Finely minced; sharp allium bite to cut through dressing fat profile.</td>
-                    </tr>
-                    <tr>
-                        <td class="col-ing">Full-Fat Mayonnaise</td>
-                        <td class="col-mass">120 grams</td>
-                        <td class="col-notes">Keto emulsion base; primary lipid vehicle binding dry inclusions together.</td>
-                    </tr>
-                    <tr>
-                        <td class="col-ing">Dijon Mustard</td>
-                        <td class="col-mass">5 grams</td>
-                        <td class="col-notes">Secondary emulsifier and acid source; sharpens lipid heavy palate.</td>
-                    </tr>
-                    <tr>
-                        <td class="col-ing">Salt & Black Pepper</td>
-                        <td class="col-mass">To taste</td>
-                        <td class="col-notes">Electrolyte and piperine seasoning matrix adjusted to final palate preference.</td>
-                    </tr>
-                </tbody>
-            </table>
+            <!-- Stepper controls -->
+            <div class="flex items-center gap-2">
+              <span class="font-mono text-[10px] uppercase text-dim">Exact Portion Count:</span>
+              <div class="flex items-center border border-noir bg-white focus-within:ring-1 focus-within:ring-noir">
+                <button id="btn-scale-down" type="button" class="w-7 h-7 flex items-center justify-center font-mono text-xs border-r border-noir hover:bg-noir hover:text-white transition-colors" title="Decrease Count">-</button>
+                <input type="number" id="current-servings" min="1" max="999" value="4" class="font-mono text-xs font-bold w-14 text-center border-none outline-none py-1 bg-transparent [appearance:textfield] [&amp;::-webkit-outer-spin-button]:appearance-none [&amp;::-webkit-inner-spin-button]:appearance-none" title="Type desired count and press Enter">
+                <button id="btn-scale-up" type="button" class="w-7 h-7 flex items-center justify-center font-mono text-xs border-l border-noir hover:bg-noir hover:text-white transition-colors" title="Increase Count">+</button>
+              </div>
+            </div>
+          </div>
 
-            <!-- SOP Section -->
-            <div class="sop-container">
-                <div class="section-header">Standard Operating Procedure</div>
-                <div class="sop-list">
-                    <div class="sop-step">
-                        <strong>1. Base Isolation & Sizing:</strong> Weigh and shred 567 grams of pre-cooked, completely chilled chicken breast into uniform pieces. Transfer directly into a clean, chilled stainless steel mixing vessel.
-                    </div>
-                    <div class="sop-step">
-                        <strong>2. Structural Solid Integration:</strong> Precision dice 150 grams of Fuji apple, 50 grams of celery stalk, and 30 grams of red onion into uniform small dice. Deposit into the mixing vessel alongside 100 grams of cubed cheddar cheese and 60 grams of chopped pecans.
-                    </div>
-                    <div class="sop-step">
-                        <strong>3. Emulsion Matrix Preparation:</strong> In an auxiliary vessel, whisk 120 grams of full-fat mayonnaise with 5 grams of Dijon mustard, salt, and freshly cracked black pepper until the dressing phase is completely homogenous and uniform.
-                    </div>
-                    <div class="sop-step">
-                        <strong>4. Suspension & Low-Shear Fold:</strong> Pour the emulsified dressing directly over the combined solid inclusions. Utilizing a wide silicone spatula, execute a gentle bottom-to-top fold to thoroughly coat every component without shearing the apple cell walls or softening the pecans.
-                    </div>
-                    <div class="sop-step">
-                        <strong>5. Equilibration & Cold Storage:</strong> Transfer the blended chicken salad into an airtight glass storage container. Allow the matrix to rest refrigerated at or below 40&deg;F (4&deg;C) for a minimum of 30 minutes to equilibrate the aromatic profile prior to portion deployment. Stable for 4 days.
-                    </div>
+          <!-- Two-column Method & Ingredients Layout -->
+          <div class="grid-internal grid grid-cols-1 md:grid-cols-12 gap-6 lg:gap-8">
+
+            <!-- INGREDIENTS LISTING (Unabbreviated Units, Categorized, Interactive Checks) -->
+            <div class="md:col-span-5 space-y-5">
+              <div class="border-b-2 border-noir pb-2 flex items-center justify-between">
+                <h2 class="font-mono text-xs tracking-[0.2em] uppercase font-bold text-noir flex items-center gap-1.5">
+                  <span class="w-2 h-2 bg-noir inline-block"></span>
+                  Ingredients
+                </h2>
+                <button onclick="resetChecklist()" type="button" class="no-print font-mono text-[10px] text-dim hover:text-noir underline">
+                  Clear Checks
+                </button>
+              </div>
+
+              <!-- Container for dynamic categories -->
+              <div id="ingredients-container" class="space-y-4"><div class="space-y-1.5"><h3 class="font-mono text-[11px] font-bold uppercase tracking-wider text-noir border-b border-noir/30 pb-1">Protein &amp; Lipid Solids</h3><ul class="space-y-1.5 text-xs"><li class="flex items-start gap-2.5">
+            <input type="checkbox" id="ing-0-0" class="ingredient-check print-checkbox mt-0.5 h-3.5 w-3.5 rounded-none border-noir text-noir focus:ring-0 accent-noir cursor-pointer">
+            <label for="ing-0-0" class="cursor-pointer select-none leading-relaxed transition-colors flex-1">
+              <span class="ingredient-amount font-mono font-bold text-noir">567 grams</span>
+              <span class="ingredient-text font-serif text-ink ml-1">chicken breast, pre-cooked and fully chilled, shredded or diced into uniform bite-sized pieces</span>
+            </label>
+          </li><li class="flex items-start gap-2.5">
+            <input type="checkbox" id="ing-0-1" class="ingredient-check print-checkbox mt-0.5 h-3.5 w-3.5 rounded-none border-noir text-noir focus:ring-0 accent-noir cursor-pointer">
+            <label for="ing-0-1" class="cursor-pointer select-none leading-relaxed transition-colors flex-1">
+              <span class="ingredient-amount font-mono font-bold text-noir">100 grams</span>
+              <span class="ingredient-text font-serif text-ink ml-1">cheddar cheese, cut into sharp, uniform cubes</span>
+            </label>
+          </li></ul></div><div class="space-y-1.5"><h3 class="font-mono text-[11px] font-bold uppercase tracking-wider text-noir border-b border-noir/30 pb-1">Crisp Produce &amp; Nut Inclusions</h3><ul class="space-y-1.5 text-xs"><li class="flex items-start gap-2.5">
+            <input type="checkbox" id="ing-1-0" class="ingredient-check print-checkbox mt-0.5 h-3.5 w-3.5 rounded-none border-noir text-noir focus:ring-0 accent-noir cursor-pointer">
+            <label for="ing-1-0" class="cursor-pointer select-none leading-relaxed transition-colors flex-1">
+              <span class="ingredient-amount font-mono font-bold text-noir">150 grams</span>
+              <span class="ingredient-text font-serif text-ink ml-1">Fuji apple, cored and finely diced</span>
+            </label>
+          </li><li class="flex items-start gap-2.5">
+            <input type="checkbox" id="ing-1-1" class="ingredient-check print-checkbox mt-0.5 h-3.5 w-3.5 rounded-none border-noir text-noir focus:ring-0 accent-noir cursor-pointer">
+            <label for="ing-1-1" class="cursor-pointer select-none leading-relaxed transition-colors flex-1">
+              <span class="ingredient-amount font-mono font-bold text-noir">60 grams</span>
+              <span class="ingredient-text font-serif text-ink ml-1">pecans, toasted and coarsely chopped</span>
+            </label>
+          </li><li class="flex items-start gap-2.5">
+            <input type="checkbox" id="ing-1-2" class="ingredient-check print-checkbox mt-0.5 h-3.5 w-3.5 rounded-none border-noir text-noir focus:ring-0 accent-noir cursor-pointer">
+            <label for="ing-1-2" class="cursor-pointer select-none leading-relaxed transition-colors flex-1">
+              <span class="ingredient-amount font-mono font-bold text-noir">50 grams</span>
+              <span class="ingredient-text font-serif text-ink ml-1">celery stalk, finely diced</span>
+            </label>
+          </li><li class="flex items-start gap-2.5">
+            <input type="checkbox" id="ing-1-3" class="ingredient-check print-checkbox mt-0.5 h-3.5 w-3.5 rounded-none border-noir text-noir focus:ring-0 accent-noir cursor-pointer">
+            <label for="ing-1-3" class="cursor-pointer select-none leading-relaxed transition-colors flex-1">
+              <span class="ingredient-amount font-mono font-bold text-noir">30 grams</span>
+              <span class="ingredient-text font-serif text-ink ml-1">red onion, finely minced</span>
+            </label>
+          </li></ul></div><div class="space-y-1.5"><h3 class="font-mono text-[11px] font-bold uppercase tracking-wider text-noir border-b border-noir/30 pb-1">Emulsion Dressing &amp; Seasoning</h3><ul class="space-y-1.5 text-xs"><li class="flex items-start gap-2.5">
+            <input type="checkbox" id="ing-2-0" class="ingredient-check print-checkbox mt-0.5 h-3.5 w-3.5 rounded-none border-noir text-noir focus:ring-0 accent-noir cursor-pointer">
+            <label for="ing-2-0" class="cursor-pointer select-none leading-relaxed transition-colors flex-1">
+              <span class="ingredient-amount font-mono font-bold text-noir">120 grams</span>
+              <span class="ingredient-text font-serif text-ink ml-1">full-fat mayonnaise</span>
+            </label>
+          </li><li class="flex items-start gap-2.5">
+            <input type="checkbox" id="ing-2-1" class="ingredient-check print-checkbox mt-0.5 h-3.5 w-3.5 rounded-none border-noir text-noir focus:ring-0 accent-noir cursor-pointer">
+            <label for="ing-2-1" class="cursor-pointer select-none leading-relaxed transition-colors flex-1">
+              <span class="ingredient-amount font-mono font-bold text-noir">5 grams</span>
+              <span class="ingredient-text font-serif text-ink ml-1">Dijon mustard</span>
+            </label>
+          </li><li class="flex items-start gap-2.5">
+            <input type="checkbox" id="ing-2-2" class="ingredient-check print-checkbox mt-0.5 h-3.5 w-3.5 rounded-none border-noir text-noir focus:ring-0 accent-noir cursor-pointer">
+            <label for="ing-2-2" class="cursor-pointer select-none leading-relaxed transition-colors flex-1">
+              <span class="ingredient-amount font-mono font-bold text-noir">2 grams</span>
+              <span class="ingredient-text font-serif text-ink ml-1">fine salt and freshly cracked black pepper, adjusted to taste</span>
+            </label>
+          </li></ul></div></div>
+
+              <div class="p-3 bg-surface border border-noir text-[11px] font-serif italic text-dim">
+                <strong class="font-sans font-semibold not-italic text-[10px] uppercase block text-noir mb-0.5">Noe Good Food Unit Standard:</strong>
+                All measures are explicitly written out (grams, milliliters, tablespoons, teaspoons, whole). Abbreviations are prohibited.
+              </div>
+            </div>
+
+            <!-- PREPARATION STEPS & FIELD NOTES -->
+            <div class="md:col-span-7 space-y-5">
+              <div class="border-b-2 border-noir pb-2 flex items-center justify-between">
+                <h2 class="font-mono text-xs tracking-[0.2em] uppercase font-bold text-noir flex items-center gap-1.5">
+                  <span class="w-2 h-2 bg-noir inline-block"></span>
+                  Preparation Steps
+                </h2>
+                <span class="font-mono text-[10px] text-dim tracking-wider uppercase">Numbered Protocol</span>
+              </div>
+
+              <!-- Step list container -->
+              <div id="instructions-container" class="space-y-3 font-serif"><div class="flex gap-3 items-start group">
+          <div class="font-mono text-xs font-bold bg-noir text-white px-2 py-0.5 flex-shrink-0 text-center min-w-[2.2rem]">
+            01
+          </div>
+          <div class="flex items-start gap-2 flex-1">
+            <input type="checkbox" id="step-0" class="step-check print-checkbox mt-1 h-3.5 w-3.5 rounded-none border-noir text-noir focus:ring-0 accent-noir cursor-pointer flex-shrink-0">
+            <label for="step-0" class="cursor-pointer select-none space-y-0.5 flex-1">
+              <span class="step-body block space-y-0.5">
+                <span class="font-mono text-[10px] tracking-wider uppercase text-dim font-bold block">
+                  Base Isolation &amp; Sizing
+                </span>
+                <span class="text-xs sm:text-[13px] leading-relaxed text-ink/90 font-serif block">
+                  Weigh and shred <span class="font-mono font-bold text-noir">567 grams</span> of pre-cooked, completely chilled chicken breast into uniform bite-sized pieces. Transfer directly into a clean, chilled stainless steel mixing vessel.
+                </span>
+              </span>
+            </label>
+          </div>
+        </div><div class="flex gap-3 items-start group">
+          <div class="font-mono text-xs font-bold bg-noir text-white px-2 py-0.5 flex-shrink-0 text-center min-w-[2.2rem]">
+            02
+          </div>
+          <div class="flex items-start gap-2 flex-1">
+            <input type="checkbox" id="step-1" class="step-check print-checkbox mt-1 h-3.5 w-3.5 rounded-none border-noir text-noir focus:ring-0 accent-noir cursor-pointer flex-shrink-0">
+            <label for="step-1" class="cursor-pointer select-none space-y-0.5 flex-1">
+              <span class="step-body block space-y-0.5">
+                <span class="font-mono text-[10px] tracking-wider uppercase text-dim font-bold block">
+                  Structural Solid Integration
+                </span>
+                <span class="text-xs sm:text-[13px] leading-relaxed text-ink/90 font-serif block">
+                  Precision dice <span class="font-mono font-bold text-noir">150 grams</span> of Fuji apple, <span class="font-mono font-bold text-noir">50 grams</span> of celery stalk, and <span class="font-mono font-bold text-noir">30 grams</span> of red onion into uniform small dice. Deposit into the mixing vessel alongside <span class="font-mono font-bold text-noir">100 grams</span> of cubed cheddar cheese and <span class="font-mono font-bold text-noir">60 grams</span> of chopped pecans.
+                </span>
+              </span>
+            </label>
+          </div>
+        </div><div class="flex gap-3 items-start group">
+          <div class="font-mono text-xs font-bold bg-noir text-white px-2 py-0.5 flex-shrink-0 text-center min-w-[2.2rem]">
+            03
+          </div>
+          <div class="flex items-start gap-2 flex-1">
+            <input type="checkbox" id="step-2" class="step-check print-checkbox mt-1 h-3.5 w-3.5 rounded-none border-noir text-noir focus:ring-0 accent-noir cursor-pointer flex-shrink-0">
+            <label for="step-2" class="cursor-pointer select-none space-y-0.5 flex-1">
+              <span class="step-body block space-y-0.5">
+                <span class="font-mono text-[10px] tracking-wider uppercase text-dim font-bold block">
+                  Emulsion Matrix Preparation
+                </span>
+                <span class="text-xs sm:text-[13px] leading-relaxed text-ink/90 font-serif block">
+                  In an auxiliary vessel, whisk <span class="font-mono font-bold text-noir">120 grams</span> of full-fat mayonnaise with <span class="font-mono font-bold text-noir">5 grams</span> of Dijon mustard, salt, and freshly cracked black pepper until the dressing phase is completely homogeneous and uniform.
+                </span>
+              </span>
+            </label>
+          </div>
+        </div><div class="flex gap-3 items-start group">
+          <div class="font-mono text-xs font-bold bg-noir text-white px-2 py-0.5 flex-shrink-0 text-center min-w-[2.2rem]">
+            04
+          </div>
+          <div class="flex items-start gap-2 flex-1">
+            <input type="checkbox" id="step-3" class="step-check print-checkbox mt-1 h-3.5 w-3.5 rounded-none border-noir text-noir focus:ring-0 accent-noir cursor-pointer flex-shrink-0">
+            <label for="step-3" class="cursor-pointer select-none space-y-0.5 flex-1">
+              <span class="step-body block space-y-0.5">
+                <span class="font-mono text-[10px] tracking-wider uppercase text-dim font-bold block">
+                  Suspension &amp; Low-Shear Fold
+                </span>
+                <span class="text-xs sm:text-[13px] leading-relaxed text-ink/90 font-serif block">
+                  Pour the emulsified dressing directly over the combined solid inclusions. Utilizing a wide silicone spatula, execute a gentle bottom-to-top fold to thoroughly coat every component without shearing the apple cell walls or softening the pecans.
+                </span>
+              </span>
+            </label>
+          </div>
+        </div><div class="flex gap-3 items-start group">
+          <div class="font-mono text-xs font-bold bg-noir text-white px-2 py-0.5 flex-shrink-0 text-center min-w-[2.2rem]">
+            05
+          </div>
+          <div class="flex items-start gap-2 flex-1">
+            <input type="checkbox" id="step-4" class="step-check print-checkbox mt-1 h-3.5 w-3.5 rounded-none border-noir text-noir focus:ring-0 accent-noir cursor-pointer flex-shrink-0">
+            <label for="step-4" class="cursor-pointer select-none space-y-0.5 flex-1">
+              <span class="step-body block space-y-0.5">
+                <span class="font-mono text-[10px] tracking-wider uppercase text-dim font-bold block">
+                  Equilibration &amp; Cold Storage
+                </span>
+                <span class="text-xs sm:text-[13px] leading-relaxed text-ink/90 font-serif block">
+                  Transfer the blended chicken salad into an airtight glass storage container. Allow the matrix to rest refrigerated at or below 4°C (40°F) for a minimum of 30 minutes to equilibrate the aromatic profile prior to portion deployment. Stable for 4 days.
+                </span>
+              </span>
+            </label>
+          </div>
+        </div></div>
+
+              <!-- Chef's Field Notes -->
+              <div class="border-t border-noir pt-3 mt-4">
+                <div class="flex items-center gap-2 mb-1.5">
+                  <span class="font-mono text-[10px] tracking-wider uppercase font-bold bg-noir text-white px-2 py-0.5">Chef's Analytical Notes</span>
                 </div>
+                <ul id="view-field-notes" class="list-disc pl-4 font-serif text-xs leading-relaxed space-y-1 text-dim"><li>Storage &amp; thermal protocol: Transfer immediately to a glass airtight lock container and hold refrigerated at or below 4°C (40°F); consume within 4 days for peak crispness.</li><li>Low-shear folding: Fold dressing from bottom to top with a wide silicone spatula to coat all solids without bruising Fuji apple cell walls or softening toasted pecans.</li><li>Deployment formats: Serve chilled at 240 grams per portion in a bowl or wrapped in crisp butter lettuce leaves.</li></ul>
+              </div>
             </div>
+
+          </div>
         </div>
 
-        <!-- Bottom Metadata Strip -->
-        <div>
-            <div class="bottom-divider"></div>
-            <div class="status-strip">
-                <div class="status-block">
-                    <span class="kicker">Storage Protocol:</span>
-                    <span class="meta">Refrigerate Immediately at &le; 40&deg;F</span>
-                </div>
-                <div class="status-block">
-                    <span class="kicker">Fresh Matrix Window:</span>
-                    <span class="meta">Consume within 4 days</span>
-                </div>
-                <div class="status-block">
-                    <span class="kicker">Deployment:</span>
-                    <span class="meta">Cold / Bowl or Wrap</span>
-                </div>
-            </div>
+        <!-- Right Pane Footer Stamp -->
+        <div class="border-t-2 border-noir pt-4 mt-6 flex flex-col sm:flex-row justify-between items-start sm:items-center text-xs font-mono text-dim gap-2">
+          <div class="flex items-center gap-2">
+            <span class="inline-block w-2 h-2 bg-noir"></span>
+            <span class="font-semibold text-noir">NOE GOOD FOOD STANDARD ARCHIVE</span>
+            <span class="hidden sm:inline">• PRECISION RATIOS • ZERO COMPROMISE</span>
+          </div>
+          <div class="italic font-serif text-ink text-sm">
+            "Balance, precision, and proportion in culinary formulation."
+          </div>
         </div>
-    </main>
-</div>
+      </section>
 
-</body>
-</html>
+    </div>
+  </main>
+
+  <script>
+    // Canonical Recipe abiding by the Noe Good Food Standard
+    const defaultRecipe = {
+      docId: "NGF-STD-6104",
+      category: "APPLE & PECAN COLD CRUNCH • KETO POULTRY MATRIX",
+      title: "Classic Keto Chicken Salad",
+      subtitle: "Chilled shredded chicken breast suspended in a Dijon-mayonnaise lipid emulsion with crisp Fuji apple, toasted pecans, celery, and sharp cheddar.",
+      notes: "Pre-chilling cooked chicken breast prevents lipid separation when folded into the Dijon-mayonnaise emulsion. Uniform small-dice Fuji apple, celery, and red onion preserve cellular crunch across a 4-day refrigerated hold window (approx. 4.2 cups total batch volume).",
+      nutrition: {
+        servingSize: "Serving Size: 1 portion (240 grams)",
+        calories: 505,
+        proteinGrams: 45,
+        fatGrams: 35,
+        carbsGrams: 7,
+        fiberGrams: 1
+      },
+      image: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=1200&auto=format&fit=crop",
+      prepTime: "20 minutes",
+      cookTime: "0 minutes (pre-cooked)",
+      restTime: "30 minutes chill",
+      baseYield: 4,
+      processTemp: "≤ 4°C (40°F) hold",
+      tags: ["KETO", "POULTRY", "HIGH PROTEIN", "COLD MATRIX", "MEAL PREP"],
+      fieldNotes: [
+        "Storage & thermal protocol: Transfer immediately to a glass airtight lock container and hold refrigerated at or below 4°C (40°F); consume within 4 days for peak crispness.",
+        "Low-shear folding: Fold dressing from bottom to top with a wide silicone spatula to coat all solids without bruising Fuji apple cell walls or softening toasted pecans.",
+        "Deployment formats: Serve chilled at 240 grams per portion in a bowl or wrapped in crisp butter lettuce leaves."
+      ],
+      ingredientGroups: [
+        {
+          groupName: "Protein & Lipid Solids",
+          items: [
+            { amount: 567, unit: "grams", item: "chicken breast, pre-cooked and fully chilled, shredded or diced into uniform bite-sized pieces" },
+            { amount: 100, unit: "grams", item: "cheddar cheese, cut into sharp, uniform cubes" }
+          ]
+        },
+        {
+          groupName: "Crisp Produce & Nut Inclusions",
+          items: [
+            { amount: 150, unit: "grams", item: "Fuji apple, cored and finely diced" },
+            { amount: 60, unit: "grams", item: "pecans, toasted and coarsely chopped" },
+            { amount: 50, unit: "grams", item: "celery stalk, finely diced" },
+            { amount: 30, unit: "grams", item: "red onion, finely minced" }
+          ]
+        },
+        {
+          groupName: "Emulsion Dressing & Seasoning",
+          items: [
+            { amount: 120, unit: "grams", item: "full-fat mayonnaise" },
+            { amount: 5, unit: "grams", item: "Dijon mustard" },
+            { amount: 2, unit: "grams", item: "fine salt and freshly cracked black pepper, adjusted to taste" }
+          ]
+        }
+      ],
+      steps: [
+        {
+          index: "01",
+          phase: "Base Isolation & Sizing",
+          text: "Weigh and shred {{567|grams}} of pre-cooked, completely chilled chicken breast into uniform bite-sized pieces. Transfer directly into a clean, chilled stainless steel mixing vessel."
+        },
+        {
+          index: "02",
+          phase: "Structural Solid Integration",
+          text: "Precision dice {{150|grams}} of Fuji apple, {{50|grams}} of celery stalk, and {{30|grams}} of red onion into uniform small dice. Deposit into the mixing vessel alongside {{100|grams}} of cubed cheddar cheese and {{60|grams}} of chopped pecans."
+        },
+        {
+          index: "03",
+          phase: "Emulsion Matrix Preparation",
+          text: "In an auxiliary vessel, whisk {{120|grams}} of full-fat mayonnaise with {{5|grams}} of Dijon mustard, salt, and freshly cracked black pepper until the dressing phase is completely homogeneous and uniform."
+        },
+        {
+          index: "04",
+          phase: "Suspension & Low-Shear Fold",
+          text: "Pour the emulsified dressing directly over the combined solid inclusions. Utilizing a wide silicone spatula, execute a gentle bottom-to-top fold to thoroughly coat every component without shearing the apple cell walls or softening the pecans."
+        },
+        {
+          index: "05",
+          phase: "Equilibration & Cold Storage",
+          text: "Transfer the blended chicken salad into an airtight glass storage container. Allow the matrix to rest refrigerated at or below 4°C (40°F) for a minimum of 30 minutes to equilibrate the aromatic profile prior to portion deployment. Stable for 4 days."
+        }
+      ]
+    };
+
+    // State management
+    let recipeState = JSON.parse(JSON.stringify(defaultRecipe));
+    let currentServingScale = recipeState.baseYield;
+
+    function formatAmount(baseAmount, baseYield, currentYield) {
+      if (baseAmount === undefined || baseAmount === null || isNaN(baseAmount)) return '';
+      const scaled = (baseAmount / baseYield) * currentYield;
+      if (Math.abs(scaled - Math.round(scaled)) < 0.04) {
+        return Math.round(scaled).toString();
+      }
+      return scaled.toFixed(scaled < 1 ? 2 : 1).replace(/\.0$/, '');
+    }
+
+    function formatUnitLabel(unit, amountNum) {
+      if (!unit) return '';
+      const val = parseFloat(amountNum);
+      const isSingular = Math.abs(val - 1) < 0.001;
+      const mapSingularToPlural = {
+        cup: 'cups',
+        can: 'cans',
+        box: 'boxes',
+        gram: 'grams',
+        tablespoon: 'tablespoons',
+        teaspoon: 'teaspoons'
+      };
+      const mapPluralToSingular = {
+        cups: 'cup',
+        cans: 'can',
+        boxes: 'box',
+        grams: 'gram',
+        tablespoons: 'tablespoon',
+        teaspoons: 'teaspoon'
+      };
+      if (isSingular && mapPluralToSingular[unit]) {
+        return mapPluralToSingular[unit];
+      }
+      if (!isSingular && mapSingularToPlural[unit]) {
+        return mapSingularToPlural[unit];
+      }
+      return unit;
+    }
+
+    function formatStepUnitPhrase(rawUnit, scaledAmountStr) {
+      const num = parseFloat(scaledAmountStr);
+      const isSingular = Math.abs(num - 1) < 0.001;
+      const trimmed = rawUnit.trim();
+
+      if (/^gram(s)?$/i.test(trimmed)) {
+        return isSingular ? 'gram' : 'grams';
+      }
+      if (/^tablespoon(s)?$/i.test(trimmed)) {
+        return isSingular ? 'tablespoon' : 'tablespoons';
+      }
+      if (/^teaspoon(s)?$/i.test(trimmed)) {
+        return isSingular ? 'teaspoon' : 'teaspoons';
+      }
+      if (/^cup(s)?$/i.test(trimmed)) {
+        return isSingular ? 'cup' : 'cups';
+      }
+      return trimmed;
+    }
+
+    function formatScaledStepText(text, baseYield, currentYield) {
+      if (!text) return '';
+      return text.replace(/\{\{\s*([\d.]+)\s*\|\s*([^}]+?)\s*\}\}/g, (_, rawAmt, rawUnit) => {
+        const baseVal = parseFloat(rawAmt);
+        if (isNaN(baseVal)) return rawAmt;
+        const scaledVal = formatAmount(baseVal, baseYield, currentYield);
+        const unitLabel = formatStepUnitPhrase(rawUnit, scaledVal);
+        return `<span class="font-mono font-bold text-noir">${scaledVal} ${unitLabel}</span>`;
+      });
+    }
+
+    function getScaledStepPlainText(text, baseYield, currentYield) {
+      if (!text) return '';
+      return text.replace(/\{\{\s*([\d.]+)\s*\|\s*([^}]+?)\s*\}\}/g, (_, rawAmt, rawUnit) => {
+        const baseVal = parseFloat(rawAmt);
+        if (isNaN(baseVal)) return rawAmt;
+        const scaledVal = formatAmount(baseVal, baseYield, currentYield);
+        const unitLabel = formatStepUnitPhrase(rawUnit, scaledVal);
+        return `${scaledVal} ${unitLabel}`;
+      });
+    }
+
+    function parseApproxMeasure(rawVal) {
+      if (rawVal.includes('/')) {
+        const parts = rawVal.split(/\s+/);
+        if (parts.length === 2) {
+          const [num, den] = parts[1].split('/').map(Number);
+          return Number(parts[0]) + (den ? num / den : 0);
+        } else {
+          const [num, den] = parts[0].split('/').map(Number);
+          return den ? num / den : 0;
+        }
+      }
+      return parseFloat(rawVal);
+    }
+
+    function formatScaledItemText(item, baseYield, currentYield) {
+      const baseText = item.item || '';
+
+      if (item.approxAmount !== undefined && item.approxAmount !== null && item.approxUnit) {
+        const scaledApprox = formatAmount(item.approxAmount, baseYield, currentYield);
+        let unit = item.approxUnit;
+        const num = parseFloat(scaledApprox);
+        if (num === 1 && unit.endsWith('s') && !unit.endsWith('ss')) {
+          unit = unit.slice(0, -1);
+        } else if (num !== 1 && !unit.endsWith('s')) {
+          unit = unit + 's';
+        }
+        return `${baseText} <span class="text-dim font-mono text-[11px]">(approx. ${scaledApprox} ${unit})</span>`;
+      }
+
+      const approxRegex = /\((?:approx\.?\s*)?([\d\s\.\/]+)\s*([a-zA-Z\s]+)\)/i;
+      const match = baseText.match(approxRegex);
+      if (match) {
+        const numericVal = parseApproxMeasure(match[1].trim());
+        const rawUnit = match[2].trim();
+
+        if (!isNaN(numericVal) && numericVal > 0) {
+          const scaledVal = formatAmount(numericVal, baseYield, currentYield);
+          let unit = rawUnit;
+          const num = parseFloat(scaledVal);
+          if (num === 1 && unit.endsWith('s') && !unit.endsWith('ss')) {
+            unit = unit.slice(0, -1);
+          } else if (num !== 1 && !unit.endsWith('s')) {
+            unit = unit + 's';
+          }
+          const cleanPrefix = baseText.replace(match[0], '').trim();
+          return `${cleanPrefix} <span class="text-dim font-mono text-[11px]">(approx. ${scaledVal} ${unit})</span>`;
+        }
+      }
+
+      return baseText;
+    }
+
+    function getScaledItemPlainText(item, baseYield, currentYield) {
+      const baseText = item.item || '';
+
+      if (item.approxAmount !== undefined && item.approxAmount !== null && item.approxUnit) {
+        const scaledApprox = formatAmount(item.approxAmount, baseYield, currentYield);
+        let unit = item.approxUnit;
+        const num = parseFloat(scaledApprox);
+        if (num === 1 && unit.endsWith('s') && !unit.endsWith('ss')) {
+          unit = unit.slice(0, -1);
+        } else if (num !== 1 && !unit.endsWith('s')) {
+          unit = unit + 's';
+        }
+        return `${baseText} (approx. ${scaledApprox} ${unit})`;
+      }
+
+      const approxRegex = /\((?:approx\.?\s*)?([\d\s\.\/]+)\s*([a-zA-Z\s]+)\)/i;
+      const match = baseText.match(approxRegex);
+      if (match) {
+        const numericVal = parseApproxMeasure(match[1].trim());
+        const rawUnit = match[2].trim();
+
+        if (!isNaN(numericVal) && numericVal > 0) {
+          const scaledVal = formatAmount(numericVal, baseYield, currentYield);
+          let unit = rawUnit;
+          const num = parseFloat(scaledVal);
+          if (num === 1 && unit.endsWith('s') && !unit.endsWith('ss')) {
+            unit = unit.slice(0, -1);
+          } else if (num !== 1 && !unit.endsWith('s')) {
+            unit = unit + 's';
+          }
+          const cleanPrefix = baseText.replace(match[0], '').trim();
+          return `${cleanPrefix} (approx. ${scaledVal} ${unit})`;
+        }
+      }
+
+      return baseText;
+    }
+
+    function showToast(message) {
+      const toast = document.getElementById('toast-notify');
+      if (!toast) return;
+      toast.textContent = message;
+      toast.classList.remove('translate-y-20', 'opacity-0');
+      setTimeout(() => {
+        toast.classList.add('translate-y-20', 'opacity-0');
+      }, 2800);
+    }
+
+    function renderView() {
+      document.getElementById('view-doc-id').textContent = recipeState.docId || 'NGF-STD-6104';
+      document.getElementById('view-category').textContent = recipeState.category || 'NOE GOOD FOOD STANDARD RECIPE';
+      document.getElementById('view-title').textContent = recipeState.title;
+      document.getElementById('view-subtitle').textContent = recipeState.subtitle;
+      document.getElementById('view-prep').textContent = recipeState.prepTime;
+      document.getElementById('view-cook').textContent = recipeState.cookTime;
+      document.getElementById('view-rest').textContent = recipeState.restTime || 'None';
+      document.getElementById('view-temp').textContent = recipeState.processTemp || 'Ambient';
+      document.getElementById('view-yield').textContent = `${recipeState.baseYield} portions`;
+      document.getElementById('view-notes').textContent = recipeState.notes || '';
+
+      const servingsInput = document.getElementById('current-servings');
+      if (servingsInput && document.activeElement !== servingsInput) {
+        servingsInput.value = currentServingScale;
+      }
+
+      const nutr = recipeState.nutrition || {
+        servingSize: "Serving Size: 1 portion (240 grams)",
+        calories: 505,
+        proteinGrams: 45,
+        fatGrams: 35,
+        carbsGrams: 7,
+        fiberGrams: 1
+      };
+
+      const netCarbs = Math.max(0, parseFloat(((Number(nutr.carbsGrams) || 0) - (Number(nutr.fiberGrams) || 0)).toFixed(1)));
+
+      const setSafeText = (id, val) => {
+        const el = document.getElementById(id);
+        if (el) el.textContent = val;
+      };
+
+      setSafeText('view-nutrition-serving-size', nutr.servingSize || "Serving Size: 1 portion (240 grams)");
+      setSafeText('badge-nutr-calories', nutr.calories ?? 0);
+      setSafeText('badge-nutr-fat', nutr.fatGrams ?? 0);
+      setSafeText('badge-nutr-carbs', nutr.carbsGrams ?? 0);
+      setSafeText('badge-nutr-fiber', nutr.fiberGrams ?? 0);
+      setSafeText('badge-nutr-netcarbs', netCarbs);
+      setSafeText('badge-nutr-protein', nutr.proteinGrams ?? 0);
+
+      const imgElem = document.getElementById('view-image');
+      if (recipeState.image) {
+        imgElem.src = recipeState.image;
+        imgElem.classList.remove('hidden');
+      } else {
+        imgElem.classList.add('hidden');
+      }
+
+      const tagContainer = document.getElementById('view-tags-container');
+      tagContainer.innerHTML = '';
+      (recipeState.tags || []).forEach(tag => {
+        const badge = document.createElement('span');
+        badge.className = 'font-mono text-[9px] uppercase tracking-wider px-2 py-0.5 border border-noir bg-white font-semibold';
+        badge.textContent = tag;
+        tagContainer.appendChild(badge);
+      });
+
+      const notesList = document.getElementById('view-field-notes');
+      notesList.innerHTML = '';
+      (recipeState.fieldNotes || []).forEach(note => {
+        const li = document.createElement('li');
+        li.textContent = note;
+        notesList.appendChild(li);
+      });
+
+      const ingContainer = document.getElementById('ingredients-container');
+      ingContainer.innerHTML = '';
+
+      recipeState.ingredientGroups.forEach((group, gIdx) => {
+        const groupWrap = document.createElement('div');
+        groupWrap.className = 'space-y-1.5';
+
+        const title = document.createElement('h3');
+        title.className = 'font-mono text-[11px] font-bold uppercase tracking-wider text-noir border-b border-noir/30 pb-1';
+        title.textContent = group.groupName;
+        groupWrap.appendChild(title);
+
+        const list = document.createElement('ul');
+        list.className = 'space-y-1.5 text-xs';
+
+        group.items.forEach((item, iIdx) => {
+          const checkId = `ing-${gIdx}-${iIdx}`;
+          const li = document.createElement('li');
+          li.className = 'flex items-start gap-2.5';
+
+          const scaledAmount = formatAmount(item.amount, recipeState.baseYield, currentServingScale);
+          const unitDisplay = formatUnitLabel(item.unit, scaledAmount);
+          const formattedItem = formatScaledItemText(item, recipeState.baseYield, currentServingScale);
+
+          li.innerHTML = `
+            <input type="checkbox" id="${checkId}" class="ingredient-check print-checkbox mt-0.5 h-3.5 w-3.5 rounded-none border-noir text-noir focus:ring-0 accent-noir cursor-pointer">
+            <label for="${checkId}" class="cursor-pointer select-none leading-relaxed transition-colors flex-1">
+              <span class="ingredient-amount font-mono font-bold text-noir">${scaledAmount} ${unitDisplay}</span>
+              <span class="ingredient-text font-serif text-ink ml-1">${formattedItem}</span>
+            </label>
+          `;
+          list.appendChild(li);
+        });
+
+        groupWrap.appendChild(list);
+        ingContainer.appendChild(groupWrap);
+      });
+
+      const stepContainer = document.getElementById('instructions-container');
+      stepContainer.innerHTML = '';
+
+      recipeState.steps.forEach((step, idx) => {
+        const stepCheckId = `step-${idx}`;
+        const stepEl = document.createElement('div');
+        stepEl.className = 'flex gap-3 items-start group';
+
+        const stepNum = step.index || (idx + 1).toString().padStart(2, '0');
+        const renderedStepText = formatScaledStepText(step.text, recipeState.baseYield, currentServingScale);
+
+        stepEl.innerHTML = `
+          <div class="font-mono text-xs font-bold bg-noir text-white px-2 py-0.5 flex-shrink-0 text-center min-w-[2.2rem]">
+            ${stepNum}
+          </div>
+          <div class="flex items-start gap-2 flex-1">
+            <input type="checkbox" id="${stepCheckId}" class="step-check print-checkbox mt-1 h-3.5 w-3.5 rounded-none border-noir text-noir focus:ring-0 accent-noir cursor-pointer flex-shrink-0">
+            <label for="${stepCheckId}" class="cursor-pointer select-none space-y-0.5 flex-1">
+              <span class="step-body block space-y-0.5">
+                <span class="font-mono text-[10px] tracking-wider uppercase text-dim font-bold block">
+                  ${step.phase || 'Procedure Step'}
+                </span>
+                <span class="text-xs sm:text-[13px] leading-relaxed text-ink/90 font-serif block">
+                  ${renderedStepText}
+                </span>
+              </span>
+            </label>
+          </div>
+        `;
+        stepContainer.appendChild(stepEl);
+      });
+    }
+
+    function setPresetMultiplier(factor) {
+      currentServingScale = Math.max(1, Math.round(recipeState.baseYield * factor));
+
+      document.querySelectorAll('.multiplier-btn').forEach(btn => {
+        btn.classList.remove('bg-noir', 'text-white', 'font-bold');
+      });
+      if (Math.abs(factor - 0.5) < 0.01) document.getElementById('btn-mult-half')?.classList.add('bg-noir', 'text-white', 'font-bold');
+      if (Math.abs(factor - 1) < 0.01) document.getElementById('btn-mult-one')?.classList.add('bg-noir', 'text-white', 'font-bold');
+      if (Math.abs(factor - 2) < 0.01) document.getElementById('btn-mult-two')?.classList.add('bg-noir', 'text-white', 'font-bold');
+
+      renderView();
+    }
+
+    const scaleDownBtn = document.getElementById('btn-scale-down');
+    if (scaleDownBtn) {
+      scaleDownBtn.addEventListener('click', () => {
+        if (currentServingScale > 1) {
+          currentServingScale -= 1;
+          checkPresetMatch();
+          renderView();
+        }
+      });
+    }
+
+    const scaleUpBtn = document.getElementById('btn-scale-up');
+    if (scaleUpBtn) {
+      scaleUpBtn.addEventListener('click', () => {
+        if (currentServingScale < 999) {
+          currentServingScale += 1;
+          checkPresetMatch();
+          renderView();
+        }
+      });
+    }
+
+    const servingsInputField = document.getElementById('current-servings');
+
+    function applyManualServings() {
+      if (!servingsInputField) return;
+      const val = parseInt(servingsInputField.value, 10);
+      if (!isNaN(val) && val > 0) {
+        currentServingScale = Math.min(Math.max(1, val), 999);
+        checkPresetMatch();
+        renderView();
+        showToast(`Yield scaled to ${currentServingScale} portions.`);
+      } else {
+        servingsInputField.value = currentServingScale;
+      }
+    }
+
+    if (servingsInputField) {
+      servingsInputField.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+          e.preventDefault();
+          applyManualServings();
+          servingsInputField.blur();
+        }
+      });
+
+      servingsInputField.addEventListener('change', () => {
+        applyManualServings();
+      });
+    }
+
+    function checkPresetMatch() {
+      clearMultiplierActive();
+      const half = Math.round(recipeState.baseYield * 0.5);
+      const one = recipeState.baseYield;
+      const two = Math.round(recipeState.baseYield * 2);
+
+      if (currentServingScale === half) {
+        document.getElementById('btn-mult-half')?.classList.add('bg-noir', 'text-white', 'font-bold');
+      } else if (currentServingScale === one) {
+        document.getElementById('btn-mult-one')?.classList.add('bg-noir', 'text-white', 'font-bold');
+      } else if (currentServingScale === two) {
+        document.getElementById('btn-mult-two')?.classList.add('bg-noir', 'text-white', 'font-bold');
+      }
+    }
+
+    function clearMultiplierActive() {
+      document.querySelectorAll('.multiplier-btn').forEach(btn => {
+        btn.classList.remove('bg-noir', 'text-white', 'font-bold');
+      });
+    }
+
+    function resetChecklist() {
+      document.querySelectorAll('.ingredient-check, .step-check').forEach(chk => {
+        chk.checked = false;
+      });
+      showToast("Checklist reset to unchecked state.");
+    }
+
+    // Dedicated Print Button Handler with Fallback
+    const printCardBtn = document.getElementById('btn-print-card');
+    if (printCardBtn) {
+      printCardBtn.addEventListener('click', () => {
+        try {
+          window.focus();
+          window.print();
+          showToast("Press Ctrl+P / Cmd+P if the print dialog does not appear.");
+        } catch (err) {
+          showToast("Press Ctrl+P / Cmd+P to print");
+        }
+      });
+    }
+
+    // Null-Safe Live Editor Bindings (Stripped cleanly on standalone export)
+    const editorPane = document.getElementById('recipe-editor-pane');
+    const toggleEditorBtn = document.getElementById('btn-toggle-editor');
+    const closeEditorBtn = document.getElementById('btn-close-editor');
+    const applyEditorBtn = document.getElementById('btn-apply-editor');
+    const resetDefaultBtn = document.getElementById('btn-reset-default');
+
+    function populateEditorForm() {
+      if (!editorPane) return;
+      document.getElementById('edit-doc-id').value = recipeState.docId || 'NGF-STD-6104';
+      document.getElementById('edit-category').value = recipeState.category || '';
+      document.getElementById('edit-title').value = recipeState.title;
+      document.getElementById('edit-subtitle').value = recipeState.subtitle;
+      document.getElementById('edit-notes').value = recipeState.notes || '';
+      document.getElementById('edit-image').value = recipeState.image || '';
+      document.getElementById('edit-prep').value = recipeState.prepTime;
+      document.getElementById('edit-cook').value = recipeState.cookTime;
+      document.getElementById('edit-rest').value = recipeState.restTime || '';
+      document.getElementById('edit-base-yield').value = recipeState.baseYield;
+      document.getElementById('edit-temp').value = recipeState.processTemp || '';
+      document.getElementById('edit-tags').value = (recipeState.tags || []).join(', ');
+
+      const nutr = recipeState.nutrition || {};
+      const setSafeVal = (id, val) => {
+        const el = document.getElementById(id);
+        if (el) el.value = val;
+      };
+
+      setSafeVal('edit-nutr-serving-size', nutr.servingSize || '');
+      setSafeVal('edit-nutr-calories', nutr.calories ?? '');
+      setSafeVal('edit-nutr-protein', nutr.proteinGrams ?? '');
+      setSafeVal('edit-nutr-fat', nutr.fatGrams ?? '');
+      setSafeVal('edit-nutr-carbs', nutr.carbsGrams ?? '');
+      setSafeVal('edit-nutr-fiber', nutr.fiberGrams ?? '');
+
+      document.getElementById('edit-json-payload').value = JSON.stringify({
+        ingredientGroups: recipeState.ingredientGroups,
+        steps: recipeState.steps,
+        fieldNotes: recipeState.fieldNotes
+      }, null, 2);
+    }
+
+    if (toggleEditorBtn && editorPane) {
+      toggleEditorBtn.addEventListener('click', () => {
+        const isHidden = editorPane.classList.contains('hidden');
+        if (isHidden) {
+          populateEditorForm();
+          editorPane.classList.remove('hidden');
+          const label = document.getElementById('editor-btn-label');
+          if (label) label.textContent = 'Hide Form';
+        } else {
+          editorPane.classList.add('hidden');
+          const label = document.getElementById('editor-btn-label');
+          if (label) label.textContent = 'Edit Card';
+        }
+      });
+    }
+
+    if (closeEditorBtn && editorPane) {
+      closeEditorBtn.addEventListener('click', () => {
+        editorPane.classList.add('hidden');
+        const label = document.getElementById('editor-btn-label');
+        if (label) label.textContent = 'Edit Card';
+      });
+    }
+
+    if (applyEditorBtn && editorPane) {
+      applyEditorBtn.addEventListener('click', () => {
+        try {
+          const parsed = JSON.parse(document.getElementById('edit-json-payload').value);
+
+          recipeState.docId = document.getElementById('edit-doc-id').value || "NGF-STD-6104";
+          recipeState.category = document.getElementById('edit-category').value || "NOE GOOD FOOD STANDARD";
+          recipeState.title = document.getElementById('edit-title').value || "Classic Keto Chicken Salad";
+          recipeState.subtitle = document.getElementById('edit-subtitle').value || "";
+          recipeState.notes = document.getElementById('edit-notes').value || "";
+          recipeState.image = document.getElementById('edit-image').value || "";
+          recipeState.prepTime = document.getElementById('edit-prep').value || "20 minutes";
+          recipeState.cookTime = document.getElementById('edit-cook').value || "0 minutes (pre-cooked)";
+          recipeState.restTime = document.getElementById('edit-rest').value || "None";
+          recipeState.baseYield = parseInt(document.getElementById('edit-base-yield').value, 10) || 4;
+          recipeState.processTemp = document.getElementById('edit-temp').value || "≤ 4°C (40°F) hold";
+
+          recipeState.nutrition = {
+            servingSize: document.getElementById('edit-nutr-serving-size').value || "Serving Size: 1 portion (240 grams)",
+            calories: Number(document.getElementById('edit-nutr-calories').value) || 0,
+            proteinGrams: Number(document.getElementById('edit-nutr-protein').value) || 0,
+            fatGrams: Number(document.getElementById('edit-nutr-fat').value) || 0,
+            carbsGrams: Number(document.getElementById('edit-nutr-carbs').value) || 0,
+            fiberGrams: Number(document.getElementById('edit-nutr-fiber').value) || 0
+          };
+
+          const rawTags = document.getElementById('edit-tags').value;
+          recipeState.tags = rawTags.split(',').map(t => t.trim()).filter(Boolean);
+
+          if (parsed.ingredientGroups) recipeState.ingredientGroups = parsed.ingredientGroups;
+          if (parsed.steps) recipeState.steps = parsed.steps;
+          if (parsed.fieldNotes) recipeState.fieldNotes = parsed.fieldNotes;
+
+          currentServingScale = recipeState.baseYield;
+          checkPresetMatch();
+          renderView();
+          editorPane.classList.add('hidden');
+          const label = document.getElementById('editor-btn-label');
+          if (label) label.textContent = 'Edit Card';
+          showToast("Noe Good Food Standard Card compiled.");
+        } catch (err) {
+          showToast("JSON Syntax error in ingredients/steps payload.");
+        }
+      });
+    }
+
+    if (resetDefaultBtn) {
+      resetDefaultBtn.addEventListener('click', () => {
+        recipeState = JSON.parse(JSON.stringify(defaultRecipe));
+        currentServingScale = recipeState.baseYield;
+        checkPresetMatch();
+        populateEditorForm();
+        renderView();
+        showToast("Reset to master default standard.");
+      });
+    }
+
+    // Copy Dropdown Handlers
+    const copyMenuBtn = document.getElementById('btn-copy-menu');
+    const copyDropdown = document.getElementById('copy-dropdown-menu');
+
+    if (copyMenuBtn && copyDropdown) {
+      copyMenuBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        copyDropdown.classList.toggle('hidden');
+      });
+
+      document.addEventListener('click', () => {
+        if (!copyDropdown.classList.contains('hidden')) {
+          copyDropdown.classList.add('hidden');
+        }
+      });
+    }
+
+    function copyStringToClipboard(str, successMsg) {
+      const el = document.createElement('textarea');
+      el.value = str;
+      el.setAttribute('readonly', '');
+      el.style.position = 'absolute';
+      el.style.left = '-9999px';
+      document.body.appendChild(el);
+      el.select();
+      try {
+        document.execCommand('copy');
+        showToast(successMsg);
+      } catch (err) {
+        showToast("Unable to copy to clipboard.");
+      }
+      document.body.removeChild(el);
+    }
+
+    function generateStandaloneHTMLDocument() {
+      const clone = document.documentElement.cloneNode(true);
+
+      // Remove compiled Tailwind runtime style tags so the exported file stays clean and relies on the Tailwind CDN
+      clone.querySelectorAll('head style').forEach(styleEl => {
+        if (styleEl.textContent.includes('--tw-border-spacing-x')) {
+          styleEl.remove();
+        }
+      });
+
+      // Prune editor trigger button and drawer from exported DOM
+      const editorBtn = clone.querySelector('#btn-toggle-editor');
+      if (editorBtn) editorBtn.remove();
+
+      const editorDrawer = clone.querySelector('#recipe-editor-pane');
+      if (editorDrawer) editorDrawer.remove();
+
+      // Reset transient UI states
+      const dropdown = clone.querySelector('#copy-dropdown-menu');
+      if (dropdown) dropdown.classList.add('hidden');
+
+      const toast = clone.querySelector('#toast-notify');
+      if (toast) {
+        toast.classList.add('translate-y-20', 'opacity-0');
+        toast.textContent = 'Notice message goes here';
+      }
+
+      // Sync active recipeState JSON into the embedded script cleanly
+      const scriptTag = clone.querySelector('script:not([src])');
+      if (scriptTag) {
+        let scriptContent = scriptTag.textContent;
+        const serializedState = JSON.stringify(recipeState, null, 2);
+        scriptContent = scriptContent.replace(
+          /const defaultRecipe = \{[\s\S]*?\};\n\s*\/\/ State management/,
+          `const defaultRecipe = ${serializedState};\n\n    // State management`
+        );
+        scriptTag.textContent = scriptContent;
+      }
+
+      return "<!DOCTYPE html>\n" + clone.outerHTML;
+    }
+
+    function downloadRecipeHTML() {
+      const htmlContent = generateStandaloneHTMLDocument();
+      const sanitizedTitle = (recipeState.title || 'recipe')
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/^-|-$/g, '');
+      const fileName = `${recipeState.docId || 'NGF-STD'}-${sanitizedTitle}.html`;
+
+      try {
+        const blob = new Blob([htmlContent], { type: 'text/html;charset=utf-8' });
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = fileName;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        setTimeout(() => URL.revokeObjectURL(url), 1500);
+        showToast(`Downloaded clean reader file: "${fileName}"`);
+      } catch (err) {
+        copyStringToClipboard(htmlContent, "Download blocked by environment; clean reader HTML copied to clipboard!");
+      }
+    }
+
+    function copyRecipeMarkdown() {
+      let md = `# ${recipeState.title}\n`;
+      md += `*The Noe Good Food Standard — Formulation ID: ${recipeState.docId}*\n\n`;
+      md += `> ${recipeState.subtitle}\n\n`;
+      md += `**Active Prep:** ${recipeState.prepTime} | **Thermal Cook:** ${recipeState.cookTime} | **Equilibration:** ${recipeState.restTime} | **Yield:** ${currentServingScale} portions (Scaled)\n\n`;
+
+      if (recipeState.nutrition) {
+        const n = recipeState.nutrition;
+        const netCarbs = Math.max(0, parseFloat(((Number(n.carbsGrams) || 0) - (Number(n.fiberGrams) || 0)).toFixed(1)));
+        md += `### Nutrition Per Serving\n`;
+        md += `*${n.servingSize || 'Per portion'}*\n`;
+        md += `- **Calories:** ${n.calories} calories\n`;
+        md += `- **Total Fat:** ${n.fatGrams} grams\n`;
+        md += `- **Total Carbohydrates:** ${n.carbsGrams} grams\n`;
+        md += `- **Fiber (Dietary Fiber):** ${n.fiberGrams} grams\n`;
+        md += `- **Net Carbohydrates:** ${netCarbs} grams\n`;
+        md += `- **Protein:** ${n.proteinGrams} grams\n\n`;
+      }
+
+      md += `### Ingredients (Unabbreviated Units)\n`;
+      recipeState.ingredientGroups.forEach(grp => {
+        md += `\n**${grp.groupName}**\n`;
+        grp.items.forEach(it => {
+          const amt = formatAmount(it.amount, recipeState.baseYield, currentServingScale);
+          const unitLabel = formatUnitLabel(it.unit, amt);
+          const itemText = getScaledItemPlainText(it, recipeState.baseYield, currentServingScale);
+          md += `- [ ] **${amt} ${unitLabel}** ${itemText}\n`;
+        });
+      });
+      md += `\n### Preparation Steps\n`;
+      recipeState.steps.forEach((st, idx) => {
+        const num = st.index || (idx + 1).toString().padStart(2, '0');
+        const scaledStepProse = getScaledStepPlainText(st.text, recipeState.baseYield, currentServingScale);
+        md += `${num}. **${st.phase}** — ${scaledStepProse}\n\n`;
+      });
+      if (recipeState.fieldNotes && recipeState.fieldNotes.length) {
+        md += `### Chef's Analytical Notes\n`;
+        recipeState.fieldNotes.forEach(note => {
+          md += `- ${note}\n`;
+        });
+      }
+      copyStringToClipboard(md, "Recipe copied as Markdown (.md)");
+    }
+
+    function copyRecipeHTML() {
+      const fullDoc = generateStandaloneHTMLDocument();
+      copyStringToClipboard(fullDoc, "Clean reader HTML copied to clipboard (editor removed).");
+    }
+
+    function exportRecipeJSON() {
+      const jsonStr = JSON.stringify(recipeState, null, 2);
+      copyStringToClipboard(jsonStr, "Formulation JSON copied to clipboard.");
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      renderView();
+    });
+  </script>
+
+</body></html>
